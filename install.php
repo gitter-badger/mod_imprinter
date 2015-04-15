@@ -50,7 +50,7 @@ class mod_ImprinterInstallerScript {
      * @return void
      */
     function update($parent) {
-        print '<h3>The module has been updated to version' . $parent->get('manifest')->version . '</h3>';
+        print '<h3>The module has been updated to version: <code>' . $parent->get('manifest')->version . '</code></h3>';
     }
 
     /**
