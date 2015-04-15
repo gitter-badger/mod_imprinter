@@ -24,9 +24,11 @@ defined('_JEXEC') or die('Restricted access');
  */
 ?>
 
+Version 0.0.4 15.04.2015
+! Published on GitHub
+
 Version 0.0.3 15.04.2015
 + Added imprinter.min.css
-! Published on GitHub
 + Added imprinter.css
 + Added script.php
 
