@@ -92,6 +92,13 @@
                        label="MOD_IMPRINTER_FIELD_LASTNAME_LABEL" description="MOD_IMPRINTER_FIELD_LASTNAME_DESC"
                        filter="string" />
 
+                <field name="nameurl" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_NAMEURL_LABEL" description="MOD_IMPRINTER_FIELD_NAMEURL_DESC"
+                       filter="string" />
+                <field name="nameurltitle" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_NAMEURLTITLE_LABEL" description="MOD_IMPRINTER_FIELD_NAMEURLTITLE_DESC"
+                       filter="string" />
+
                 <field name="jobtitle" type="text" default=""
                        label="MOD_IMPRINTER_FIELD_JOBTITLE_LABEL" description="MOD_IMPRINTER_FIELD_JOBTITLE_DESC"
                        filter="string" />
@@ -255,7 +262,7 @@
 
     <updateservers>
         <!--<server type="collection">http://example.com/list.xml</server>-->
-        <server type="extension" priority="1" name="M. S. RitZenhoff Imprinter Module">https://github.com/msritzenhoff/mod_imprinter/blob/master/mod_imprinter.xml</server>
+        <server type="extension" name="Imprinter" priority="1">https://github.com/msritzenhoff/mod_imprinter/blob/master/mod_imprinter.xml</server>
     </updateservers>
 
 </extension>

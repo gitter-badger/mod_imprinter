@@ -11,6 +11,10 @@
  * @copyright       Copyright (C) 2015. Michael S. RitZenhoff by Interim Webmanagement. All rights reserved.
  **/
 
+/*
+ * https://docs.joomla.org/J3.x:Creating_a_simple_module/Adding_an_install-uninstall-update_script_file
+ */
+
 // No direct access to this file
 defined('_JEXEC') or die;
 

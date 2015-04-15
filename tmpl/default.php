@@ -34,6 +34,8 @@ $companyservice = htmlspecialchars($params->get('companyservice'));
 $firstname = htmlspecialchars($params->get('firstname'));
 $secondname = htmlspecialchars($params->get('secondname'));
 $lastname = htmlspecialchars($params->get('lastname'));
+$nameurl = htmlspecialchars($params->get('nameurl'));
+$nameurltitle = htmlspecialchars($params->get('nameurltitle'));
 $jobtitle = htmlspecialchars($params->get('jobtitle'));
 
 $start_business = htmlspecialchars($params->get('start_business'));
@@ -81,6 +83,7 @@ endif;
     <h3>Inhaltliche Verantwortlichkeit gemäß <small><a title="Informationspflichten und Informationsrechte" href="http://www.juris.de/jportal/portal/page/bshaprod.psml?doc.id=jlr-RdFunkStVtrHAV3P55&amp;st=lr&amp;showdoccase=1&amp;paramfromHL=true#focuspoint" rel="external">§ 55 Abs. 2 RStV</a></small> sowie <small><a title="Allgemeine Informationspflichten" href="http://www.gesetze-im-internet.de/tmg/__5.html" rel="external">§ 5 TMG</a></small></h3>
 
     <section data-role="imprint-vcard">
+        <h3 hidden><?php print 'h-card for:' . $companyname; ?></h3>
 
     <?php
     if($companyname) :
@@ -97,16 +100,16 @@ endif;
         <?php
         if($companyname) :
             ?>
-            <p class="p-org org">
+            <p class="p-org">
                 <?php if($companyname) :
                     ?>
-                    <span class="p-organization-name organization-name" itemprop="name"><?php print $companyname; ?></span>
+                    <span class="p-organization-name" itemprop="name"><?php print $companyname; ?></span>
                     <?php
                 endif;
 
                 if($companyservice) :
                     ?>
-                    <span class="p-category category" itemprop="description"><?php print $companyservice; ?></span>
+                    <span class="p-category" itemprop="description"><?php print $companyservice; ?></span>
                     <?php
                 endif;
                 ?>
@@ -119,51 +122,77 @@ endif;
         if($firstname || $lastname) :
             ?>
             <span vocab="http://schema.org/" typeof="Person" itemscope itemtype="http://data-vocabulary.org/#Person">
-                <span class="p-n n" property="name" itemprop="name">
-                    <a class="p-name u-url url" href="https://plus.google.com/112687566145330736121?rel=author">
+                <span class="p-n" property="name" itemprop="name">
+                    <a class="p-name u-url" href="https://plus.google.com/112687566145330736121?rel=author">
                     <?php
                     if($firstname) :
                         ?>
-                        <span class="p-given-name given-name" property="foaf:name"><?php print $firstname; ?></span>
+                        <span class="p-given-name" property="foaf:name"><?php print $firstname; ?></span>
                         <?php
                     endif;
 
                     if($lastname) :
                         ?>
-                        <span class="p-family-name family-name" property="foaf:givenName"><?php print $lastname; ?></span>
+                        <span class="p-family-name" property="foaf:givenName"><?php print $lastname; ?></span>
                         <?php
                     endif;
                     ?>
                     </a>
                 </span>
 
-                <span class="p-fn fn u-url" property="name" itemprop="name">
-                    <a class="p-name u-url url" href="http://msritzenhoff.de/" title="Multimedia Developer – Software / Web Development &amp; Support">
+                <span class="p-fn u-url" property="name" itemprop="name">
+                    <?php
+                    // start link: p-name u-url
+                    if($nameurl) :
+                        ?>
+                        <a class="p-name u-url" href="<?php print $nameurl; ?>"<?php $nameurltitle ? ' title="' . print $nameurltitle . '"' : ''; ?>>
                         <?php
+                    endif;
+                    // start link: p-name u-url
+
+                        if($honorificprefix) :
+                            ?>
+                            <span class="p-honorific-prefix"><?php print $honorificprefix; ?></span>
+                            <?php
+                        endif;
+
+                        if($honorificsuffix) :
+                            ?>
+                            <span class="p-honorific-suffix"><?php print $honorificsuffix; ?></span>
+                            <?php
+                        endif;
+
                         if($firstname) :
                             ?>
-                            <span class="p-given-name given-name"><?php print $firstname; ?></span>
+                            <span class="p-given-name"><?php print $firstname; ?></span>
                             <?php
                         endif;
 
                         if($secondname) :
                             ?>
-                            <abbr class="p-additional-name additional-name" title="<?php print $secondname; ?>"><?php print $secondname; ?>.</abbr>
+                            <abbr class="p-additional-name" title="<?php print $secondname; ?>"><?php print $secondname; ?>.</abbr>
                             <?php
                         endif;
 
                         if($lastname) :
                             ?>
-                            <span class="p-family-name family-name"><?php print $lastname; ?></span>
+                            <span class="p-family-name"><?php print $lastname; ?></span>
                             <?php
                         endif;
+
+                    // end link: p-name u-url
+                    if($nameurl) :
                         ?>
-                    </a>
+                        </a>
+                        <?php
+                    endif;
+                    // end link: p-name u-url
+                    ?>
                 </span>
                 <?php
                 if($jobtitle) :
                     ?>
-                    <span class="p-job-title title" property="jobtitle" itemprop="jobTitle"><?php print $jobtitle; ?></span>
+                    <span class="p-job-title" property="jobTitle" itemprop="jobTitle"><?php print $jobtitle; ?></span>
                     <?php
                 endif;
                 ?>
@@ -176,19 +205,19 @@ endif;
             <?php
             if($street || $postalcode || $city) :
                 ?>
-                <span class="h-adr adr" itemprop="address" itemscope itemtype="http://schema.org/#PostalAddress">
+                <span class="h-adr" itemprop="address" itemscope itemtype="http://schema.org/#PostalAddress">
                 <?php
                 if($street) :
                     ?>
-                    <span class="p-street-address street-address" itemprop="streetAddress"><?php print $street; ?></span>
+                    <span class="p-street-address" itemprop="streetAddress"><?php print $street; ?></span>
                     <?php
                 endif;
 
                 if($postalcode || $city) :
                     ?>
                     <span class="city">
-                        <span class="p-postal-code postal-code" itemprop="postalCode"><?php print $postalcode; ?></span>
-                        <span class="p-locality locality" itemprop="addressLocality"><?php print $city; ?></span>
+                        <span class="p-postal-code" itemprop="postalCode"><?php print $postalcode; ?></span>
+                        <span class="p-locality" itemprop="addressLocality"><?php print $city; ?></span>
                     </span>
                     <?php
                 endif;
@@ -199,14 +228,14 @@ endif;
                         <?php
                         if($region) :
                             ?>
-                            <abbr class="p-region country-region" itemprop="addressRegion" title="<?php print $region; ?>"><?php print $region; ?></abbr>
+                            <abbr class="p-region" itemprop="addressRegion" title="<?php print $region; ?>"><?php print $region; ?></abbr>
                             <span>/</span>
                             <?php
                         endif;
 
                         if($country) :
                             ?>
-                            <span class="p-country-name country-name"><?php print $country; ?></span>
+                            <span class="p-country-name"><?php print $country; ?></span>
                             <?php
                         endif;
                         ?>
@@ -222,15 +251,15 @@ endif;
             <?php
             if($geolatitude && $geolongitude) :
                 ?>
-                <span class="h-geo geo">
+                <span class="h-geo">
                     <span class="type work">GEO: </span>
                     <?php // backward compatibility ?>
-                    <span class="p-latitude latitude"><?php print $geolatitude; ?></span>
-                    <span class="p-longitude longitude"><?php print ';' . $geolongitude; ?></span>
+                    <span class="p-latitude"><?php print $geolatitude; ?></span>
+                    <span class="p-longitude"><?php print ';' . $geolongitude; ?></span>
                     <?php
                     if($geoaltitude) :
                         ?>
-                        <span class="p-longitude"><?php print ';' . $geoaltitude; ?></span>
+                        <span class="p-altitude"><?php print ';' . $geoaltitude; ?></span>
                         <?php
                     endif;
                     ?>
@@ -258,9 +287,9 @@ endif;
 
             if($mobilephone) :
                 ?>
-                <span class="p-tel mobil" itemprop="mobilephone">
-                    <span class="type work">Mobil: </span>
-                    <span class="value" property="mobilephone"><?php print $mobilephone; ?></span>
+                <span class="p-tel mobil" itemprop="telephone">
+                    <span class="type mobil">Mobil: </span>
+                    <span class="value" property="telephone"><?php print $mobilephone; ?></span>
                     <?php
                     if($mobilephonecall == 1) :
                         ?>
@@ -280,9 +309,9 @@ endif;
 
             if($telefax) :
                 ?>
-                <span class="p-fax fax" itemprop="fax">
+                <span class="p-fax" itemprop="faxNumber">
                     <span class="type work">Fax: </span>
-                    <span class="value"><?php print $telefax; ?></span>
+                    <span class="value" property="faxNumber"><?php print $telefax; ?></span>
                 </span>
                 <?php
             endif;
@@ -305,7 +334,7 @@ endif;
             ?>
             <span class="url">
                 <span title="online">//www: </span>
-                <span><a class="p-name u-url url org" itemprop="url" href="<?php print $url; ?>" title=""><?php print $url; ?></a></span>
+                <span><a class="p-name u-url org" itemprop="url" href="<?php print $url; ?>" title=""><?php print $url; ?></a></span>
             </span>
             <?php
         endif;
