@@ -7,14 +7,14 @@
     <license>GNU General Public License version 2; see LICENSE.txt</license>
     <authorEmail>info@interim-webmanagement.net</authorEmail>
     <authorUrl>interim-webmanagement.net</authorUrl>
-    <version>0.0.8</version>
+    <version>0.0.9</version>
     <description><![CDATA[
         <style>
             .star{color: red;}
         </style>
         <div style="font-weight:normal; text-align: left;">
             <h4>Imprint Module for legal information spiced with microdata and microformat 2 [h-card].
-            <small style="float:right">ver. 0.0.8</small></h4>
+            <small style="float:right">ver. 0.0.9</small></h4>
             <p><strong>Imprinter</strong> module. Put Imprinter on any page.</p>
             <p>Need information? Please visit the <a href="http://interim-webmanagement.net/projekte/imprinter" target="_blank">Imprinter Info Page</a>. You'll find there all the information you need.</p>
             <p>Like the Imprinter? Check out the <a style="font-weight:bold;" href="http://interim-webmanagement.net/projekte/clifflex" target="_blank">CLIFFlex Template</a></p>
@@ -124,7 +124,7 @@
 
                 <field type="spacer" hr="true" />
 
-                <field name="start_business" type="text" default=""
+                <field name="startbusiness" type="text" default=""
                        label="MOD_IMPRINTER_FIELD_BUSINESSSTART_LABEL" description="MOD_IMPRINTER_FIELD_BUSINESSSTART_DESC"
                        filter="string" />
 
@@ -233,7 +233,7 @@
 
             <!-- Additional Tab -->
             <fieldset name="additional">
-                <field name="editor" type="editor" buttons="true" width="409" filter="JComponentHelper::filterText"
+                <field name="accessory" type="editor" buttons="true" width="409" filter="JComponentHelper::filterText"
                        label="MOD_IMPRINTER_FIELD_EDITOR_LABEL" />
 
                 <field name="spacer_name_5" type="spacer" label="MOD_IMPRINTER_SPACER_5" />

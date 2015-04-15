@@ -18,6 +18,8 @@ $urlModuleTemplate = JURI::base(true) . "/modules/{$module->module}/tmpl/";
 $document = JFactory::getDocument();
 $theme = $params->get('theme', 'default');
 
+// Extras Tab
+$microformat2 = htmlspecialchars($params->get('microformat2'));
 $imprintercss = htmlspecialchars($params->get('imprintercss'));
 if($imprintercss == 1) :
     //add css
@@ -32,7 +34,7 @@ $companyname = htmlspecialchars($params->get('companyname'));
 $companyservice = htmlspecialchars($params->get('companyservice'));
 
 $honorificprefix = htmlspecialchars($params->get('honorificprefix'));
-$honorificprefix = htmlspecialchars($params->get('honorificprefix'));
+$honorificsuffix = htmlspecialchars($params->get('honorificsuffix'));
 $hprefix0 = htmlspecialchars($params->get('hprefix0'));
 $hprefix1 = htmlspecialchars($params->get('hprefix1'));
 
@@ -45,7 +47,7 @@ $nameurl = htmlspecialchars($params->get('nameurl'));
 $nameurltitle = htmlspecialchars($params->get('nameurltitle'));
 $jobtitle = htmlspecialchars($params->get('jobtitle'));
 
-$start_business = htmlspecialchars($params->get('start_business'));
+$startbusiness = htmlspecialchars($params->get('startbusiness'));
 $vatid = htmlspecialchars($params->get('vatid'));
 
 // Contact Tab
@@ -73,7 +75,8 @@ $geoplacename = htmlspecialchars($params->get('geoplacename'));
 $geolatitude = htmlspecialchars($params->get('geolatitude'));
 $geolongitude = htmlspecialchars($params->get('geolongitude'));
 
-$microformat2 = htmlspecialchars($params->get('microformat2'));
+// Additional Tab
+$accessory = htmlspecialchars($params->get('accessory'));
 
 ?>
 <article <?php $moduleclass_sfx ? print 'class="' . $moduleclass_sfx . '"' : ''; ?>>
@@ -351,19 +354,29 @@ endif;
         </div>
     </section>
 
-    <?php
-    if($vatid):
-        ?>
-        <p data-vatid="de">USt-IdNr. gemäß § 19 UStG / § 27 UStG: <?php print $vatid; ?></p>
+    <section>
         <?php
-    endif;
-    ?>
+        if($vatid):
+            ?>
+            <p data-vatid="de">USt-IdNr. gemäß § 19 UStG / § 27 UStG: <?php print $vatid; ?></p>
+            <?php
+        endif;
+        ?>
 
-    <?php
-    if($microformat2 == 1):
-        ?>
-        <small class="microformat2">This content uses <a target="_blank" href="http://microformats.org/wiki/microformats2">microformats 2</a></small>
         <?php
-    endif;
-    ?>
+        if($microformat2 == 1):
+            ?>
+            <small class="microformat2">This content uses <a target="_blank" href="http://microformats.org/wiki/microformats2">microformats 2</a></small>
+            <?php
+        endif;
+        ?>
+    </section>
+
+    <section>
+        <?php
+        if($accessory):
+            print $accessory;
+        endif;
+        ?>
+    </section>
 </article>
