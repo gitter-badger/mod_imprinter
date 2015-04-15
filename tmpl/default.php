@@ -76,7 +76,7 @@ $geolatitude = htmlspecialchars($params->get('geolatitude'));
 $geolongitude = htmlspecialchars($params->get('geolongitude'));
 
 // Additional Tab
-$accessory = htmlspecialchars($params->get('accessory'));
+$accessory = $params->get('accessory');
 
 ?>
 <article <?php $moduleclass_sfx ? print 'class="' . $moduleclass_sfx . '"' : ''; ?>>
