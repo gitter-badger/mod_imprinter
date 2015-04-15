@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.0" client="site" method="upgrade">
     <name>Imprinter</name>
-    <author>Michael S. RitZenhoff</author>
-    <creationDate>15.04.2015</creationDate>
     <version>0.0.5</version>
+    <creationDate>13.04.2015</creationDate>
+    <author>Michael S. RitZenhoff</author>
     <authorEmail>info@interim-webmanagement.net</authorEmail>
     <authorUrl>interim-webmanagement.net</authorUrl>
-    <copyright>Copyright (C) 2005 - 2012 Michael S. RitZenhoff. All rights reserved.</copyright>
+    <copyright>Copyright (C) 2015. Michael S. RitZenhoff. All rights reserved.</copyright>
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
     <description><![CDATA[
         <div style="font-weight:normal; text-align: left;">
@@ -30,6 +30,13 @@
         <filename>mod_imprinter.xml</filename>
         <filename>install.php</filename>
     </files>
+
+    <languages>
+        <language tag="de-DE">language\de-DE\de-DE.mod_imprinter.ini</language>
+        <language tag="de-DE">language\de-DE\de-DE.mod_imprinter.sys.ini</language>
+        <language tag="en-GB">language\en-GB\en-GB.mod_imprinter.ini</language>        
+        <language tag="en-GB">language\en-GB\en-GB.mod_imprinter.sys.ini</language>
+    </languages>
 
     <help key="JHELP_EXTENSIONS_MODULE_MANAGER_FOOTER" />
 

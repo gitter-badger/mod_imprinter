@@ -1,10 +1,14 @@
 <?php
 /**
- * @package     Joomla
- * @subpackage  Imprinter Module for Joomla 3.4+
- * @author      interim-webmanagement.net
- * @copyright   (C) 2015 - Interim Webmanagement. All rights reserved.
- * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
+ * mod_imprinter Module Entry Point
+ * 
+ * @package         Joomla
+ * @subpackage      Imprinter Module
+ * @author          Michael S. RitZenhoff by Interim Webmanagement
+ * @author url      http://interim-webmanagement.net
+ * @author email    info@interim-webmanagement.net
+ * @license         GNU/GPL, see /assets/license.txt
+ * @copyright       Copyright (C) 2015. Michael S. RitZenhoff by Interim Webmanagement. All rights reserved.
  **/
 
 // no direct access

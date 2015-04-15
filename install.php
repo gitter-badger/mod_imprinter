@@ -1,11 +1,15 @@
 <?php
 /**
- * @package     Joomla
- * @subpackage  Imprinter Module for Joomla 3.4+
- * @author      interim-webmanagement.net
- * @copyright   (C) 2015 - Interim Webmanagement. All rights reserved.
- * @license     GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
- * */
+ * Installer class for mod_imprinter
+ * 
+ * @package         Joomla
+ * @subpackage      Imprinter Module
+ * @author          Michael S. RitZenhoff by Interim Webmanagement
+ * @author url      http://interim-webmanagement.net
+ * @author email    info@interim-webmanagement.net
+ * @license         GNU/GPL, see /assets/license.txt
+ * @copyright       Copyright (C) 2015. Michael S. RitZenhoff by Interim Webmanagement. All rights reserved.
+ **/
 
 // No direct access to this file
 defined('_JEXEC') or die;
@@ -22,7 +26,7 @@ class mod_ImprinterInstallerScript {
      * @return void
      */
     function install($parent) {
-        print '<p>The module has been installed</p>';
+        print '<h3>The module has been installed</h3>';
     }
 
     /**
@@ -32,7 +36,7 @@ class mod_ImprinterInstallerScript {
      * @return void
      */
     function uninstall($parent) {
-        print '<p>The module has been uninstalled</p>';
+        print '<h3>The module has been uninstalled</h3>';
     }
 
     /**
@@ -42,7 +46,7 @@ class mod_ImprinterInstallerScript {
      * @return void
      */
     function update($parent) {
-        print '<p>The module has been updated to version' . $parent->get('manifest')->version . '</p>';
+        print '<h3>The module has been updated to version' . $parent->get('manifest')->version . '</h3>';
     }
 
     /**
@@ -53,7 +57,7 @@ class mod_ImprinterInstallerScript {
      * @return void
      */
     function preflight($type, $parent) {
-        print '<p>Anything here happens before the installation/update/uninstallation of the module</p>';
+        //print '<h4>Anything here happens before the installation/update/uninstallation of the module</h4>';
     }
 
     /**
@@ -64,7 +68,7 @@ class mod_ImprinterInstallerScript {
      * @return void
      */
     function postflight($type, $parent) {
-        print '<p>Anything here happens after the installation/update/uninstallation of the module</p>';
+        //print '<h4>Anything here happens after the installation/update/uninstallation of the module</h4>';
     }
 
 }
