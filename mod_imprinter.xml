@@ -12,7 +12,7 @@
         <style>
             .star{color: red;}
         </style>
-        <div>
+        <div style="font-weight:400;">
             <h4>Imprint Module for legal information spiced with microdata and microformat 2 [h-card].
             <small style="float:right">ver. 0.0.9</small></h4>
             <p><strong>Imprinter</strong> module. Put Imprinter on any page.</p>
