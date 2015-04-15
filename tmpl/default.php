@@ -387,7 +387,9 @@ endif;
             ?>
             <p data-vatid="de">USt-IdNr. gemäß § 19 UStG: <?php print $vatid; ?></p>
             <?php
-            //<p data-vatid="de">USt-IdNr. gemäß § 19 UStG / § 27 UStG: <?php print $vatid; ?></p>
+            /*
+             * <p data-vatid="de">USt-IdNr. gemäß § 19 UStG / § 27 UStG: <?php print $vatid; ?></p>
+             */
         endif;
         ?>
 
