@@ -30,7 +30,7 @@ class mod_ImprinterInstallerScript {
      * @return void
      */
     function install($parent) {
-        print '<h3>The module has been installed</h3>';
+        print '<h4>The module has been installed</h4>';
     }
 
     /**
@@ -40,7 +40,7 @@ class mod_ImprinterInstallerScript {
      * @return void
      */
     function uninstall($parent) {
-        print '<h3>The module has been uninstalled</h3>';
+        print '<h4>The module has been uninstalled</h4>';
     }
 
     /**
@@ -50,7 +50,7 @@ class mod_ImprinterInstallerScript {
      * @return void
      */
     function update($parent) {
-        print '<h3>The module has been updated to version: <code>' . $parent->get('manifest')->version . '</code></h3>';
+        print '<h4>The module has been updated to version: <code>' . $parent->get('manifest')->version . '</code></h4>';
     }
 
     /**
