@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.0" client="site" method="upgrade">
-    <name>Imprinter</name>
-    <version>0.0.7</version>
-    <creationDate>13.04.2015</creationDate>
+    <name>Imprinter Module</name>
     <author>Michael S. RitZenhoff</author>
+    <creationDate>13.04.2015</creationDate>
+    <copyright>Copyright (C) 2015. Michael S. RitZenhoff. All rights reserved.</copyright>
+    <license>GNU General Public License version 2; see LICENSE.txt</license>
     <authorEmail>info@interim-webmanagement.net</authorEmail>
     <authorUrl>interim-webmanagement.net</authorUrl>
-    <copyright>Copyright (C) 2015. Michael S. RitZenhoff. All rights reserved.</copyright>
-    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <version>0.0.8</version>
     <description><![CDATA[
+        <style>
+            .star{color: red;}
+        </style>
         <div style="font-weight:normal; text-align: left;">
             <h4>Imprint Module for legal information spiced with microdata and microformat 2 [h-card].
-            <small style="float:right">ver. 0.0.7</small></h4>
+            <small style="float:right">ver. 0.0.8</small></h4>
             <p><strong>Imprinter</strong> module. Put Imprinter on any page.</p>
             <p>Need information? Please visit the <a href="http://interim-webmanagement.net/projekte/imprinter" target="_blank">Imprinter Info Page</a>. You'll find there all the information you need.</p>
             <p>Like the Imprinter? Check out the <a style="font-weight:bold;" href="http://interim-webmanagement.net/projekte/clifflex" target="_blank">CLIFFlex Template</a></p>
@@ -66,6 +69,8 @@
                     <option value="DESC">MOD_IMPRINTER_ORDER_DIR_DESC</option>
                 </field>
                 -->
+
+                <field name="spacer_name_1" type="spacer" label="MOD_IMPRINTER_SPACER_1" />
             </fieldset>
 
             <!-- Imprint Tab -->
@@ -80,7 +85,17 @@
 
                 <field type="spacer" hr="true" />
 
-                <field name="firstname" type="text" default=""
+                <field name="honorificprefix" type="list" default="1"
+                       label="MOD_IMPRINTER_FIELD_HONORIFICPREFIX_LABEL" description="MOD_IMPRINTER_FIELD_HONORIFICPREFIX_DESC">
+                    <option value="1">MOD_IMPRINTER_FIELD_VALUE_HPREFIXMR</option>
+                    <option value="2">MOD_IMPRINTER_FIELD_VALUE_HPREFIXMRS</option>
+                </field>
+
+                <field name="honorificsuffix" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_HONORIFICSUFFIX_LABEL" description="MOD_IMPRINTER_FIELD_HONORIFICSUFFIX_DESC"
+                       filter="string" />
+
+                <field name="firstname" type="text" class="required" required="true" default=""
                        label="MOD_IMPRINTER_FIELD_FIRSTNAME_LABEL" description="MOD_IMPRINTER_FIELD_FIRSTNAME_DESC"
                        filter="string" />
 
@@ -88,7 +103,7 @@
                        label="MOD_IMPRINTER_FIELD_SECONDNAME_LABEL" description="MOD_IMPRINTER_FIELD_SECONDNAME_DESC"
                        filter="string" />
 
-                <field name="lastname" type="text" default=""
+                <field name="lastname" type="text" class="required" required="true" default=""
                        label="MOD_IMPRINTER_FIELD_LASTNAME_LABEL" description="MOD_IMPRINTER_FIELD_LASTNAME_DESC"
                        filter="string" />
 
@@ -113,19 +128,17 @@
                        label="MOD_IMPRINTER_FIELD_BUSINESSSTART_LABEL" description="MOD_IMPRINTER_FIELD_BUSINESSSTART_DESC"
                        filter="string" />
 
-                <field type="spacer" hr="true" />
-
                 <field name="vatid" type="text" default=""
                        label="MOD_IMPRINTER_FIELD_VATID_LABEL" description="MOD_IMPRINTER_FIELD_VATID_DESC"
                        filter="string" />
 
-                <field name="spacer_name_1" type="spacer" label="MOD_IMPRINTER_SPACER_1" />
+                <field name="spacer_name_2" type="spacer" label="MOD_IMPRINTER_SPACER_2" />
             </fieldset>
 
             <!-- Contact Tab -->
             <fieldset name="contact">
 
-                <field name="telephone" type="text" default=""
+                <field name="telephone" type="text" validate="tel" default=""
                        label="MOD_IMPRINTER_FIELD_TELEPHONE_LABEL" description="MOD_IMPRINTER_FIELD_TELEPHONE_DESC"
                        filter="string" />
                 <field name="telephonecall" type="radio" class="btn-group btn-group-yesno" default="0"
@@ -136,13 +149,13 @@
 
                 <field type="spacer" hr="true" />
 
-                <field name="telefax" type="text" default=""
+                <field name="telefax" type="text" validate="tel" default=""
                        label="MOD_IMPRINTER_FIELD_TELEFAX_LABEL" description="MOD_IMPRINTER_FIELD_TELEFAX_DESC"
                        filter="string" />
 
                 <field type="spacer" hr="true" />
 
-                <field name="mobilephone" type="text" default=""
+                <field name="mobilephone" type="text" validate="tel" default=""
                        label="MOD_IMPRINTER_FIELD_MOBILEPHONE_LABEL" description="MOD_IMPRINTER_FIELD_MOBILEPHONE_DESC"
                        filter="string" />
                 <field name="mobilephonecall" type="radio" class="btn-group btn-group-yesno" default="0"
@@ -158,31 +171,31 @@
 
                 <field type="spacer" hr="true" />
 
-                <field name="email" type="text" class="validate-email" default=""
+                <field name="email" type="text" class="required validate-email" required="true" validate="email" scheme="mailto" default=""
                        label="MOD_IMPRINTER_FIELD_EMAIL_LABEL" description="MOD_IMPRINTER_FIELD_EMAIL_DESC"
                        filter="string" />
 
                 <field type="spacer" hr="true" />
 
-                <field name="url" type="text" class="validate-url" default=""
+                <field name="url" type="text" class="validate-url" validate="url" scheme="http,https" default=""
                        label="MOD_IMPRINTER_FIELD_URL_LABEL" description="MOD_IMPRINTER_FIELD_URL_DESC"
                        filter="string" />
 
-                <field name="spacer_name_2" type="spacer" label="MOD_IMPRINTER_SPACER_2" />
+                <field name="spacer_name_3" type="spacer" label="MOD_IMPRINTER_SPACER_3" />
             </fieldset>
 
             <!-- Location Tab -->
             <fieldset name="location">
 
-                <field name="street" type="text" default=""
+                <field name="street" type="text" class="required" required="true" default=""
                        label="MOD_IMPRINTER_FIELD_STREET_LABEL" description="MOD_IMPRINTER_FIELD_STREET_DESC"
                        filter="string" />
 
-                <field name="postalcode" type="text" default=""
+                <field name="postalcode" type="text" class="required" required="true" default=""
                        label="MOD_IMPRINTER_FIELD_POSTALCODE_LABEL" description="MOD_IMPRINTER_FIELD_POSTALCODE_DESC"
                        filter="string" />
 
-                <field name="city" type="text" default=""
+                <field name="city" type="text" class="required" required="true" default=""
                        label="MOD_IMPRINTER_FIELD_CITY_LABEL" description="MOD_IMPRINTER_FIELD_CITY_DESC"
                        filter="string" />
 
@@ -190,7 +203,7 @@
                        label="MOD_IMPRINTER_FIELD_REGION_LABEL" description="MOD_IMPRINTER_FIELD_REGION_DESC"
                        filter="string" />
 
-                <field name="country" type="text" default=""
+                <field name="country" type="text" class="required" required="true" default=""
                        label="MOD_IMPRINTER_FIELD_COUNTRY_LABEL" description="MOD_IMPRINTER_FIELD_COUNTRY_DESC"
                        filter="string" />
 
@@ -215,7 +228,15 @@
                        label="MOD_IMPRINTER_FIELD_GEOLONGITUDE_LABEL" description="MOD_IMPRINTER_FIELD_GEOLONGITUDE_DESC"
                        filter="string" />
 
-                <field name="spacer_name_3" type="spacer" label="MOD_IMPRINTER_SPACER_3" />
+                <field name="spacer_name_4" type="spacer" label="MOD_IMPRINTER_SPACER_4" />
+            </fieldset>
+
+            <!-- Additional Tab -->
+            <fieldset name="additional">
+                <field name="editor" type="editor" buttons="true" width="409" filter="JComponentHelper::filterText"
+                       label="MOD_IMPRINTER_FIELD_EDITOR_LABEL" />
+
+                <field name="spacer_name_5" type="spacer" label="MOD_IMPRINTER_SPACER_5" />
             </fieldset>
 
             <!-- Extra Tab -->
@@ -235,6 +256,13 @@
                 </field>
                 <field type="spacer" name="geoinfo" class="text"
                        label="MOD_IMPRINTER_IMPRINTERCSSCODE_LABEL" description="MOD_IMPRINTER_IMPRINTERCSSCODE_DESC" />
+
+                <field type="spacer" hr="true" />
+
+                <field type="spacer" name="developersdtest" class="text"
+                       label="MOD_IMPRINTER_DEVELOPERSDTEST_LABEL" description="MOD_IMPRINTER_DEVELOPERSDTEST_DESC" />
+
+                <field name="spacer_name_6" type="spacer" label="MOD_IMPRINTER_SPACER_6" />
             </fieldset>
 
             <!-- Extended Tab -->
@@ -265,7 +293,9 @@
     </config>
 
     <updateservers>
-        <!--<server type="collection">http://example.com/list.xml</server>-->
+        <!--
+        <server type="collection">http://example.com/list.xml</server>
+        -->
         <server type="extension" name="Imprinter" priority="1">https://github.com/msritzenhoff/mod_imprinter/blob/master/mod_imprinter.xml</server>
     </updateservers>
 

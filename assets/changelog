@@ -25,8 +25,17 @@ defined('_JEXEC') or die;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 ?>
+Version 0.0.8 15.04.2015
++ Added Additional Tab with free Textfield
++ Added HonorificSuffix
++ Added HonorificPrefix
+
+Version 0.0.7 15.04.2015
++ Added link for Author
++ Added link for Name
+
 Version 0.0.6 15.04.2015
-^ Changes in language
+$ Changes in language
 
 Version 0.0.5 15.04.2015
 ^ Changes in mod_imprinter.xml: scriptfile, updateservers

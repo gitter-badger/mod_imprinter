@@ -1,7 +1,7 @@
 <?php
 /**
  * default for mod_imprinter
- * 
+ *
  * @package         Joomla
  * @subpackage      Imprinter Module
  * @author          Michael S. RitZenhoff by Interim Webmanagement
@@ -31,9 +31,15 @@ $showtitle = htmlspecialchars($module->showtitle);
 $companyname = htmlspecialchars($params->get('companyname'));
 $companyservice = htmlspecialchars($params->get('companyservice'));
 
+$honorificprefix = htmlspecialchars($params->get('honorificprefix'));
+$honorificprefix = htmlspecialchars($params->get('honorificprefix'));
+$hprefix0 = htmlspecialchars($params->get('hprefix0'));
+$hprefix1 = htmlspecialchars($params->get('hprefix1'));
+
 $firstname = htmlspecialchars($params->get('firstname'));
 $secondname = htmlspecialchars($params->get('secondname'));
 $lastname = htmlspecialchars($params->get('lastname'));
+
 $authorurl = htmlspecialchars($params->get('authorurl'));
 $nameurl = htmlspecialchars($params->get('nameurl'));
 $nameurltitle = htmlspecialchars($params->get('nameurltitle'));
@@ -99,59 +105,46 @@ endif;
     ?>
 
         <?php
+        /*
+         * $companyname
+         * $companyservice
+         */
         if($companyname) :
             ?>
             <p class="p-org">
-                <?php if($companyname) :
-                    ?>
-                    <span class="p-organization-name" itemprop="name"><?php print $companyname; ?></span>
-                    <?php
-                endif;
-
-                if($companyservice) :
-                    ?>
-                    <span class="p-category" itemprop="description"><?php print $companyservice; ?></span>
-                    <?php
-                endif;
+                <?php
+                $companyname ? print '<span class="p-organization-name" itemprop="name">' . $companyname . '</span>' : print '';
+                $companyservice ? print '<span class="p-category" itemprop="description">' . $companyservice . '</span>' : print '';
                 ?>
             </p>
             <?php
         endif;
-        ?>
 
-        <?php
+        /*
+         * $firstname
+         * $secondname
+         * $lastname
+         * 
+         * $honorificprefix
+         * $honorificsuffix
+         *
+         * $authorurl
+         * $nameurl
+         * $nameurltitle
+         */
         if($firstname || $lastname) :
             ?>
             <span vocab="http://schema.org/" typeof="Person" itemscope itemtype="http://data-vocabulary.org/#Person">
                 <span class="p-n" property="name" itemprop="name">
                     <?php
-                    // start link: p-name u-url
-                    if($authorurl) :
-                        ?>
-                        <a class="p-name u-url" href="<?php print $authorurl; ?>">
-                        <?php
-                    endif;
+                    $authorurl ? print '<a class="p-name u-url" href="' . $authorurl . '">' : print '';
                     // start link: p-name u-url
 
-                    if($firstname) :
-                        ?>
-                        <span class="p-given-name" property="foaf:name"><?php print $firstname; ?></span>
-                        <?php
-                    endif;
-
-                    if($lastname) :
-                        ?>
-                        <span class="p-family-name" property="foaf:givenName"><?php print $lastname; ?></span>
-                        <?php
-                    endif;
+                    $firstname ? print '<span class="p-given-name" property="foaf:name">' . $firstname . '</span>' : print '';
+                    $lastname ? print '<span class="p-family-name" property="foaf:givenName">' . $lastname . '</span>' : print '';
 
                     // end link: p-name u-url
-                    if($authorurl) :
-                        ?>
-                        </a>
-                        <?php
-                    endif;
-                    // end link: p-name u-url
+                    $authorurl ? print '</a>' : print '';
                     ?>
                 </span>
 
