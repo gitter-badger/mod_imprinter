@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.4" client="site" method="upgrade">
-    <name>Imprinter Module</name>
+    <name>Imprinter</name>
     <author>Michael S. RitZenhoff</author>
     <creationDate>13.04.2015</creationDate>
     <copyright>Copyright (C) 2015. Michael S. RitZenhoff. All rights reserved.</copyright>
