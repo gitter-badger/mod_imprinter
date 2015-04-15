@@ -31,13 +31,6 @@
         <filename>install.php</filename>
     </files>
 
-    <languages>
-        <language tag="de-DE">de-DE\de-DE.mod_imprinter.ini</language>
-        <language tag="de-DE">de-DE\de-DE.mod_imprinter.sys.ini</language>
-        <language tag="en-GB">en-GB\en-GB.mod_imprinter.ini</language>        
-        <language tag="en-GB">en-GB\en-GB.mod_imprinter.sys.ini</language>
-    </languages>
-
     <help key="JHELP_EXTENSIONS_MODULE_MANAGER_FOOTER" />
 
     <config>
