@@ -151,8 +151,17 @@ endif;
                     ?>
                 </span>
 
+                <?php
+                if($nameurl) :
+                ?>
                 <span class="p-fn u-url" property="name" itemprop="name">
-                    <?php
+                <?php
+                else:
+                ?>
+                <span class="p-fn" property="name" itemprop="name">
+                <?php
+                endif;
+
                     // start link: p-name u-url
                     if($nameurl) :
                         ?>
