@@ -128,7 +128,7 @@ endif;
                     // start link: p-name u-url
                     if($authorurl) :
                         ?>
-                        <a class="p-name u-url" href="https://plus.google.com/112687566145330736121?rel=author">
+                        <a class="p-name u-url" href="<?php print $authorurl; ?>">
                         <?php
                     endif;
                     // start link: p-name u-url
@@ -160,7 +160,7 @@ endif;
                     // start link: p-name u-url
                     if($nameurl) :
                         ?>
-                        <a class="p-name u-url" href="<?php print $nameurl; ?>"<?php $nameurltitle ? ' title="' . print $nameurltitle . '"' : ''; ?>>
+                        <a class="p-name u-url" href="<?php print $nameurl; ?>"<?php $nameurltitle ? print ' title="' . $nameurltitle . '"' : print ''; ?>>
                         <?php
                     endif;
                     // start link: p-name u-url
