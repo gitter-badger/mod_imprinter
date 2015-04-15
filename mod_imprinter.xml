@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.0" client="site" method="upgrade">
     <name>Imprinter</name>
-    <version>0.0.5</version>
+    <version>0.0.6</version>
     <creationDate>13.04.2015</creationDate>
     <author>Michael S. RitZenhoff</author>
     <authorEmail>info@interim-webmanagement.net</authorEmail>
@@ -11,7 +11,7 @@
     <description><![CDATA[
         <div style="font-weight:normal; text-align: left;">
             <h4>Imprint Module for legal information spiced with microdata and microformat 2 [h-card].
-            <small style="float:right">ver. 0.0.5</small></h4>
+            <small style="float:right">ver. 0.0.6</small></h4>
             <p><strong>Imprinter</strong> module. Put Imprinter on any page.</p>
             <p>Need information? Please visit the <a href="http://interim-webmanagement.net/projekte/imprinter" target="_blank">Imprinter Info Page</a>. You'll find there all the information you need.</p>
             <p>Like the Imprinter? Check out the <a style="font-weight:bold;" href="http://interim-webmanagement.net/projekte/clifflex" target="_blank">CLIFFlex Template</a></p>
