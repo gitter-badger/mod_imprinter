@@ -364,6 +364,7 @@ endif;
     </section>
 
     <section>
+        <h4 hidden><?php print 'Extended Information:' . $companyname; ?></h4>
         <?php
         if($vatid):
             ?>
@@ -382,6 +383,7 @@ endif;
     </section>
 
     <section>
+        <h4 hidden><?php print 'Additional Information:' . $companyname; ?></h4>
         <?php
         if($accessory):
             print $accessory;
