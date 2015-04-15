@@ -34,6 +34,7 @@ $companyservice = htmlspecialchars($params->get('companyservice'));
 $firstname = htmlspecialchars($params->get('firstname'));
 $secondname = htmlspecialchars($params->get('secondname'));
 $lastname = htmlspecialchars($params->get('lastname'));
+$authorurl = htmlspecialchars($params->get('authorurl'));
 $nameurl = htmlspecialchars($params->get('nameurl'));
 $nameurltitle = htmlspecialchars($params->get('nameurltitle'));
 $jobtitle = htmlspecialchars($params->get('jobtitle'));
@@ -123,8 +124,15 @@ endif;
             ?>
             <span vocab="http://schema.org/" typeof="Person" itemscope itemtype="http://data-vocabulary.org/#Person">
                 <span class="p-n" property="name" itemprop="name">
-                    <a class="p-name u-url" href="https://plus.google.com/112687566145330736121?rel=author">
                     <?php
+                    // start link: p-name u-url
+                    if($authorurl) :
+                        ?>
+                        <a class="p-name u-url" href="https://plus.google.com/112687566145330736121?rel=author">
+                        <?php
+                    endif;
+                    // start link: p-name u-url
+
                     if($firstname) :
                         ?>
                         <span class="p-given-name" property="foaf:name"><?php print $firstname; ?></span>
@@ -136,8 +144,15 @@ endif;
                         <span class="p-family-name" property="foaf:givenName"><?php print $lastname; ?></span>
                         <?php
                     endif;
+
+                    // end link: p-name u-url
+                    if($authorurl) :
+                        ?>
+                        </a>
+                        <?php
+                    endif;
+                    // end link: p-name u-url
                     ?>
-                    </a>
                 </span>
 
                 <span class="p-fn u-url" property="name" itemprop="name">

@@ -92,6 +92,10 @@
                        label="MOD_IMPRINTER_FIELD_LASTNAME_LABEL" description="MOD_IMPRINTER_FIELD_LASTNAME_DESC"
                        filter="string" />
 
+                <field name="authorurl" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_AUTHORURL_LABEL" description="MOD_IMPRINTER_FIELD_AUTHORURL_DESC"
+                       filter="string" />
+
                 <field name="nameurl" type="text" default=""
                        label="MOD_IMPRINTER_FIELD_NAMEURL_LABEL" description="MOD_IMPRINTER_FIELD_NAMEURL_DESC"
                        filter="string" />
