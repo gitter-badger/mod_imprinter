@@ -256,7 +256,7 @@ endif;
 
             if($mobilephone) :
                 ?>
-                <div class="p-tel mobil" itemprop="mobilephone">
+                <span class="p-tel mobil" itemprop="mobilephone">
                     <span class="type work">Mobil: </span>
                     <span class="value" property="mobilephone"><?php print $mobilephone; ?></span>
                     <?php
@@ -272,16 +272,16 @@ endif;
                         <?php
                     endif;
                 ?>
-                </div>
+                </span>
                 <?php
             endif;
 
             if($telefax) :
                 ?>
-                <div class="p-fax fax" itemprop="fax">
+                <span class="p-fax fax" itemprop="fax">
                     <span class="type work">Fax: </span>
                     <span class="value"><?php print $telefax; ?></span>
-                </div>
+                </span>
                 <?php
             endif;
             ?>
