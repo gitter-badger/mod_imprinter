@@ -32,10 +32,10 @@
     </files>
 
     <languages>
-        <language tag="de-DE">language\de-DE\de-DE.mod_imprinter.ini</language>
-        <language tag="de-DE">language\de-DE\de-DE.mod_imprinter.sys.ini</language>
-        <language tag="en-GB">language\en-GB\en-GB.mod_imprinter.ini</language>        
-        <language tag="en-GB">language\en-GB\en-GB.mod_imprinter.sys.ini</language>
+        <language tag="de-DE">de-DE\de-DE.mod_imprinter.ini</language>
+        <language tag="de-DE">de-DE\de-DE.mod_imprinter.sys.ini</language>
+        <language tag="en-GB">en-GB\en-GB.mod_imprinter.ini</language>        
+        <language tag="en-GB">en-GB\en-GB.mod_imprinter.sys.ini</language>
     </languages>
 
     <help key="JHELP_EXTENSIONS_MODULE_MANAGER_FOOTER" />
@@ -49,12 +49,14 @@
 
                 <field type="spacer" hr="true" />
 
+                <!--
                 <field name="catid" type="category" extension="com_example" required="true" multiple="true" size="10" default="1"
                        label="JGLOBAL_CHOOSE_CATEGORY_LABEL" description="JGLOBAL_CHOOSE_CATEGORY_DESC">
                     <option value="1">JALL</option>
                 </field>
 
                 <field type="spacer" hr="true" />
+                -->
 
                 <field name="orderby" type="list" default="a.created"
                        label="JGLOBAL_ARTICLE_ORDER_LABEL" description="JGLOBAL_ARTICLE_ORDER_DESC">
