@@ -18,6 +18,8 @@ $urlModuleTemplate = JURI::base(true) . "/modules/{$module->module}/tmpl/";
 $document = JFactory::getDocument();
 $theme = $params->get('theme', 'default');
 
+/* ========================================================================= */
+
 // Extras Tab
 $microformat2 = htmlspecialchars($params->get('microformat2'));
 $imprintercss = htmlspecialchars($params->get('imprintercss'));
@@ -28,6 +30,8 @@ endif;
 
 $title = htmlspecialchars($module->title);
 $showtitle = htmlspecialchars($module->showtitle);
+
+/* ========================================================================= */
 
 // Imprint Tab
 $companyname = htmlspecialchars($params->get('companyname'));
@@ -78,6 +82,19 @@ $geolongitude = htmlspecialchars($params->get('geolongitude'));
 // Additional Tab
 $accessory = $params->get('accessory');
 
+/* ========================================================================= */
+
+function convert_email($email) {
+    $pieces = str_split(trim($email));
+    $emailAddress = '';
+    foreach ($pieces as $val) {
+        $emailAddress .= '&#'.ord($val).';';
+    }
+    return $emailAddress;
+
+}
+
+/* ========================================================================= */
 ?>
 <article <?php $moduleclass_sfx ? print 'class="' . $moduleclass_sfx . '"' : ''; ?>>
 <?php
@@ -343,7 +360,7 @@ endif;
             ?>
             <span class="u-email org pref">
                 <span class="type" title="pref">E-Mail: </span>
-                <span class="value"><a class="email" itemprop="email" href="mailto:<?php print $email; ?>" title=""><?php print $email; ?></a></span>
+                <span class="value"><a class="email" itemprop="email" href="mailto:<?php print convert_email($email); ?>" title=""><?php print convert_email($email); ?></a></span>
             </span>
             <?php
         endif;
