@@ -3,33 +3,35 @@
     <name>Imprinter</name>
     <author>Michael S. RitZenhoff</author>
     <creationDate>15.04.2015</creationDate>
-    <version>0.0.4</version>
+    <version>0.0.5</version>
     <authorEmail>info@interim-webmanagement.net</authorEmail>
     <authorUrl>interim-webmanagement.net</authorUrl>
     <copyright>Copyright (C) 2005 - 2012 Michael S. RitZenhoff. All rights reserved.</copyright>
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
     <description><![CDATA[
         <div style="font-weight:normal; text-align: left;">
-            <h4>Imprint Module for legal information spiced with microdata and microformat 2 [h-card]. <small style="float:right">ver. 0.0.4</small></h4>
+            <h4>Imprint Module for legal information spiced with microdata and microformat 2 [h-card].
+            <small style="float:right">ver. 0.0.5</small></h4>
             <p><strong>Imprinter</strong> module. Put Imprinter on any page.</p>
             <p>Need information? Please visit the <a href="http://interim-webmanagement.net/projekte/imprinter" target="_blank">Imprinter Info Page</a>. You'll find there all the information you need.</p>
             <p>Like the Imprinter? Check out the <a style="font-weight:bold;" href="http://interim-webmanagement.net/projekte/clifflex" target="_blank">CLIFFlex Template</a></p>
         </div>
     ]]></description>
 
+    <scriptfile>install.php</scriptfile>
+
     <files>
-        <scriptfile>script.php</scriptfile>
+        <filename module="mod_imprinter">mod_imprinter.php</filename>
         <folder>assets</folder>
         <folder>language</folder>
-        <filename>tmpl/css/imprinter.css</filename>
-        <filename>tmpl/css/imprinter.min.css</filename>
-        <filename>tmpl/default.php</filename>
-        <filename>tmpl/index.html</filename>
+        <folder>tmpl</folder>
         <filename>helper.php</filename>
         <filename>index.html</filename>
-        <filename module="mod_imprinter">mod_imprinter.php</filename>
         <filename>mod_imprinter.xml</filename>
+        <filename>install.php</filename>
     </files>
+
+    <help key="JHELP_EXTENSIONS_MODULE_MANAGER_FOOTER" />
 
     <config>
         <fields name="params">
@@ -37,6 +39,32 @@
             <fieldset name="basic">
                 <field name="spacer_loadmodule" type="spacer"
                        label="MOD_IMPRINTER_FIELD_BASICINFORMATION_LABEL" />
+
+                <field type="spacer" hr="true" />
+
+                <field name="catid" type="category" extension="com_example" required="true" multiple="true" size="10" default="1"
+                       label="JGLOBAL_CHOOSE_CATEGORY_LABEL" description="JGLOBAL_CHOOSE_CATEGORY_DESC">
+                    <option value="1">JALL</option>
+                </field>
+
+                <field type="spacer" hr="true" />
+
+                <field name="orderby" type="list" default="a.created"
+                       label="JGLOBAL_ARTICLE_ORDER_LABEL" description="JGLOBAL_ARTICLE_ORDER_DESC">
+                    <option value="a.created">JGLOBAL_CREATED_DATE</option>
+                    <option value="a.publish_up">MOD_IMPRINTER_PUBLISH_UP</option>
+                    <option value="a.publish_down">MOD_IMPRINTER_PUBLISH_DOWN</option>
+                    <option value="a.modified">JGLOBAL_FIELD_MODIFIED_LABEL</option>
+                    <option value="a.title">JGLOBAL_TITLE</option>
+                    <option value="a.ordering">JGLOBAL_ORDERING</option>
+                </field>
+
+                <field name="order_dir" type="list" default="DESC"
+                       label="JFIELD_ORDERING_LABEL" description="JFIELD_ORDERING_DESC">
+                    <option value="ASC">MOD_IMPRINTER_ORDER_DIR_ASC</option>
+                    <option value="DESC">MOD_IMPRINTER_ORDER_DIR_DESC</option>
+                </field>
+
             </fieldset>
 
             <!-- Imprint Tab -->
@@ -217,11 +245,16 @@
                 <field name="cache_time" type="text" default="900"
                        label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
 
-                <field name="cachemode" type="hidden" default="itemid">
-                    <option value="itemid"></option>
+                <field name="cachemode" type="hidden" default="static">
+                    <option value="static"></option>
                 </field>
             </fieldset>
         </fields>
     </config>
+
+    <updateservers>
+        <!--<server type="collection">http://example.com/list.xml</server>-->
+        <server type="extension" priority="1" name="M. S. RitZenhoff Imprinter Module">https://github.com/msritzenhoff/mod_imprinter/blob/master/mod_imprinter.xml</server>
+    </updateservers>
 
 </extension>
