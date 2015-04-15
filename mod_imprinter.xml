@@ -40,16 +40,15 @@
                 <field name="spacer_loadmodule" type="spacer"
                        label="MOD_IMPRINTER_FIELD_BASICINFORMATION_LABEL" />
 
+                <!--
                 <field type="spacer" hr="true" />
 
-                <!--
                 <field name="catid" type="category" extension="com_example" required="true" multiple="true" size="10" default="1"
                        label="JGLOBAL_CHOOSE_CATEGORY_LABEL" description="JGLOBAL_CHOOSE_CATEGORY_DESC">
                     <option value="1">JALL</option>
                 </field>
 
                 <field type="spacer" hr="true" />
-                -->
 
                 <field name="orderby" type="list" default="a.created"
                        label="JGLOBAL_ARTICLE_ORDER_LABEL" description="JGLOBAL_ARTICLE_ORDER_DESC">
@@ -66,7 +65,7 @@
                     <option value="ASC">MOD_IMPRINTER_ORDER_DIR_ASC</option>
                     <option value="DESC">MOD_IMPRINTER_ORDER_DIR_DESC</option>
                 </field>
-
+                -->
             </fieldset>
 
             <!-- Imprint Tab -->
