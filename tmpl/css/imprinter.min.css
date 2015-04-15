@@ -1,0 +1,5 @@
+/* 
+    Created on : 15.04.2015, 13:21:42
+    Author     : msritzenhoff
+*/
+.h-adr>.city,.h-adr>.p-street-address,.h-card,.h-card>*,.p-org>.p-category,.p-org>.p-organization-name{float:left;width:100%}.p-org>.p-organization-name{font-weight:600}.h-card .h-adr,.h-card .h-geo,.h-card .p-fax,.h-card .p-fn,.h-card .p-tel.mobil,.h-card .p-tel.tel,.h-card .u-email{float:left;width:100%}.h-card,.h-card .h-adr,.h-card .h-geo,.p-fax,.p-org,.p-org~span{padding-bottom:1vh}.h-card>* *,a.p-name{width:auto;margin-right:4px}.h-card .h-geo .p-latitude,a.p-name{margin-right:0}.h-card .h-geo,.h-card .p-n,.h-card .p-n>a{display:none}[data-vatid=de]{padding:1vh 0}small.microformat2{float:left;width:100%;padding:3px 0;border-top:1px solid #a6b6dd;text-align:right}small.microformat2 a{color:#679906}

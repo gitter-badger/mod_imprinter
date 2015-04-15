@@ -12,12 +12,10 @@
 // No direct access
 defined('_JEXEC') or die;
 
-$urlModuleTemplate = JPATH_BASE . "/modules/{$module->module}/tmpl/";
-$document = JFactory::getDocument();
-$theme = $params->get("theme","default");
-
-//add css
-$document->addStyleSheet($urlModuleTemplate . "css/imprinter.css");
+if($imprintercss == 1) :
+    //add css
+    $document->addStyleSheet($urlModuleTemplate . "css/imprinter.min.css");
+endif;
 
 $title = htmlspecialchars($module->title);
 $showtitle = htmlspecialchars($module->showtitle);

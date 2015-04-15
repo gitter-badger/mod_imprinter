@@ -24,7 +24,15 @@ defined('_JEXEC') or die('Restricted access');
  */
 ?>
 
+Version 0.0.3 15.04.2015
++ Added imprinter.min.css
+! Published on GitHub
++ Added imprinter.css
++ Added script.php
+
 Version 0.0.2 14.04.2015
+^ Changes and Optimizations
+^ Changed: $var = $params->get(htmlspecialchars('param')) => $var = htmlspecialchars($params->get('param'));
 
 Version 0.0.1 13.04.2015
 ! First lokal Installation of Imprinter Module

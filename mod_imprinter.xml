@@ -23,6 +23,7 @@
         <folder>assets</folder>
         <folder>language</folder>
         <filename>tmpl/css/imprinter.css</filename>
+        <filename>tmpl/css/imprinter.min.css</filename>
         <filename>tmpl/default.php</filename>
         <filename>tmpl/index.html</filename>
         <filename>helper.php</filename>
@@ -185,6 +186,16 @@
                     <option value="0" class="off">JNO</option>
                     <option value="1" class="on">JYES</option>
                 </field>
+
+                <field type="spacer" hr="true" />
+
+                <field name="imprintercss" type="radio" class="btn-group btn-group-yesno" default="0"
+                       label="TPL_CLIFFLEX_FIELD_IMPRINTERCSS_LABEL" description="TPL_CLIFFLEX_FIELD_IMPRINTERCSS_DESC">
+                    <option value="0" class="off">JNO</option>
+                    <option value="1" class="on">JYES</option>
+                </field>
+                <field type="spacer" name="geoinfo" class="text"
+                       label="MOD_IMPRINTER_GEOINFO_LABEL" description="MOD_IMPRINTER_GEOINFO_DESC" />
             </fieldset>
 
             <!-- Extended Tab -->
