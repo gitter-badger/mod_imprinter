@@ -1,0 +1,80 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15.04.2015, 13:21:42
+    Author     : msritzenhoff
+*/
+
+/* vCard / h-card start */
+.h-card,
+.h-card >*,
+.p-org >.p-organization-name,
+.p-org >.p-category,
+.h-adr >.p-street-address,
+.h-adr >.city{
+    float: left; width: 100%;
+}
+
+.p-org >.p-organization-name{
+    font-weight: 600;
+}
+
+.h-card .p-fn,
+.h-card .h-adr,
+.h-card .h-geo,
+.h-card .p-tel.tel,
+.h-card .p-tel.mobil,
+.h-card .p-fax,
+.h-card .u-email{
+    float: left; width: 100%;
+}
+.h-card,
+.p-org,
+.p-org ~span,
+.h-card .h-adr,
+.h-card .h-geo,
+.p-fax{
+    padding-bottom: 1vh;
+}
+
+a.p-name,
+.h-card >* *{
+    width: auto; margin-right: 4px;
+}
+a.p-name,
+.h-card .h-geo .p-latitude{
+    margin-right: 0;
+}
+
+.h-card .h-geo,
+.h-card .p-n,
+.h-card .p-n >a{
+    display: none;
+}
+
+[data-vatid=de]{
+    padding: 1vh 0 1vh;
+}
+small.microformat2{
+    float: left; width: 100%; padding: 3px 0;
+    border-top: 1px solid #a6b6dd;
+    text-align: right;
+} 
+small.microformat2 a{
+    color: rgb(103,153,6);
+}
+
+
+body.m105 .h-card >*{
+    width: 50%;
+}
+body.m105 .h-card >*{
+    float: left;
+}
+body.m105 .h-card >img{
+    padding: 0.5vh 20px 0 0;
+}
+/* vCard / h-card end */

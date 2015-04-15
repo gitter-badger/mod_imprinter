@@ -1,0 +1,39 @@
+<?php
+defined('_JEXEC') or die('Restricted access');
+/**
+ * @package             Joomla
+ * @subpackage          Imprinter Module
+ * @author              Michael S. RitZenhoff
+ * @author url          http://interim-webmanagement.net
+ * @author email        info@interim-webmanagement.net
+ * @license             GNU/GPL, see /assets/en-GB.license.txt
+ * @copyright           Copyright (C) 2005 - 2012 Michael S. RitZenhoff. All rights reserved.
+ *
+ * Imprinter is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+?>
+
+Version 0.0.2 14.04.2015
+
+Version 0.0.1 13.04.2015
+! First lokal Installation of Imprinter Module
+
+
+* -> Security Fix
+# -> Bug Fix
+$ -> Language fix or change
++ -> Addition
+^ -> Change
+- -> Removed
+! -> Note

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" client="site" method="upgrade">
+    <name>Imprinter</name>
+    <author>Michael S. RitZenhoff</author>
+    <creationDate>15.04.2015</creationDate>
+    <version>0.0.3</version>
+    <authorEmail>info@interim-webmanagement.net</authorEmail>
+    <authorUrl>interim-webmanagement.net</authorUrl>
+    <copyright>Copyright (C) 2005 - 2012 Michael S. RitZenhoff. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <description><![CDATA[
+        <div style="font-weight:normal; text-align: left;">
+            <h4>Imprint Module for legal information spiced with microdata and microformat<sup>2</sup> [h-card].</h4>
+            
+            <p><strong>Imprinter</strong> module. Put Imprinter on any page.</p>
+            <p>Need support? Please visit the <a href="http://interim-webmanagement.net/projekte/imprinter" target="_blank">Imprinter Support Page</a><br>
+            you'll find there all the information you need.</p>
+
+            <p>Like the Imprinter?<br>
+            Check out the <a style="font-weight:bold;" href="http://interim-webmanagement.net/projekte/clifflex" target="_blank">CLIFFlex Template</a></p>
+
+            <small style="float:right">ver. 0.0.3</small>
+        </div>
+    ]]></description>
+
+    <files>
+        <scriptfile>script.php</scriptfile>
+        <folder>assets</folder>
+        <folder>language</folder>
+        <filename>tmpl/css/imprinter.css</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+        <filename module="mod_imprinter">mod_imprinter.php</filename>
+        <filename>mod_imprinter.xml</filename>
+    </files>
+
+    <config>
+        <fields name="params">
+            <!-- Module Tab -->
+            <fieldset name="basic">
+                <field name="spacer_loadmodule" type="spacer"
+                       label="MOD_IMPRINTER_FIELD_BASICINFORMATION_LABEL" />
+            </fieldset>
+
+            <!-- Imprint Tab -->
+            <fieldset name="imprint">
+                <field name="companyname" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_COMPANYNAME_LABEL" description="MOD_IMPRINTER_FIELD_COMPANYNAME_DESC"
+                       filter="string" />
+
+                <field name="companyservice" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_COMPANYSERVICE_LABEL" description="MOD_IMPRINTER_FIELD_COMPANYSERVICE_DESC"
+                       filter="string" />
+
+                <field type="spacer" hr="true" />
+
+                <field name="firstname" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_FIRSTNAME_LABEL" description="MOD_IMPRINTER_FIELD_FIRSTNAME_DESC"
+                       filter="string" />
+
+                <field name="secondname" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_SECONDNAME_LABEL" description="MOD_IMPRINTER_FIELD_SECONDNAME_DESC"
+                       filter="string" />
+
+                <field name="lastname" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_LASTNAME_LABEL" description="MOD_IMPRINTER_FIELD_LASTNAME_DESC"
+                       filter="string" />
+
+                <field name="jobtitle" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_JOBTITLE_LABEL" description="MOD_IMPRINTER_FIELD_JOBTITLE_DESC"
+                       filter="string" />
+
+                <field type="spacer" hr="true" />
+
+                <field name="start_business" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_BUSINESSSTART_LABEL" description="MOD_IMPRINTER_FIELD_BUSINESSSTART_DESC"
+                       filter="string" />
+
+                <field type="spacer" hr="true" />
+
+                <field name="vatid" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_VATID_LABEL" description="MOD_IMPRINTER_FIELD_VATID_DESC"
+                       filter="string" />
+
+                <field name="spacer_name_1" type="spacer" label="MOD_IMPRINTER_SPACER_1" />
+            </fieldset>
+
+            <!-- Contact Tab -->
+            <fieldset name="contact">
+
+                <field name="telephone" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_TELEPHONE_LABEL" description="MOD_IMPRINTER_FIELD_TELEPHONE_DESC"
+                       filter="string" />
+                <field name="telephonecall" type="radio" class="btn-group btn-group-yesno" default="0"
+                       label="MOD_IMPRINTER_FIELD_TELEPHONECALL_LABEL" description="MOD_IMPRINTER_FIELD_TELEPHONECALL_DESC">
+                    <option value="0" class="off">JNO</option>
+                    <option value="1" class="on">JYES</option>
+                </field>
+
+                <field type="spacer" hr="true" />
+
+                <field name="telefax" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_TELEFAX_LABEL" description="MOD_IMPRINTER_FIELD_TELEFAX_DESC"
+                       filter="string" />
+
+                <field type="spacer" hr="true" />
+
+                <field name="mobilephone" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_MOBILEPHONE_LABEL" description="MOD_IMPRINTER_FIELD_MOBILEPHONE_DESC"
+                       filter="string" />
+                <field name="mobilephonecall" type="radio" class="btn-group btn-group-yesno" default="0"
+                       label="MOD_IMPRINTER_FIELD_MOBILEPHONECALL_LABEL" description="MOD_IMPRINTER_FIELD_MOBILEPHONECALL_DESC">
+                    <option value="0" class="off">JNO</option>
+                    <option value="1" class="on">JYES</option>
+                </field>
+                <field name="mobilephonesms" type="radio" class="btn-group btn-group-yesno" default="0"
+                       label="MOD_IMPRINTER_FIELD_MOBILEPHONESMS_LABEL" description="MOD_IMPRINTER_FIELD_MOBILEPHONESMS_DESC">
+                    <option value="0" class="off">JNO</option>
+                    <option value="1" class="on">JYES</option>
+                </field>
+
+                <field type="spacer" hr="true" />
+
+                <field name="email" type="text" class="validate-email" default=""
+                       label="MOD_IMPRINTER_FIELD_EMAIL_LABEL" description="MOD_IMPRINTER_FIELD_EMAIL_DESC"
+                       filter="string" />
+
+                <field type="spacer" hr="true" />
+
+                <field name="url" type="text" class="validate-url" default=""
+                       label="MOD_IMPRINTER_FIELD_URL_LABEL" description="MOD_IMPRINTER_FIELD_URL_DESC"
+                       filter="string" />
+
+                <field name="spacer_name_2" type="spacer" label="MOD_IMPRINTER_SPACER_2" />
+            </fieldset>
+
+            <!-- Location Tab -->
+            <fieldset name="location">
+
+                <field name="street" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_STREET_LABEL" description="MOD_IMPRINTER_FIELD_STREET_DESC"
+                       filter="string" />
+
+                <field name="postalcode" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_POSTALCODE_LABEL" description="MOD_IMPRINTER_FIELD_POSTALCODE_DESC"
+                       filter="string" />
+
+                <field name="city" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_CITY_LABEL" description="MOD_IMPRINTER_FIELD_CITY_DESC"
+                       filter="string" />
+
+                <field name="region" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_REGION_LABEL" description="MOD_IMPRINTER_FIELD_REGION_DESC"
+                       filter="string" />
+
+                <field name="country" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_COUNTRY_LABEL" description="MOD_IMPRINTER_FIELD_COUNTRY_DESC"
+                       filter="string" />
+
+                <field type="spacer" hr="true" />
+
+                <field type="spacer" name="geoinfo" class="text"
+                       label="MOD_IMPRINTER_GEOINFO_LABEL" description="MOD_IMPRINTER_GEOINFO_DESC" />
+
+                <field name="georegion" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_GEOREGION_LABEL" description="MOD_IMPRINTER_FIELD_GEOREGION_DESC"
+                       filter="string" />
+
+                <field name="geoplacename" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_GEOPLACENAME_LABEL" description="MOD_IMPRINTER_FIELD_GEOPLACENAME_DESC"
+                       filter="string" />
+
+                <field name="geolatitude" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_GEOLATITUDE_LABEL" description="MOD_IMPRINTER_FIELD_GEOLATITUDE_DESC"
+                       filter="string" />
+
+                <field name="geolongitude" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_GEOLONGITUDE_LABEL" description="MOD_IMPRINTER_FIELD_GEOLONGITUDE_DESC"
+                       filter="string" />
+
+                <field name="spacer_name_3" type="spacer" label="MOD_IMPRINTER_SPACER_3" />
+            </fieldset>
+
+            <!-- Extra Tab -->
+            <fieldset name="extra">
+                <field name="microformat2" type="radio" class="btn-group btn-group-yesno" default="0"
+                       label="TPL_CLIFFLEX_FIELD_MICROFORMAT_LABEL" description="TPL_CLIFFLEX_FIELD_MICROFORMAT_DESC">
+                    <option value="0" class="off">JNO</option>
+                    <option value="1" class="on">JYES</option>
+                </field>
+            </fieldset>
+
+            <!-- Extended Tab -->
+            <fieldset name="advanced">
+                <field name="layout" type="modulelayout"
+                       label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+                <field name="moduleclass_sfx" type="text"
+                       label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+                <field name="cache" type="list" default="1"
+                       label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+                <!--
+                <field name="cache" type="hidden" value="0" />
+                -->
+
+                <field name="cache_time" type="text" default="900"
+                       label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+
+                <field name="cachemode" type="hidden" default="itemid">
+                    <option value="itemid"></option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+
+</extension>
