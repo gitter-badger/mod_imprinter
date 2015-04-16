@@ -262,6 +262,9 @@
                 <field type="spacer" name="developersdtest" class="text"
                        label="MOD_IMPRINTER_DEVELOPERSDTEST_LABEL" description="MOD_IMPRINTER_DEVELOPERSDTEST_DESC" />
 
+                <field type="spacer" name="hcardconformancetest" class="text"
+                       label="MOD_IMPRINTER_HCARDCONFORMANCETEST_LABEL" description="MOD_IMPRINTER_HCARDCONFORMANCETEST_DESC" />
+
                 <field name="spacer_name_6" type="spacer" label="MOD_IMPRINTER_SPACER_6" />
             </fieldset>
 
