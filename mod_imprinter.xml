@@ -13,7 +13,7 @@
             .star{color: red;}
         </style>
         <div style="font-weight:400;">
-            <h4>Imprint Module for legal information spiced with microdata and microformat 2 [h-card].
+            <h4>Imprint Module for legal information spiced with microdata and microformat 2 [h-card] (backwards compatible [hcard]).
             <small style="float:right">ver. 0.0.9</small></h4>
             <p><strong>Imprinter</strong> module. Put Imprinter on any page.</p>
             <p>Need information? Please visit the <a target="_blank" href="//interim-webmanagement.net/projekte/jmodule-imprinter"><strong>Imprinter Info Page</strong></a>. You'll find there all the information you need.</p>

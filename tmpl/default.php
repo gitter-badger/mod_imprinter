@@ -131,12 +131,12 @@ endif;
          */
         if($companyname) :
             ?>
-            <p class="p-org org fn org url">
+            <span class="p-org org">
                 <?php
                 $companyname ? print '<span class="p-organization-name organization-name" itemprop="name">' . $companyname . '</span>' : print '';
                 $companyservice ? print '<span class="p-category category" itemprop="description">' . $companyservice . '</span>' : print '';
                 ?>
-            </p>
+            </span>
             <?php
         endif;
 
@@ -151,13 +151,15 @@ endif;
          * $authorurl
          * $nameurl
          * $nameurltitle
+         * 
+         * $jobtitle
          */
         if($firstname || $lastname) :
             ?>
             <span vocab="http://schema.org/" typeof="Person" itemscope itemtype="http://data-vocabulary.org/#Person">
-                <span class="p-n" property="name" itemprop="name">
+                <span class="p-n n" property="name" itemprop="name">
                     <?php
-                    $authorurl ? print '<a class="p-name u-url n url" href="' . $authorurl . '">' : print '';
+                    $authorurl ? print '<a class="p-name u-url url" href="' . $authorurl . '">' : print '';
                     // start link: p-name u-url
 
                     $firstname ? print '<span class="p-given-name given-name" property="foaf:name">' . $firstname . '</span>' : print '';
@@ -168,21 +170,12 @@ endif;
                     ?>
                 </span>
 
-                <?php
-                if($nameurl) :
-                ?>
-                <span class="p-fn u-url n url" property="name" itemprop="name">
-                <?php
-                else:
-                ?>
-                <span class="p-fn n" property="name" itemprop="name">
-                <?php
-                endif;
-
+                <span class="p-fn fn" property="name" itemprop="name">
+                    <?php
                     // start link: p-name u-url
                     if($nameurl) :
                         ?>
-                        <a class="p-name u-url url fn" href="<?php print $nameurl; ?>"<?php $nameurltitle ? print ' title="' . $nameurltitle . '"' : print ''; ?>>
+                        <a class="p-name u-url url" href="<?php print $nameurl; ?>"<?php $nameurltitle ? print ' title="' . $nameurltitle . '"' : print ''; ?>>
                         <?php
                     endif;
                     // start link: p-name u-url
@@ -238,6 +231,15 @@ endif;
         endif;
         ?>
 
+        <?php
+        /*
+         * $street
+         * $postalcode
+         * $city
+         * $region
+         * $country
+         */
+        ?>
         <span itemprop="location" itemscope itemtype="http://schema.org/#Place">
             <?php
             if($street || $postalcode || $city) :
@@ -286,6 +288,11 @@ endif;
             ?>
 
             <?php
+            /*
+             * $geolatitude
+             * $geolongitude
+             * $geoaltitude
+             */
             if($geolatitude && $geolongitude) :
                 ?>
                 <span class="h-geo">
@@ -306,6 +313,10 @@ endif;
             ?>
 
             <?php
+            /*
+             * $telephone
+             * $telephonephonecall
+             */
             if($telephone) :
                 ?>
                 <div class="p-tel cell" itemprop="telephone">
@@ -322,6 +333,11 @@ endif;
                 <?php
             endif;
 
+            /*
+             * $mobilephone
+             * $mobilephonecall
+             * $mobilephonesms
+             */
             if($mobilephone) :
                 ?>
                 <span class="p-tel mobil" itemprop="telephone">
@@ -344,6 +360,9 @@ endif;
                 <?php
             endif;
 
+            /*
+             * $telefax
+             */
             if($telefax) :
                 ?>
                 <span class="p-fax" itemprop="faxNumber">
@@ -356,6 +375,9 @@ endif;
         </span>
 
         <?php
+        /*
+         * $email
+         */
         if($email):
             ?>
             <span class="u-email org pref">
@@ -367,11 +389,14 @@ endif;
         ?>
 
         <?php
+        /*
+         * $url
+         */
         if($url):
             ?>
-            <span class="url">
+            <span class="domain">
                 <span title="online">//www: </span>
-                <span><a class="p-name u-url org" itemprop="url" href="<?php print $url; ?>" title=""><?php print $url; ?></a></span>
+                <span><a class="p-name u-url org url" itemprop="url" href="<?php print $url; ?>" title=""><?php print $url; ?></a></span>
             </span>
             <?php
         endif;
@@ -383,6 +408,9 @@ endif;
     <section>
         <h4 hidden><?php print 'Extended Information for' . $companyname; ?></h4>
         <?php
+        /*
+         * $vatid
+         */
         if($vatid):
             ?>
             <p data-vatid="de">USt-IdNr. gemäß § 19 UStG: <?php print $vatid; ?></p>
@@ -394,6 +422,9 @@ endif;
         ?>
 
         <?php
+        /*
+         * $microformat2
+         */
         if($microformat2 == 1):
             ?>
             <small class="microformat2">This content uses <a target="_blank" href="http://microformats.org/wiki/microformats2">microformats 2</a></small>
@@ -402,12 +433,21 @@ endif;
         ?>
     </section>
 
-    <section>
-        <h4 hidden><?php print 'Additional Information for' . $companyname; ?></h4>
-        <?php
-        if($accessory):
-            print $accessory;
-        endif;
+    <?php
+    if($accessory):
         ?>
-    </section>
+        <section>
+            <h4 hidden><?php print 'Additional Information for' . $companyname; ?></h4>
+            <?php
+            /*
+             * $accessory
+             */
+            if($accessory):
+                print $accessory;
+            endif;
+            ?>
+        </section>
+        <?php
+    endif;
+    ?>
 </article>
