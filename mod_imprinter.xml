@@ -7,14 +7,14 @@
     <license>GNU General Public License version 2; see LICENSE.txt</license>
     <authorEmail>info@interim-webmanagement.net</authorEmail>
     <authorUrl>interim-webmanagement.net</authorUrl>
-    <version>0.1.2</version>
+    <version>0.1.3</version>
     <description><![CDATA[
         <style>
             .star{color: red;}
         </style>
         <div style="font-weight:400;">
             <h4>Imprint Module for legal information spiced with microdata and microformat 2 [h-card] (backwards compatible [hcard]).
-            <small style="float:right">ver. 0.1.2</small></h4>
+            <small style="float:right">ver. 0.1.3</small></h4>
             <p><strong>Imprinter</strong> module. Put Imprinter on any page.</p>
             <p>Need information? Please visit the <a target="_blank" href="//interim-webmanagement.net/projekte/jmodule-imprinter"><strong>Imprinter Info Page</strong></a>. You'll find there all the information you need.</p>
             <p>Like the Imprinter? Check out the <a target="_blank" href="//interim-webmanagement.net/projekte/clifflex"><strong>CLIFFlex Template</strong></a></p>
@@ -85,10 +85,16 @@
 
                 <field type="spacer" hr="true" />
 
+                <field name="gender" type="list" default="1"
+                       label="MOD_IMPRINTER_FIELD_GENDER_LABEL" description="MOD_IMPRINTER_FIELD_GENDER_DESC">
+                    <option value="MOD_IMPRINTER_FIELD_GENDERMALE_VALUE">MOD_IMPRINTER_FIELD_GENDERMALE</option>
+                    <option value="MOD_IMPRINTER_FIELD_GENDERFEMALE_VALUE">MOD_IMPRINTER_FIELD_GENDERFEMALE</option>
+                </field>
+
                 <field name="honorificprefix" type="list" default="1"
                        label="MOD_IMPRINTER_FIELD_HONORIFICPREFIX_LABEL" description="MOD_IMPRINTER_FIELD_HONORIFICPREFIX_DESC">
-                    <option value="1">MOD_IMPRINTER_FIELD_HPREFIXMR_VALUE</option>
-                    <option value="2">MOD_IMPRINTER_FIELD_HPREFIXMRS_VALUE</option>
+                    <option value="MOD_IMPRINTER_FIELD_HPREFIXMR_VALUE">MOD_IMPRINTER_FIELD_HPREFIXMR</option>
+                    <option value="MOD_IMPRINTER_FIELD_HPREFIXMRS_VALUE">MOD_IMPRINTER_FIELD_HPREFIXMRS</option>
                 </field>
 
                 <field name="honorificsuffix" type="text" default=""

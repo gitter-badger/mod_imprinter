@@ -125,7 +125,7 @@ endif;
     <?php
     if($organizationname) :
         ?>
-        <div class="h-card vcard" typeof="Organization" itemscope itemtype="http://data-vocabulary.org/#Organization">
+        <div class="h-card vcard" typeof="Organization" itemscope itemtype="http://schema.org/Organization">
         <?php
     else:
         ?>
@@ -166,12 +166,12 @@ endif;
          */
         if($firstname || $lastname) :
             ?>
-            <span vocab="http://schema.org/" typeof="Person" itemscope itemtype="http://data-vocabulary.org/#Person">
+            <span vocab="http://schema.org/" typeof="Person" itemscope itemtype="http://schema.org/Person">
                 <span class="p-n n" property="name" itemprop="name">
                     <?php
                     if($authorurl):
                         ?>
-                        <a class="p-name u-url url" href="' . $authorurl . '">
+                        <a class="p-name u-url url" href="<?php print $authorurl; ?>">
                         <?php
                     endif;
                     // start link: p-name u-url
@@ -244,7 +244,7 @@ endif;
             <?php
             if($street || $postalcode || $city) :
                 ?>
-                <span class="p-adr h-adr adr" itemprop="address" itemscope itemtype="http://schema.org/#PostalAddress">
+                <span class="p-adr h-adr adr" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                     <?php
                     if($postofficeboxaddress && $postofficeboxnumber) :
                         ?>
