@@ -25,6 +25,10 @@ defined('_JEXEC') or die;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 ?>
+Version 0.1.2 16.04.2015
++ Added postOfficeBox
++ Added Gender
+
 Version 0.1.1 16.04.2015
 ^ changes to pass conformance with GD-Test-Tool
 

@@ -7,14 +7,14 @@
     <license>GNU General Public License version 2; see LICENSE.txt</license>
     <authorEmail>info@interim-webmanagement.net</authorEmail>
     <authorUrl>interim-webmanagement.net</authorUrl>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
     <description><![CDATA[
         <style>
             .star{color: red;}
         </style>
         <div style="font-weight:400;">
             <h4>Imprint Module for legal information spiced with microdata and microformat 2 [h-card] (backwards compatible [hcard]).
-            <small style="float:right">ver. 0.1.1</small></h4>
+            <small style="float:right">ver. 0.1.2</small></h4>
             <p><strong>Imprinter</strong> module. Put Imprinter on any page.</p>
             <p>Need information? Please visit the <a target="_blank" href="//interim-webmanagement.net/projekte/jmodule-imprinter"><strong>Imprinter Info Page</strong></a>. You'll find there all the information you need.</p>
             <p>Like the Imprinter? Check out the <a target="_blank" href="//interim-webmanagement.net/projekte/clifflex"><strong>CLIFFlex Template</strong></a></p>
@@ -147,8 +147,68 @@
                 <field name="spacer_name_2" type="spacer" label="MOD_IMPRINTER_SPACER_2" />
             </fieldset>
 
+            <!-- Location Tab -->
+            <fieldset name="location">
+
+                <field name="street" type="text" class="required" required="true" default=""
+                       label="MOD_IMPRINTER_FIELD_STREET_LABEL" description="MOD_IMPRINTER_FIELD_STREET_DESC"
+                       filter="string" />
+
+                <field name="postalcode" type="text" class="required" required="true" default=""
+                       label="MOD_IMPRINTER_FIELD_POSTALCODE_LABEL" description="MOD_IMPRINTER_FIELD_POSTALCODE_DESC"
+                       filter="string" />
+
+                <field name="city" type="text" class="required" required="true" default=""
+                       label="MOD_IMPRINTER_FIELD_CITY_LABEL" description="MOD_IMPRINTER_FIELD_CITY_DESC"
+                       filter="string" />
+
+                <field name="region" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_REGION_LABEL" description="MOD_IMPRINTER_FIELD_REGION_DESC"
+                       filter="string" />
+
+                <field name="country" type="text" class="required" required="true" default=""
+                       label="MOD_IMPRINTER_FIELD_COUNTRY_LABEL" description="MOD_IMPRINTER_FIELD_COUNTRY_DESC"
+                       filter="string" />
+
+                <field type="spacer" hr="true" />
+
+                <field type="spacer" name="geoinfo" class="text"
+                       label="MOD_IMPRINTER_GEOINFO_LABEL" description="MOD_IMPRINTER_GEOINFO_DESC" />
+
+                <field name="georegion" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_GEOREGION_LABEL" description="MOD_IMPRINTER_FIELD_GEOREGION_DESC"
+                       filter="string" />
+
+                <field name="geoplacename" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_GEOPLACENAME_LABEL" description="MOD_IMPRINTER_FIELD_GEOPLACENAME_DESC"
+                       filter="string" />
+
+                <field name="geolatitude" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_GEOLATITUDE_LABEL" description="MOD_IMPRINTER_FIELD_GEOLATITUDE_DESC"
+                       filter="string" />
+
+                <field name="geolongitude" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_GEOLONGITUDE_LABEL" description="MOD_IMPRINTER_FIELD_GEOLONGITUDE_DESC"
+                       filter="string" />
+
+                <field name="geoaltitude" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_GEOALTITUDE_LABEL" description="MOD_IMPRINTER_FIELD_GEOALTITUDE_DESC"
+                       filter="string" />
+
+                <field name="spacer_name_4" type="spacer" label="MOD_IMPRINTER_SPACER_4" />
+            </fieldset>
+
             <!-- Contact Tab -->
             <fieldset name="contact">
+
+                <field name="postofficeboxaddress" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_POSTOFFICEBOXADDRESS_LABEL" description="MOD_IMPRINTER_FIELD_POSTOFFICEBOXADDRESS_DESC"
+                       filter="string" />
+                <field name="postofficeboxnumber" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_POSTOFFICEBOXNUMBER_LABEL" description="MOD_IMPRINTER_FIELD_POSTOFFICEBOXNUMBER_DESC"
+                       filter="string" />
+
+                <field type="spacer" hr="true" />
 
                 <field name="telephone" type="text" validate="tel" default=""
                        label="MOD_IMPRINTER_FIELD_TELEPHONE_LABEL" description="MOD_IMPRINTER_FIELD_TELEPHONE_DESC"
@@ -194,53 +254,6 @@
                        filter="string" />
 
                 <field name="spacer_name_3" type="spacer" label="MOD_IMPRINTER_SPACER_3" />
-            </fieldset>
-
-            <!-- Location Tab -->
-            <fieldset name="location">
-
-                <field name="street" type="text" class="required" required="true" default=""
-                       label="MOD_IMPRINTER_FIELD_STREET_LABEL" description="MOD_IMPRINTER_FIELD_STREET_DESC"
-                       filter="string" />
-
-                <field name="postalcode" type="text" class="required" required="true" default=""
-                       label="MOD_IMPRINTER_FIELD_POSTALCODE_LABEL" description="MOD_IMPRINTER_FIELD_POSTALCODE_DESC"
-                       filter="string" />
-
-                <field name="city" type="text" class="required" required="true" default=""
-                       label="MOD_IMPRINTER_FIELD_CITY_LABEL" description="MOD_IMPRINTER_FIELD_CITY_DESC"
-                       filter="string" />
-
-                <field name="region" type="text" default=""
-                       label="MOD_IMPRINTER_FIELD_REGION_LABEL" description="MOD_IMPRINTER_FIELD_REGION_DESC"
-                       filter="string" />
-
-                <field name="country" type="text" class="required" required="true" default=""
-                       label="MOD_IMPRINTER_FIELD_COUNTRY_LABEL" description="MOD_IMPRINTER_FIELD_COUNTRY_DESC"
-                       filter="string" />
-
-                <field type="spacer" hr="true" />
-
-                <field type="spacer" name="geoinfo" class="text"
-                       label="MOD_IMPRINTER_GEOINFO_LABEL" description="MOD_IMPRINTER_GEOINFO_DESC" />
-
-                <field name="georegion" type="text" default=""
-                       label="MOD_IMPRINTER_FIELD_GEOREGION_LABEL" description="MOD_IMPRINTER_FIELD_GEOREGION_DESC"
-                       filter="string" />
-
-                <field name="geoplacename" type="text" default=""
-                       label="MOD_IMPRINTER_FIELD_GEOPLACENAME_LABEL" description="MOD_IMPRINTER_FIELD_GEOPLACENAME_DESC"
-                       filter="string" />
-
-                <field name="geolatitude" type="text" default=""
-                       label="MOD_IMPRINTER_FIELD_GEOLATITUDE_LABEL" description="MOD_IMPRINTER_FIELD_GEOLATITUDE_DESC"
-                       filter="string" />
-
-                <field name="geolongitude" type="text" default=""
-                       label="MOD_IMPRINTER_FIELD_GEOLONGITUDE_LABEL" description="MOD_IMPRINTER_FIELD_GEOLONGITUDE_DESC"
-                       filter="string" />
-
-                <field name="spacer_name_4" type="spacer" label="MOD_IMPRINTER_SPACER_4" />
             </fieldset>
 
             <!-- Additional Tab -->
