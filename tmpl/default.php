@@ -34,8 +34,8 @@ $showtitle = htmlspecialchars($module->showtitle);
 /* ========================================================================= */
 
 // Imprint Tab
-$organization = htmlspecialchars($params->get('organization'));
-$organizationservice = htmlspecialchars($params->get('organizationservice'));
+$organizationname = htmlspecialchars($params->get('organizationname'));
+$organizationdescription = htmlspecialchars($params->get('organizationdescription'));
 
 $honorificprefix = htmlspecialchars($params->get('honorificprefix'));
 $honorificsuffix = htmlspecialchars($params->get('honorificsuffix'));
@@ -117,13 +117,13 @@ endif;
         <h3 hidden><?php print 'h-card for:' . $companyname; ?></h3>
 
     <?php
-    if($companyname) :
+    if($organizationname) :
         ?>
         <div class="h-card vcard" vocab="http://schema.org/" typeof="Organization" itemscope itemtype="http://data-vocabulary.org/#Organization">
         <?php
     else:
         ?>
-        <div>
+        <div class="h-card vcard" vocab="http://schema.org/" typeof="Person" itemscope itemtype="http://data-vocabulary.org/#Person">
         <?php
     endif;
     ?>
@@ -133,12 +133,12 @@ endif;
          * $companyname
          * $companyservice
          */
-        if($organization) :
+        if($organizationname) :
             ?>
             <span class="p-org org">
                 <?php
                 $organizationname ? print '<span class="p-organization-name organization-name" itemprop="name">' . $organizationname . '</span>' : print '';
-                $organizationservice ? print '<span class="p-category category" itemprop="description">' . $organizationservice . '</span>' : print '';
+                $organizationdescription ? print '<span class="p-category category" itemprop="description">' . $organizationdescription . '</span>' : print '';
                 ?>
             </span>
             <?php

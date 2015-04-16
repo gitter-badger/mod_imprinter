@@ -79,8 +79,8 @@
                        label="MOD_IMPRINTER_FIELD_ORGANIZATIONNAME_LABEL" description="MOD_IMPRINTER_FIELD_ORGANIZATIONNAME_DESC"
                        filter="string" />
 
-                <field name="organizationservice" type="text" default=""
-                       label="MOD_IMPRINTER_FIELD_ORGANIZATIONSERVICE_LABEL" description="MOD_IMPRINTER_FIELD_ORGANIZATIONSERVICE_DESC"
+                <field name="organizationdescription" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_ORGANIZATIONDESCRIPTION_LABEL" description="MOD_IMPRINTER_FIELD_ORGANIZATIONDESCRIPTION_DESC"
                        filter="string" />
 
                 <field type="spacer" hr="true" />
