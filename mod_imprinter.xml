@@ -7,14 +7,14 @@
     <license>GNU General Public License version 2; see LICENSE.txt</license>
     <authorEmail>info@interim-webmanagement.net</authorEmail>
     <authorUrl>interim-webmanagement.net</authorUrl>
-    <version>0.0.9</version>
+    <version>0.1.0</version>
     <description><![CDATA[
         <style>
             .star{color: red;}
         </style>
         <div style="font-weight:400;">
             <h4>Imprint Module for legal information spiced with microdata and microformat 2 [h-card] (backwards compatible [hcard]).
-            <small style="float:right">ver. 0.0.9</small></h4>
+            <small style="float:right">ver. 0.1.0</small></h4>
             <p><strong>Imprinter</strong> module. Put Imprinter on any page.</p>
             <p>Need information? Please visit the <a target="_blank" href="//interim-webmanagement.net/projekte/jmodule-imprinter"><strong>Imprinter Info Page</strong></a>. You'll find there all the information you need.</p>
             <p>Like the Imprinter? Check out the <a target="_blank" href="//interim-webmanagement.net/projekte/clifflex"><strong>CLIFFlex Template</strong></a></p>
@@ -75,20 +75,20 @@
 
             <!-- Imprint Tab -->
             <fieldset name="imprint">
-                <field name="companyname" type="text" default=""
-                       label="MOD_IMPRINTER_FIELD_COMPANYNAME_LABEL" description="MOD_IMPRINTER_FIELD_COMPANYNAME_DESC"
+                <field name="organizationname" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_ORGANIZATIONNAME_LABEL" description="MOD_IMPRINTER_FIELD_ORGANIZATIONNAME_DESC"
                        filter="string" />
 
-                <field name="companyservice" type="text" default=""
-                       label="MOD_IMPRINTER_FIELD_COMPANYSERVICE_LABEL" description="MOD_IMPRINTER_FIELD_COMPANYSERVICE_DESC"
+                <field name="organizationservice" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_ORGANIZATIONSERVICE_LABEL" description="MOD_IMPRINTER_FIELD_ORGANIZATIONSERVICE_DESC"
                        filter="string" />
 
                 <field type="spacer" hr="true" />
 
                 <field name="honorificprefix" type="list" default="1"
                        label="MOD_IMPRINTER_FIELD_HONORIFICPREFIX_LABEL" description="MOD_IMPRINTER_FIELD_HONORIFICPREFIX_DESC">
-                    <option value="1">MOD_IMPRINTER_FIELD_VALUE_HPREFIXMR</option>
-                    <option value="2">MOD_IMPRINTER_FIELD_VALUE_HPREFIXMRS</option>
+                    <option value="1">MOD_IMPRINTER_FIELD_HPREFIXMR_VALUE</option>
+                    <option value="2">MOD_IMPRINTER_FIELD_HPREFIXMRS_VALUE</option>
                 </field>
 
                 <field name="honorificsuffix" type="text" default=""
@@ -99,9 +99,21 @@
                        label="MOD_IMPRINTER_FIELD_FIRSTNAME_LABEL" description="MOD_IMPRINTER_FIELD_FIRSTNAME_DESC"
                        filter="string" />
 
+                <field type="spacer" hr="true" />
+
                 <field name="secondname" type="text" default=""
                        label="MOD_IMPRINTER_FIELD_SECONDNAME_LABEL" description="MOD_IMPRINTER_FIELD_SECONDNAME_DESC"
                        filter="string" />
+                <field name="secondnameinitialbtn" type="radio" class="btn-group btn-group-yesno" default="0"
+                       label="MOD_IMPRINTER_FIELD_SECONDNAMEINITIALBTN_LABEL" description="MOD_IMPRINTER_FIELD_SECONDNAMEINITIALBTN_DESC">
+                    <option value="0" class="off">JNO</option>
+                    <option value="1" class="on">JYES</option>
+                </field>
+                <field name="secondnameinitial" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_SECONDNAMEINITIAL_LABEL" description="MOD_IMPRINTER_FIELD_SECONDNAMEINITIAL_DESC"
+                       filter="string" />
+
+                <field type="spacer" hr="true" />
 
                 <field name="lastname" type="text" class="required" required="true" default=""
                        label="MOD_IMPRINTER_FIELD_LASTNAME_LABEL" description="MOD_IMPRINTER_FIELD_LASTNAME_DESC"

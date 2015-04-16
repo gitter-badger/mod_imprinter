@@ -34,8 +34,8 @@ $showtitle = htmlspecialchars($module->showtitle);
 /* ========================================================================= */
 
 // Imprint Tab
-$companyname = htmlspecialchars($params->get('companyname'));
-$companyservice = htmlspecialchars($params->get('companyservice'));
+$organization = htmlspecialchars($params->get('organization'));
+$organizationservice = htmlspecialchars($params->get('organizationservice'));
 
 $honorificprefix = htmlspecialchars($params->get('honorificprefix'));
 $honorificsuffix = htmlspecialchars($params->get('honorificsuffix'));
@@ -44,6 +44,8 @@ $hprefix1 = htmlspecialchars($params->get('hprefix1'));
 
 $firstname = htmlspecialchars($params->get('firstname'));
 $secondname = htmlspecialchars($params->get('secondname'));
+$secondnameinitialbtn = htmlspecialchars($params->get('secondnameinitialbtn'));
+$secondnameinitial = htmlspecialchars($params->get('secondnameinitial'));
 $lastname = htmlspecialchars($params->get('lastname'));
 
 $authorurl = htmlspecialchars($params->get('authorurl'));
@@ -95,9 +97,11 @@ function convert_email($email) {
 }
 
 /* ========================================================================= */
-?>
-<article <?php $moduleclass_sfx ? print 'class="' . $moduleclass_sfx . '"' : ''; ?>>
-<?php
+
+/*
+ * <article <?php $moduleclass_sfx ? print 'class="' . $moduleclass_sfx . '"' : ''; ?>>
+ */
+
 if($showtitle == 1) :
     ?>
     <header>
@@ -129,12 +133,12 @@ endif;
          * $companyname
          * $companyservice
          */
-        if($companyname) :
+        if($organization) :
             ?>
             <span class="p-org org">
                 <?php
-                $companyname ? print '<span class="p-organization-name organization-name" itemprop="name">' . $companyname . '</span>' : print '';
-                $companyservice ? print '<span class="p-category category" itemprop="description">' . $companyservice . '</span>' : print '';
+                $organizationname ? print '<span class="p-organization-name organization-name" itemprop="name">' . $organizationname . '</span>' : print '';
+                $organizationservice ? print '<span class="p-category category" itemprop="description">' . $organizationservice . '</span>' : print '';
                 ?>
             </span>
             <?php
@@ -199,9 +203,15 @@ endif;
                         endif;
 
                         if($secondname) :
-                            ?>
-                            <abbr class="p-additional-name additional-name" title="<?php print $secondname; ?>"><?php print $secondname; ?>.</abbr>
-                            <?php
+                            if($secondnameinitialbtn == 1) :
+                                ?>
+                                <abbr class="p-additional-name additional-name" title="<?php print $secondname; ?>"><?php print $secondnameinitial; ?></abbr>
+                                <?php
+                            else:
+                                ?>
+                                <span class="p-additional-name additional-name"><?php print $secondname; ?></span>
+                                <?php
+                            endif;
                         endif;
 
                         if($lastname) :
@@ -267,7 +277,7 @@ endif;
                         <?php
                         if($region) :
                             ?>
-                            <abbr class="p-region region" itemprop="addressRegion" title="<?php print $region; ?>"><?php print $region; ?></abbr>
+                            <span class="p-region region" itemprop="addressRegion"><?php print $region; ?></span>
                             <span>/</span>
                             <?php
                         endif;
@@ -323,7 +333,7 @@ endif;
                     <span class="type work">Tel: </span>
                     <span class="value" property="telephone"><?php print $telephone; ?></span>
                     <?php
-                    if($telephonephonecall == 1) :
+                    if($telephonecall == 1) :
                         ?>
                         <a class="u-url" href="tel:<?php print $telephone; ?>" title="Anruf tätigen"><span></span>Anruf</a>
                         <?php
@@ -450,4 +460,7 @@ endif;
         <?php
     endif;
     ?>
-</article>
+<?php
+/*
+ * </article>
+ */
