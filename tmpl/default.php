@@ -131,10 +131,10 @@ endif;
          */
         if($companyname) :
             ?>
-            <p class="p-org">
+            <p class="p-org org fn org url">
                 <?php
-                $companyname ? print '<span class="p-organization-name" itemprop="name">' . $companyname . '</span>' : print '';
-                $companyservice ? print '<span class="p-category" itemprop="description">' . $companyservice . '</span>' : print '';
+                $companyname ? print '<span class="p-organization-name organization-name" itemprop="name">' . $companyname . '</span>' : print '';
+                $companyservice ? print '<span class="p-category category" itemprop="description">' . $companyservice . '</span>' : print '';
                 ?>
             </p>
             <?php
@@ -157,11 +157,11 @@ endif;
             <span vocab="http://schema.org/" typeof="Person" itemscope itemtype="http://data-vocabulary.org/#Person">
                 <span class="p-n" property="name" itemprop="name">
                     <?php
-                    $authorurl ? print '<a class="p-name u-url" href="' . $authorurl . '">' : print '';
+                    $authorurl ? print '<a class="p-name u-url n url" href="' . $authorurl . '">' : print '';
                     // start link: p-name u-url
 
-                    $firstname ? print '<span class="p-given-name" property="foaf:name">' . $firstname . '</span>' : print '';
-                    $lastname ? print '<span class="p-family-name" property="foaf:givenName">' . $lastname . '</span>' : print '';
+                    $firstname ? print '<span class="p-given-name given-name" property="foaf:name">' . $firstname . '</span>' : print '';
+                    $lastname ? print '<span class="p-family-name family-name" property="foaf:givenName">' . $lastname . '</span>' : print '';
 
                     // end link: p-name u-url
                     $authorurl ? print '</a>' : print '';
@@ -171,49 +171,49 @@ endif;
                 <?php
                 if($nameurl) :
                 ?>
-                <span class="p-fn u-url" property="name" itemprop="name">
+                <span class="p-fn u-url n url" property="name" itemprop="name">
                 <?php
                 else:
                 ?>
-                <span class="p-fn" property="name" itemprop="name">
+                <span class="p-fn n" property="name" itemprop="name">
                 <?php
                 endif;
 
                     // start link: p-name u-url
                     if($nameurl) :
                         ?>
-                        <a class="p-name u-url" href="<?php print $nameurl; ?>"<?php $nameurltitle ? print ' title="' . $nameurltitle . '"' : print ''; ?>>
+                        <a class="p-name u-url url fn" href="<?php print $nameurl; ?>"<?php $nameurltitle ? print ' title="' . $nameurltitle . '"' : print ''; ?>>
                         <?php
                     endif;
                     // start link: p-name u-url
 
                         if($honorificprefix) :
                             ?>
-                            <span class="p-honorific-prefix"><?php print $honorificprefix; ?></span>
+                            <span class="p-honorific-prefix honorific-prefix"><?php print $honorificprefix; ?></span>
                             <?php
                         endif;
 
                         if($honorificsuffix) :
                             ?>
-                            <span class="p-honorific-suffix"><?php print $honorificsuffix; ?></span>
+                            <span class="p-honorific-suffix honorific-suffix"><?php print $honorificsuffix; ?></span>
                             <?php
                         endif;
 
                         if($firstname) :
                             ?>
-                            <span class="p-given-name"><?php print $firstname; ?></span>
+                            <span class="p-given-name given-name"><?php print $firstname; ?></span>
                             <?php
                         endif;
 
                         if($secondname) :
                             ?>
-                            <abbr class="p-additional-name" title="<?php print $secondname; ?>"><?php print $secondname; ?>.</abbr>
+                            <abbr class="p-additional-name additional-name" title="<?php print $secondname; ?>"><?php print $secondname; ?>.</abbr>
                             <?php
                         endif;
 
                         if($lastname) :
                             ?>
-                            <span class="p-family-name"><?php print $lastname; ?></span>
+                            <span class="p-family-name family-name"><?php print $lastname; ?></span>
                             <?php
                         endif;
 
@@ -229,7 +229,7 @@ endif;
                 <?php
                 if($jobtitle) :
                     ?>
-                    <span class="p-job-title" property="jobTitle" itemprop="jobTitle"><?php print $jobtitle; ?></span>
+                    <span class="p-job-title title" property="jobTitle" itemprop="jobTitle"><?php print $jobtitle; ?></span>
                     <?php
                 endif;
                 ?>
@@ -242,19 +242,19 @@ endif;
             <?php
             if($street || $postalcode || $city) :
                 ?>
-                <span class="h-adr" itemprop="address" itemscope itemtype="http://schema.org/#PostalAddress">
+                <span class="h-adr adr" itemprop="address" itemscope itemtype="http://schema.org/#PostalAddress">
                 <?php
                 if($street) :
                     ?>
-                    <span class="p-street-address" itemprop="streetAddress"><?php print $street; ?></span>
+                    <span class="p-street-address street-address" itemprop="streetAddress"><?php print $street; ?></span>
                     <?php
                 endif;
 
                 if($postalcode || $city) :
                     ?>
                     <span class="city">
-                        <span class="p-postal-code" itemprop="postalCode"><?php print $postalcode; ?></span>
-                        <span class="p-locality" itemprop="addressLocality"><?php print $city; ?></span>
+                        <span class="p-postal-code postal-code" itemprop="postalCode"><?php print $postalcode; ?></span>
+                        <span class="p-locality locality" itemprop="addressLocality"><?php print $city; ?></span>
                     </span>
                     <?php
                 endif;
@@ -265,14 +265,14 @@ endif;
                         <?php
                         if($region) :
                             ?>
-                            <abbr class="p-region" itemprop="addressRegion" title="<?php print $region; ?>"><?php print $region; ?></abbr>
+                            <abbr class="p-region region" itemprop="addressRegion" title="<?php print $region; ?>"><?php print $region; ?></abbr>
                             <span>/</span>
                             <?php
                         endif;
 
                         if($country) :
                             ?>
-                            <span class="p-country-name"><?php print $country; ?></span>
+                            <span class="p-country-name country-name"><?php print $country; ?></span>
                             <?php
                         endif;
                         ?>
@@ -381,7 +381,7 @@ endif;
     </section>
 
     <section>
-        <h4 hidden><?php print 'Extended Information:' . $companyname; ?></h4>
+        <h4 hidden><?php print 'Extended Information for' . $companyname; ?></h4>
         <?php
         if($vatid):
             ?>
@@ -403,7 +403,7 @@ endif;
     </section>
 
     <section>
-        <h4 hidden><?php print 'Additional Information:' . $companyname; ?></h4>
+        <h4 hidden><?php print 'Additional Information for' . $companyname; ?></h4>
         <?php
         if($accessory):
             print $accessory;
