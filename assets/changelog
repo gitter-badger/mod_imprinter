@@ -25,12 +25,15 @@ defined('_JEXEC') or die;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 ?>
+Version 0.1.1 16.04.2015
+^ changes to pass conformance with GD-Test-Tool
+
 Version 0.1.0 16.04.2015
-$ Correct output for secondname initials
+^ Correct output for secondname initials
 
 Version 0.0.9 15.04.2015
 # Output: $honorificsuffix
-$ Changed $editor to $accessory
+^ Changed $editor to $accessory
 
 Version 0.0.8 15.04.2015
 + Added Additional Tab with free Textfield

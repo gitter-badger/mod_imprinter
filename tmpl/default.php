@@ -119,11 +119,11 @@ endif;
     <?php
     if($organizationname) :
         ?>
-        <div class="h-card vcard" vocab="http://schema.org/" typeof="Organization" itemscope itemtype="http://data-vocabulary.org/Organization">
+        <div class="h-card vcard" vocab="http://schema.org/" typeof="Organization" itemscope itemtype="http://data-vocabulary.org/#Organization">
         <?php
     else:
         ?>
-        <div class="h-card vcard" vocab="http://schema.org/" typeof="Person" itemscope itemtype="http://data-vocabulary.org/#Person">
+        <div class="h-card vcard">
         <?php
     endif;
     ?>
@@ -166,8 +166,8 @@ endif;
                     $authorurl ? print '<a class="p-name u-url url" href="' . $authorurl . '">' : print '';
                     // start link: p-name u-url
 
-                    $firstname ? print '<span class="p-given-name given-name" property="foaf:name">' . $firstname . '</span>' : print '';
-                    $lastname ? print '<span class="p-family-name family-name" property="foaf:givenName">' . $lastname . '</span>' : print '';
+                    $firstname ? print '<span class="p-given-name given-name">' . $firstname . '</span>' : print '';
+                    $lastname ? print '<span class="p-family-name family-name">' . $lastname . '</span>' : print '';
 
                     // end link: p-name u-url
                     $authorurl ? print '</a>' : print '';
@@ -205,7 +205,7 @@ endif;
                         if($secondname) :
                             if($secondnameinitialbtn == 1) :
                                 ?>
-                                <abbr class="p-additional-name additional-name" title="<?php print $secondname; ?>"><?php print $secondnameinitial; ?></abbr>
+                                <span class="p-additional-name additional-name" title="<?php print $secondname; ?>"><?php print $secondnameinitial; ?></span>
                                 <?php
                             else:
                                 ?>
@@ -330,7 +330,7 @@ endif;
             if($telephone) :
                 ?>
                 <div class="p-tel cell" itemprop="telephone">
-                    <span class="type work">Tel: </span>
+                    <span class="type work VOICE">Tel: </span>
                     <span class="value" property="telephone"><?php print $telephone; ?></span>
                     <?php
                     if($telephonecall == 1) :
@@ -351,7 +351,7 @@ endif;
             if($mobilephone) :
                 ?>
                 <span class="p-tel mobil" itemprop="telephone">
-                    <span class="type mobil">Mobil: </span>
+                    <span class="type work VOICE mobil msg">Mobil: </span>
                     <span class="value" property="telephone"><?php print $mobilephone; ?></span>
                     <?php
                     if($mobilephonecall == 1) :
@@ -375,8 +375,8 @@ endif;
              */
             if($telefax) :
                 ?>
-                <span class="p-fax" itemprop="faxNumber">
-                    <span class="type work">Fax: </span>
+                <span class="p-fax fax" itemprop="faxNumber">
+                    <span class="type fax work">Fax: </span>
                     <span class="value" property="faxNumber"><?php print $telefax; ?></span>
                 </span>
                 <?php
