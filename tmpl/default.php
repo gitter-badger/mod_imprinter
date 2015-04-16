@@ -119,7 +119,7 @@ endif;
     <?php
     if($organizationname) :
         ?>
-        <div class="h-card vcard" vocab="http://schema.org/" typeof="Organization" itemscope itemtype="http://data-vocabulary.org/#Organization">
+        <div class="h-card vcard" vocab="http://schema.org/" typeof="Organization" itemscope itemtype="http://data-vocabulary.org/Organization">
         <?php
     else:
         ?>
@@ -232,7 +232,7 @@ endif;
                 <?php
                 if($jobtitle) :
                     ?>
-                    <span class="p-job-title title" property="jobTitle" itemprop="jobTitle"><?php print $jobtitle; ?></span>
+                    <span class="p-job-title title" itemprop="jobTitle"><?php print $jobtitle; ?></span>
                     <?php
                 endif;
                 ?>
