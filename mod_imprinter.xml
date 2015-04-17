@@ -7,14 +7,14 @@
     <license>GNU General Public License version 2; see LICENSE.txt</license>
     <authorEmail>info@interim-webmanagement.net</authorEmail>
     <authorUrl>interim-webmanagement.net</authorUrl>
-    <version>0.1.3</version>
+    <version>0.1.4</version>
     <description><![CDATA[
         <style>
             .star{color: red;}
         </style>
         <div style="font-weight:400;">
             <h4>Imprint Module for legal information spiced with microdata and microformat 2 [h-card] (backwards compatible [hcard]).
-            <small style="float:right">ver. 0.1.3</small></h4>
+            <small style="float:right">ver. 0.1.4</small></h4>
             <p><strong>Imprinter</strong> module. Put Imprinter on any page.</p>
             <p>Need information? Please visit the <a target="_blank" href="//interim-webmanagement.net/projekte/jmodule-imprinter"><strong>Imprinter Info Page</strong></a>. You'll find there all the information you need.</p>
             <p>Like the Imprinter? Check out the <a target="_blank" href="//interim-webmanagement.net/projekte/clifflex"><strong>CLIFFlex Template</strong></a></p>
@@ -160,8 +160,8 @@
                        label="MOD_IMPRINTER_FIELD_STREET_LABEL" description="MOD_IMPRINTER_FIELD_STREET_DESC"
                        filter="string" />
 
-                <field name="extendedstreet" type="text" class="required" required="true" default=""
-                       label="MOD_IMPRINTER_FIELD_EXTENDEDSTREET_LABEL" description="MOD_IMPRINTER_FIELD_EXTENDEDSTREET_DESC"
+                <field name="extendedaddress" type="text" class="required" required="true" default=""
+                       label="MOD_IMPRINTER_FIELD_EXTENDEDADDRESS_LABEL" description="MOD_IMPRINTER_FIELD_EXTENDEDADDRESS_DESC"
                        filter="string" />
 
                 <field name="postalcode" type="text" class="required" required="true" default=""
@@ -314,7 +314,7 @@
                 <field name="layout" type="modulelayout"
                        label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
 
-                <field name="moduleclass_sfx" type="text" default=""
+                <field name="moduleclass_sfx" type="text" default="imprinter"
                        label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
 
                 <field name="cache" type="list" default="1"
