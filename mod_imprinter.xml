@@ -160,7 +160,7 @@
                        label="MOD_IMPRINTER_FIELD_STREET_LABEL" description="MOD_IMPRINTER_FIELD_STREET_DESC"
                        filter="string" />
 
-                <field name="extendedaddress" type="text" class="required" required="true" default=""
+                <field name="extendedaddress" type="text" default=""
                        label="MOD_IMPRINTER_FIELD_EXTENDEDADDRESS_LABEL" description="MOD_IMPRINTER_FIELD_EXTENDEDADDRESS_DESC"
                        filter="string" />
 

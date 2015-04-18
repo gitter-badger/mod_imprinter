@@ -130,9 +130,12 @@ endif;
     <section data-role="imprint-vcard">
         <h3 hidden><?php print 'h-card for ' . $organizationname; ?></h3>
 
-        <h3 class="p-note">Inhaltliche Verantwortlichkeit gem&auml&szlig; <small><a title="Informationspflichten und Informationsrechte" href="http://www.juris.de/jportal/portal/page/bshaprod.psml?doc.id=jlr-RdFunkStVtrHAV3P55&amp;st=lr&amp;showdoccase=1&amp;paramfromHL=true#focuspoint" rel="external">&sect; 55 Abs. 2 RStV</a></small> sowie <small><a title="Allgemeine Informationspflichten" href="http://www.gesetze-im-internet.de/tmg/__5.html" rel="external">&sect; 5 TMG</a></small></h3>
+        <h3 class="p-note">Inhaltliche Verantwortlichkeit gem&auml;&szlig; <small><a title="Informationspflichten und Informationsrechte" href="http://www.juris.de/jportal/portal/page/bshaprod.psml?doc.id=jlr-RdFunkStVtrHAV3P55&amp;st=lr&amp;showdoccase=1&amp;paramfromHL=true#focuspoint" rel="external">&sect; 55 Abs. 2 RStV</a></small> sowie <small><a title="Allgemeine Informationspflichten" href="http://www.gesetze-im-internet.de/tmg/__5.html" rel="external">&sect; 5 TMG</a></small></h3>
 
     <?php
+    /*
+     * $organizationname
+     */
     if($organizationname) :
         ?>
         <div class="h-card vcard" typeof="Organization" itemscope itemtype="http://schema.org/Organization">
@@ -153,7 +156,7 @@ endif;
             ?>
             <span class="p-org org">
                 <?php
-                $organizationname ? print '<h4 class="p-organization-name organization-name" itemprop="legalName">' . $organizationname . '</h4>' : print '';
+                $organizationname ? print '<span class="p-organization-name organization-name" itemprop="legalName">' . $organizationname . '</span>' : print '';
                 $organizationdescription ? print '<span class="p-category category" itemprop="description">' . $organizationdescription . '</span>' : print '';
                 ?>
             </span>
@@ -178,7 +181,7 @@ endif;
         if($firstname || $lastname) :
             ?>
             <span vocab="http://schema.org/" typeof="Person" itemscope itemtype="http://schema.org/Person">
-                <span class="p-name p-n n" property="name" itemprop="name">
+                <span class="p-name p-n n" property="name" itemprop="name" hidden>
                     <?php
                     if($authorurl):
                         ?>
@@ -249,6 +252,7 @@ endif;
          * $postofficeboxnumber
          * 
          * $street
+         * $extendedaddress
          * $postalcode
          * $city
          * $region
@@ -263,7 +267,7 @@ endif;
                     <?php
                     if($postofficeboxaddress && $postofficeboxnumber) :
                         ?>
-                        <span class="p-post-office">
+                        <span class="p-post-office" itemprop="PostOffice">
                             <?php
                             $postoffice ? print '<span>' . $postoffice . $ws . '</span>' : print '';
                             ?>
@@ -275,7 +279,7 @@ endif;
 
                     $street ? print '<span class="p-street-address street-address" itemprop="streetAddress">' . $street . '</span>' : print '';
 
-                    $extendedaddress ? print '<span class="p-extended-address extended-address" itemprop="extendedAddress">' . $extendedaddress . '</span>' : print '';
+                    $extendedaddress ? print '<span class="p-extended-address extended-address">' . $extendedaddress . '</span>' : print '';
 
                     if($postalcode || $city) :
                         ?>
@@ -306,21 +310,23 @@ endif;
 
             <?php
             /*
+             * $geohidden
+             * 
              * $geolatitude
              * $geolongitude
              * $geoaltitude
              */
             if($geolatitude && $geolongitude) :
                 ?>
-                <span class="h-geo"<?php ($geohidden == 1) ? print $hidden : print ''; ?>>
+                <span class="h-geo" itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates"<?php ($geohidden == 1) ? print ' ' . $hidden : print ''; ?>>
                     <span class="type work">GEO:<?php print $ws; ?></span>
                     <?php // backward compatibility ?>
-                    <span class="p-latitude"><?php print $geolatitude; ?></span>
-                    <span class="p-longitude"><?php print ';' . $geolongitude; ?></span>
+                    <span class="p-latitude" itemprop="latitude"><?php print $geolatitude; ?></span>
+                    <span class="p-longitude" itemprop="longitude"><?php print ';' . $geolongitude; ?></span>
                     <?php
                     if($geoaltitude) :
                         ?>
-                        <span class="p-altitude"><?php print ';' . $geoaltitude; ?></span>
+                        <span class="p-altitude" itemprop="altitude"><?php print ';' . $geoaltitude; ?></span>
                         <?php
                     endif;
                     ?>
@@ -340,12 +346,8 @@ endif;
                     <span class="type work VOICE">Tel:<?php print $ws; ?></span>
                     <span class="value" property="telephone"><?php print $telephone; ?></span>
                     <?php
-                    if($telephonecall == 1) :
-                        ?>
-                        <a class="u-url" href="tel:<?php print $telephone; ?>" title="Anruf t&auml;tigen"><span></span>Anruf</a>
-                        <?php
-                    endif;
-                ?>
+                    ($telephonecall == 1) ? print '<a class="u-url" href="tel:' . $telephone . '" title="Anruf t&auml;tigen"><span></span>Anruf</a>' : '';
+                    ?>
                 </span>
                 <?php
             endif;
@@ -373,18 +375,9 @@ endif;
                     <span class="type work VOICE mobil msg">Mobil:<?php print $ws; ?></span>
                     <span class="value" property="telephone"><?php print $mobilephone; ?></span>
                     <?php
-                    if($mobilephonecall == 1) :
-                        ?>
-                        <a class="u-url" href="tel:<?php print $mobilephone; ?>" title="Anruf t&auml;tigen"><span></span>Anruf</a>
-                        <?php
-                    endif;
-
-                    if($mobilephonesms == 1) :
-                        ?>
-                        <a class="u-url" href="sms:<?php print $mobilephone; ?>" title="SMS schicken"><span></span>SMS</a>
-                        <?php
-                    endif;
-                ?>
+                    ($mobilephonecall == 1) ? print '<a class="u-url" href="tel:' . $mobilephone . '" title="Anruf t&auml;tigen"><span></span>Anruf</a>' : '';
+                    ($mobilephonesms == 1) ? print '<a class="u-url" href="sms:' . $mobilephone . '" title="SMS schicken"><span></span>SMS</a>' : '';
+                    ?>
                 </span>
                 <?php
             endif;
@@ -424,6 +417,17 @@ endif;
         if($openingHours):
             ?>
             <span><?php print $openingHours . ': '; ?><time itemprop="openingHours" datetime="Mo-Fr 07:00-23:00">Monday-Friday 7am-11pm</time></span>
+
+            <div itemscope itemtype="http://schema.org/OpeningHoursSpecification">
+                <link itemprop-reverse="openingHoursSpecification" href="http://www.freebase.com/m/02j81" />Opening hours: Mo-Fri,
+                <link itemprop="dayOfWeek" href="http://purl.org/goodrelations/v1#Monday" />
+                <link itemprop="dayOfWeek" href="http://purl.org/goodrelations/v1#Tuesday" />
+                <link itemprop="dayOfWeek" href="http://purl.org/goodrelations/v1#Wednesday" />
+                <link itemprop="dayOfWeek" href="http://purl.org/goodrelations/v1#Thursday" />
+                <link itemprop="dayOfWeek" href="http://purl.org/goodrelations/v1#Friday" />
+                <meta itemprop="opens" content="08:00:00">8:00 a.m. -
+                <meta itemprop="closes" content="20:00:00">8:00 p.m.
+            </div>
             <?php
         endif;
         /*
@@ -443,41 +447,37 @@ endif;
     </section>
 
     <section>
-        <h4 hidden><?php print 'Extended Information for ' . $organizationname; ?></h4>
+        <h3 hidden><?php print 'Extended Information for ' . $organizationname; ?></h3>
         <?php
+        /*
+         * $startbusiness
+         */
+        //$startbusiness ? print '<span itemprop="startDate">' . $startbusiness . '</span>' : print '';
+
         /*
          * $vatid
          */
-        if($vatid):
-            ?>
-            <p data-vatid="de">USt-IdNr. gem&auml;&szlig; 19 UStG: <?php print $vatid; ?></p>
-            <?php
-            /*
-             * <p data-vatid="de">USt-IdNr. gem&auml&szlig; Â§ 19 UStG / Â§ 27 UStG: <?php print $vatid; ?></p>
-             */
-        endif;
-
+        $vatid ? print '<p data-vatid="de">USt-IdNr. gem&auml;&szlig; 19 UStG: ' . $vatid . '</p>' : '';
+        /*
+         * <p data-vatid="de">USt-IdNr. gem&auml&szlig; Â§ 19 UStG / Â§ 27 UStG: <?php print $vatid; ?></p>
+         */
 
         /*
          * $microformat2
          */
-        if($microformat2 == 1):
-            ?>
-            <small class="microformat2">This content uses <a target="_blank" href="http://microformats.org/wiki/microformats2">microformats 2</a></small>
-            <?php
-        endif;
+        ($microformat2 == 1) ? print '<small class="microformat2">This content uses <a target="_blank" href="http://microformats.org/wiki/microformats2">microformats 2</a></small>' : '';
         ?>
     </section>
 
     <?php
+    /*
+     * $accessory
+     */
     if($accessory):
         ?>
         <section>
-            <h4 hidden><?php print 'Additional Information for ' . $organizationname; ?></h4>
+            <h3 hidden><?php print 'Additional Information for ' . $organizationname; ?></h3>
             <?php
-            /*
-             * $accessory
-             */
             if($accessory):
                 print $accessory;
             endif;
