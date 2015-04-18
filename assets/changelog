@@ -25,6 +25,10 @@ defined('_JEXEC') or die;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 ?>
+Version 0.1.5 18.04.2015
+* -> Fixes
+! -> Optimization
+
 Version 0.1.4 18.04.2015
 + Added $geohidden
 + Added extended-address
