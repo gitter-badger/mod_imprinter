@@ -30,8 +30,8 @@
         <folder>tmpl</folder>
         <filename>helper.php</filename>
         <filename>index.html</filename>
-        <filename>mod_imprinter.xml</filename>
         <filename>install.php</filename>
+        <filename>mod_imprinter.xml</filename>
     </files>
 
     <help key="JHELP_EXTENSIONS_MODULE_MANAGER_FOOTER" />
@@ -73,8 +73,35 @@
                 <field name="spacer_name_1" type="spacer" label="MOD_IMPRINTER_SPACER_1" />
             </fieldset>
 
+            <!-- Advanced Tab -->
+            <fieldset name="advanced">
+                <field name="layout" type="modulelayout"
+                       label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+                <field name="moduleclass_sfx" type="text" default=" imprinter"
+                       label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+                <field name="cache" type="list" default="1"
+                       label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+                <!--
+                <field name="cache" type="hidden" value="0" />
+                -->
+
+                <field name="cache_time" type="text" default="900"
+                       label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+
+                <field name="cachemode" type="hidden" default="static">
+                    <option value="static"></option>
+                </field>
+
+                <field name="spacer_name_1" type="spacer" label="MOD_IMPRINTER_SPACER_1" />
+            </fieldset>
+
             <!-- Imprint Tab -->
-            <fieldset name="imprint">
+            <fieldset name="organization">
                 <field name="organizationname" type="text" default=""
                        label="MOD_IMPRINTER_FIELD_ORGANIZATIONNAME_LABEL" description="MOD_IMPRINTER_FIELD_ORGANIZATIONNAME_DESC"
                        filter="string" />
@@ -84,6 +111,20 @@
                        filter="string" />
 
                 <field type="spacer" hr="true" />
+
+                <field name="startbusiness" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_BUSINESSSTART_LABEL" description="MOD_IMPRINTER_FIELD_BUSINESSSTART_DESC"
+                       filter="string" />
+
+                <field name="vatid" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_VATID_LABEL" description="MOD_IMPRINTER_FIELD_VATID_DESC"
+                       filter="string" />
+
+                <field name="spacer_name_2" type="spacer" label="MOD_IMPRINTER_SPACER_2" />
+            </fieldset>
+
+            <!-- Owner Tab -->
+            <fieldset name="owner">
 
                 <field name="gender" type="list" default="1"
                        label="MOD_IMPRINTER_FIELD_GENDER_LABEL" description="MOD_IMPRINTER_FIELD_GENDER_DESC">
@@ -101,11 +142,11 @@
                        label="MOD_IMPRINTER_FIELD_HONORIFICSUFFIX_LABEL" description="MOD_IMPRINTER_FIELD_HONORIFICSUFFIX_DESC"
                        filter="string" />
 
+                <field type="spacer" hr="true" />
+
                 <field name="firstname" type="text" class="required" required="true" default=""
                        label="MOD_IMPRINTER_FIELD_FIRSTNAME_LABEL" description="MOD_IMPRINTER_FIELD_FIRSTNAME_DESC"
                        filter="string" />
-
-                <field type="spacer" hr="true" />
 
                 <field name="secondname" type="text" default=""
                        label="MOD_IMPRINTER_FIELD_SECONDNAME_LABEL" description="MOD_IMPRINTER_FIELD_SECONDNAME_DESC"
@@ -119,21 +160,8 @@
                        label="MOD_IMPRINTER_FIELD_SECONDNAMEINITIAL_LABEL" description="MOD_IMPRINTER_FIELD_SECONDNAMEINITIAL_DESC"
                        filter="string" />
 
-                <field type="spacer" hr="true" />
-
                 <field name="lastname" type="text" class="required" required="true" default=""
                        label="MOD_IMPRINTER_FIELD_LASTNAME_LABEL" description="MOD_IMPRINTER_FIELD_LASTNAME_DESC"
-                       filter="string" />
-
-                <field name="authorurl" type="text" default=""
-                       label="MOD_IMPRINTER_FIELD_AUTHORURL_LABEL" description="MOD_IMPRINTER_FIELD_AUTHORURL_DESC"
-                       filter="string" />
-
-                <field name="nameurl" type="text" default=""
-                       label="MOD_IMPRINTER_FIELD_NAMEURL_LABEL" description="MOD_IMPRINTER_FIELD_NAMEURL_DESC"
-                       filter="string" />
-                <field name="nameurltitle" type="text" default=""
-                       label="MOD_IMPRINTER_FIELD_NAMEURLTITLE_LABEL" description="MOD_IMPRINTER_FIELD_NAMEURLTITLE_DESC"
                        filter="string" />
 
                 <field name="jobtitle" type="text" default=""
@@ -142,15 +170,20 @@
 
                 <field type="spacer" hr="true" />
 
-                <field name="startbusiness" type="text" default=""
-                       label="MOD_IMPRINTER_FIELD_BUSINESSSTART_LABEL" description="MOD_IMPRINTER_FIELD_BUSINESSSTART_DESC"
+                <field name="authorurl" type="text" default="https://plus.google.com/"
+                       label="MOD_IMPRINTER_FIELD_AUTHORURL_LABEL" description="MOD_IMPRINTER_FIELD_AUTHORURL_DESC"
                        filter="string" />
 
-                <field name="vatid" type="text" default=""
-                       label="MOD_IMPRINTER_FIELD_VATID_LABEL" description="MOD_IMPRINTER_FIELD_VATID_DESC"
+                <field type="spacer" hr="true" />
+
+                <field name="nameurl" type="text" default="http://"
+                       label="MOD_IMPRINTER_FIELD_NAMEURL_LABEL" description="MOD_IMPRINTER_FIELD_NAMEURL_DESC"
+                       filter="string" />
+                <field name="nameurltitle" type="text" default=""
+                       label="MOD_IMPRINTER_FIELD_NAMEURLTITLE_LABEL" description="MOD_IMPRINTER_FIELD_NAMEURLTITLE_DESC"
                        filter="string" />
 
-                <field name="spacer_name_2" type="spacer" label="MOD_IMPRINTER_SPACER_2" />
+                <field name="spacer_name_3" type="spacer" label="MOD_IMPRINTER_SPACER_3" />
             </fieldset>
 
             <!-- Location Tab -->
@@ -265,11 +298,11 @@
 
                 <field type="spacer" hr="true" />
 
-                <field name="url" type="text" class="validate-url" validate="url" scheme="http,https" default=""
+                <field name="url" type="text" class="validate-url" validate="url" scheme="http,https" default="http://"
                        label="MOD_IMPRINTER_FIELD_URL_LABEL" description="MOD_IMPRINTER_FIELD_URL_DESC"
                        filter="string" />
 
-                <field name="spacer_name_3" type="spacer" label="MOD_IMPRINTER_SPACER_3" />
+                <field name="spacer_name_5" type="spacer" label="MOD_IMPRINTER_SPACER_5" />
             </fieldset>
 
             <!-- Additional Tab -->
@@ -277,7 +310,7 @@
                 <field name="accessory" type="editor" buttons="true" width="409" filter="JComponentHelper::filterText"
                        label="MOD_IMPRINTER_FIELD_EDITOR_LABEL" />
 
-                <field name="spacer_name_5" type="spacer" label="MOD_IMPRINTER_SPACER_5" />
+                <field name="spacer_name_6" type="spacer" label="MOD_IMPRINTER_SPACER_6" />
             </fieldset>
 
             <!-- Extra Tab -->
@@ -303,35 +336,13 @@
                 <field type="spacer" name="developersdtest" class="text"
                        label="MOD_IMPRINTER_DEVELOPERSDTEST_LABEL" description="MOD_IMPRINTER_DEVELOPERSDTEST_DESC" />
 
-                <field type="spacer" name="hcardconformancetest" class="text"
-                       label="MOD_IMPRINTER_HCARDCONFORMANCETEST_LABEL" description="MOD_IMPRINTER_HCARDCONFORMANCETEST_DESC" />
+                <field type="spacer" name="hcardconformance" class="text"
+                       label="MOD_IMPRINTER_HCARDCONFORMANCE_LABEL" description="MOD_IMPRINTER_HCARDCONFORMANCE_DESC" />
 
-                <field name="spacer_name_6" type="spacer" label="MOD_IMPRINTER_SPACER_6" />
-            </fieldset>
+                <field type="spacer" name="microformatparserpin13" class="text"
+                       label="MOD_IMPRINTER_MICROFORMATPARSERPIN13_LABEL" description="MOD_IMPRINTER_MICROFORMATPARSERPIN13_DESC" />
 
-            <!-- Extended Tab -->
-            <fieldset name="advanced">
-                <field name="layout" type="modulelayout"
-                       label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
-
-                <field name="moduleclass_sfx" type="text" default="imprinter"
-                       label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
-
-                <field name="cache" type="list" default="1"
-                       label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
-                    <option value="1">JGLOBAL_USE_GLOBAL</option>
-                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
-                </field>
-                <!--
-                <field name="cache" type="hidden" value="0" />
-                -->
-
-                <field name="cache_time" type="text" default="900"
-                       label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
-
-                <field name="cachemode" type="hidden" default="static">
-                    <option value="static"></option>
-                </field>
+                <field name="spacer_name_7" type="spacer" label="MOD_IMPRINTER_SPACER_7" />
             </fieldset>
         </fields>
     </config>

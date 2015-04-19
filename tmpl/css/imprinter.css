@@ -1,4 +1,4 @@
-/* 
+/*
  * StyleSheet for mod_imprinter
  *
  * @package         Joomla
@@ -13,59 +13,51 @@
 /* vCard / h-card start */
 .h-card,
 .h-card >*,
-.p-org >.p-organization-name,
-.p-org >.p-category,
-.h-adr >.p-street-address,
-.h-adr >.city{
-    float: left; width: 100%;
-}
-
-.p-org >.p-organization-name{
-    font-weight: 600;
-}
-
+.h-card .p-org,
+.h-card .p-org >*,
+.h-card .p-n,
+.h-card .p-name,
+.h-card .p-job-title,
 .h-card .p-fn,
 .h-card .h-adr,
+.h-card .h-adr >*,
 .h-card .h-geo,
-.h-card .p-tel.tel,
-.h-card .p-tel.mobil,
-.h-card .p-fax,
-.h-card .u-email{
+.h-card .p-tel,
+.h-card .p-fax{
     float: left; width: 100%;
 }
-.h-card,
-.p-org,
-.p-org ~span,
+
+.h-card >*,
+.h-card .p-adr,
 .h-card .h-adr,
-.h-card .h-geo,
-.p-fax{
-    padding-bottom: 1vh;
+.h-card .p-post-office,
+.h-card .h-geo{
+    padding-bottom: 7px;
 }
 
-a.p-name,
-.h-card >* *{
-    width: auto; margin-right: 4px;
-}
-a.p-name,
-.h-card .h-geo .p-latitude{
-    margin-right: 0;
+.h-card .p-tel >.u-url{
+    margin-left: 10px;
 }
 
-.h-card .h-geo,
-.h-card .p-n,
-.h-card .p-n >a{
-    display: none;
+.h-card .p-name >a,
+.h-card .u-email >span,
+.h-card .domain >span{
+    float: left; width: auto;
 }
 
 [data-vatid=de]{
-    padding: 1vh 0 1vh;
+    padding: 0 0 1vh;
 }
-small.microformat2{
+[class='microformat2']{
     float: left; width: 100%; padding: 3px 0;
     border-top: 1px solid #a6b6dd;
     text-align: right;
-} 
-small.microformat2 a{
-    color: rgb(103,153,6);
+}
+[class='microformat2'] a{
+    color: #679A06; color: rgb(103,154,6);
+}
+[class='microformat2'] a:after{
+    content: url('../modules/mod_imprinter/tmpl/img/mf-logo.svg');
+    display: block; width: 16px; height: 16px; margin: 0 0 0 6px;
 }
 /* vCard / h-card end */

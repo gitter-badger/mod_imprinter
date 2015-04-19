@@ -1,0 +1,22 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="16px" height="16px" xmlns="http://www.w3.org/2000/svg">
+    <g>
+        <defs>
+            <linearGradient id="c" x1="0%" y1="0%" y2="100%">
+                <stop offset="5%" stop-color="#9c3"/>
+                <stop offset="95%" stop-color="#72bd2d"/>
+            </linearGradient>
+            <linearGradient id="b" x1="0%" y1="0%" y2="100%">
+                <stop offset="5%" stop-color="#72bd2d"/>
+                <stop offset="95%" stop-color="#56a231"/>
+            </linearGradient>
+            <linearGradient id="a" x1="0%" y1="0%" y2="100%">
+                <stop offset="5%" stop-color="#56a231"/>
+                <stop offset="95%" stop-color="#3b792d"/>
+            </linearGradient>
+        </defs>
+        <rect x="10" y="70" rx="60" ry="60" height="320" width="320" fill="url(#a)" stroke="#fff" stroke-width="20"/>
+        <rect x="120" y="25" rx="45" ry="45" height="245" width="245" fill="url(#b)" stroke="#fff" stroke-width="20"/>
+        <rect x="220" y="10" rx="20" ry="20" height="160" width="160" fill="url(#c)" stroke="#fff" stroke-width="20"/>
+    </g>
+</svg>

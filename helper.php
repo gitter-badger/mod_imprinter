@@ -1,7 +1,7 @@
 <?php
 /**
  * Helper class for mod_imprinter
- * 
+ *
  * @package         Joomla
  * @subpackage      Imprinter Module
  * @author          Michael S. RitZenhoff by Interim Webmanagement
@@ -14,16 +14,42 @@
 // no direct access
 defined('_JEXEC') or die;
 
-jimport('joomla.application.module.helper');
+/* ========================================================================= */
 
-class ModImprinterHelper {
+class modImprinterHelper {
 
-    /**
-     * @param array $params An object containing the module parameters
-     * @access public
-     */
-    public function getImprinter($params) {
-        return $params;
+    public static function getImprinter($params) {
+        // https://docs.joomla.org/Securing_Joomla_extensions
+
+        $db = JFactory::getDbo();
+        $string = $db->escape( $string );
+
+        $value = $_GET['value'];
+        $value = intval($value);
+
+        $query = $db->getQuery(true);
+        $query = "SELECT * FROM #__modules mod_imprinter WHERE id = $value";
+
+        $db->setQuery($query);
+
+        $result = $db->loadResult();
+
+        return $result;
     }
 
+}
+
+
+/* convert E-Mail to ASCII
+ * ========================================================================= */
+
+function convert_email($email) {
+    $pieces = str_split(trim($email));
+    $emailAddress = '';
+
+    foreach ($pieces as $val) {
+        $emailAddress .= '&#'.ord($val).';';
+    }
+
+    return $emailAddress;
 }
