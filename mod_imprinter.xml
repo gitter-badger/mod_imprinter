@@ -7,16 +7,18 @@
     <license>GNU General Public License version 2; see LICENSE.txt</license>
     <authorEmail>info@interim-webmanagement.net</authorEmail>
     <authorUrl>interim-webmanagement.net</authorUrl>
-    <version>0.1.8</version>
+    <version>0.1.81</version>
     <description><![CDATA[
         <style>
             .star{color: red;}
         </style>
         <div style="font-weight:400;">
             <h4>Imprint Module for legal information spiced with microdata and microformat 2 [h-card] (backwards compatible [hcard]).
-            <small style="float:right">ver. 0.1.8</small></h4>
+            <small style="float:right">ver. 0.1.81</small></h4>
             <p><strong>Imprinter</strong> module. Put Imprinter on any page.</p>
+            </hr>
             <p>Need information? Please visit the <a target="_blank" href="//interim-webmanagement.net/projekte/jmodule-imprinter"><strong>Imprinter Info Page</strong></a>. You'll find there all the information you need.</p>
+            </hr>
             <p>Like the Imprinter? Check out the <a target="_blank" href="//interim-webmanagement.net/projekte/clifflex"><strong>CLIFFlex Template</strong></a></p>
         </div>
     ]]></description>
@@ -351,7 +353,7 @@
         <!--
         <server type="collection">http://example.com/list.xml</server>
         -->
-        <server type="extension" name="Imprinter" priority="1">https://github.com/msritzenhoff/mod_imprinter/blob/master/imprinter_update.xml</server>
+        <server type="extension" name="Imprinter" priority="1">https://raw.githubusercontent.com/msritzenhoff/mod_imprinter/master/imprinter_update.xml</server>
     </updateservers>
 
 </extension>
