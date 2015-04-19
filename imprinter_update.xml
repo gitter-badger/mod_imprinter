@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<updates>
+    <update>
+        <name>Imprinter</name>
+        <description>This is mod_imprinter 1.0.1</description>
+        <element>mod_imprinter</element>
+        <type>module</type>
+        <version>0.1.8</version>
+        <downloads>
+            <downloadurl type="full" format="zip">https://github.com/msritzenhoff/mod_imprinter/archive/master.zip</downloadurl>
+        </downloads>
+        <maintainer>Michael S. Ritzenhoff</maintainer>
+        <maintainerurl>http://interim-webmanagement.net</maintainerurl>
+        <targetplatform name="joomla" version="3.4"/>
+        <client>site</client>
+    </update>
+</updates>

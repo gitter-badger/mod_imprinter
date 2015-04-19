@@ -33,10 +33,7 @@ $title = htmlspecialchars($module->title);
 /* set show/hide values
  * ========================================================================= */
 
-// Imprint Tab
-$organizationname = htmlspecialchars($params->get('organizationname'));
-$organizationdescription = htmlspecialchars($params->get('organizationdescription'));
-
+// Owner Tab
 $honorificprefix = htmlspecialchars($params->get('honorificprefix'));
 $honorificsuffix = htmlspecialchars($params->get('honorificsuffix'));
 $hprefix0 = htmlspecialchars($params->get('hprefix0'));
@@ -53,6 +50,10 @@ $authorurl = htmlspecialchars($params->get('authorurl'));
 $nameurl = htmlspecialchars($params->get('nameurl'));
 $nameurltitle = htmlspecialchars($params->get('nameurltitle'));
 $jobtitle = htmlspecialchars($params->get('jobtitle'));
+
+// Imprint Tab
+$organizationname = htmlspecialchars($params->get('organizationname'));
+$organizationdescription = htmlspecialchars($params->get('organizationdescription'));
 
 $startbusiness = htmlspecialchars($params->get('startbusiness'));
 $vatid = htmlspecialchars($params->get('vatid'));
