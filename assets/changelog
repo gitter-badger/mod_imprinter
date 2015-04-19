@@ -25,6 +25,9 @@ defined('_JEXEC') or die;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 ?>
+Version 0.1.7 19.04.2015
+- removed htmlspecialchars from Accessory
+
 Version 0.1.6 19.04.2015
 ^ Codingchanges, Bugfixes and Optimization
 

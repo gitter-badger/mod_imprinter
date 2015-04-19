@@ -94,7 +94,7 @@ $url = htmlspecialchars($params->get('url'));
 $openingHours = htmlspecialchars($params->get('openingHours'));
 
 // Additional Tab
-$accessory = htmlspecialchars($params->get('accessory'));
+$accessory = $params->get('accessory');
 
 // Extras Tab
 $microformat2 = htmlspecialchars($params->get('microformat2'));
