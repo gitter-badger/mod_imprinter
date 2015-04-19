@@ -25,6 +25,13 @@ defined('_JEXEC') or die;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 ?>
+Version 0.1.81 19.04.2015
+! 1. UpdateTest imprinter_update.xml from:
+    _https://raw.githubusercontent.com/msritzenhoff/mod_imprinter/master/imprinter_update.xml
+
+Version 0.1.8 19.04.2015
+- Added imprinter_update.xml
+
 Version 0.1.7 19.04.2015
 - removed htmlspecialchars from Accessory
 
