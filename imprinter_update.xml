@@ -2,10 +2,10 @@
 <updates>
     <update>
         <name>Imprinter</name>
-        <description>This is mod_imprinter 0.1.82</description>
+        <description>This is mod_imprinter 0.1.83</description>
         <element>mod_imprinter</element>
         <type>module</type>
-        <version>0.1.82</version>
+        <version>0.1.83</version>
         <downloads>
             <downloadurl type="full" format="zip">https://github.com/msritzenhoff/mod_imprinter/archive/master.zip</downloadurl>
         </downloads>
