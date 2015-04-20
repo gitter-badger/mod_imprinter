@@ -21,18 +21,18 @@ class modImprinterHelper {
     public static function getImprinter($params) {
         // https://docs.joomla.org/Securing_Joomla_extensions
 
-        $db = JFactory::getDbo();
-        $string = $db->escape( $string );
+        $database = JFactory::getDbo();
+        $string = $database->escape( $string );
 
         $value = $_GET['value'];
         $value = intval($value);
 
-        $query = $db->getQuery(true);
+        $query = $database->getQuery(true);
         $query = "SELECT * FROM #__modules mod_imprinter WHERE id = $value";
 
-        $db->setQuery($query);
+        $database->setQuery($query);
 
-        $result = $db->loadResult();
+        $result = $database->loadResult();
 
         return $result;
     }

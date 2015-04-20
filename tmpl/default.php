@@ -58,14 +58,14 @@ endif;
         <?php
         /*
          * $organizationname
-         * $organizationdescription
+         * $organizationdesc
          */
         if($organizationname) :
             ?>
             <span class="p-org org">
                 <?php
                 $organizationname ? print '<span class="p-organization-name organization-name" itemprop="legalName">' . $organizationname . '</span>' : print '';
-                $organizationdescription ? print '<span class="p-category category" itemprop="description">' . $organizationdescription . '</span>' : print '';
+                $organizationdesc ? print '<span class="p-category category" itemprop="description">' . $organizationdesc . '</span>' : print '';
                 ?>
             </span>
             <?php
@@ -98,7 +98,7 @@ endif;
                     endif;
                     // start link: p-name u-url
 
-                    $firstname ? print '<span class="p-given-name given-name" itemprop="givenName">' . $firstname .  $ws . '</span>' : print '';
+                    $firstname ? print '<span class="p-given-name given-name" itemprop="givenName">' . $firstname .  $space . '</span>' : print '';
                     $lastname ? print '<span class="p-family-name family-name" itemprop="familyName">' . $lastname . '</span>' : print '';
 
                     // end link: p-name u-url
@@ -119,17 +119,17 @@ endif;
                     endif;
                     // start link: p-name u-url
 
-                    //$honorificprefix ? print '<span class="p-honorific-prefix honorific-prefix" itemprop="honorificPrefix">' . $honorificprefix .  $ws . '</span>' : print '';
+                    //$honorificprefix ? print '<span class="p-honorific-prefix honorific-prefix" itemprop="honorificPrefix">' . $honorificprefix .  $space . '</span>' : print '';
 
-                    $honorificsuffix ? print '<span class="p-honorific-suffix honorific-suffix" itemprop="honorificSuffix">' . $honorificsuffix . $ws . '</span>' : print '';
+                    $honorificsuffix ? print '<span class="p-honorific-suffix honorific-suffix" itemprop="honorificSuffix">' . $honorificsuffix . $space . '</span>' : print '';
 
-                    $firstname ? print '<span class="p-given-name given-name" itemprop="givenName">' . $firstname .  $ws . '</span>' : print '';
+                    $firstname ? print '<span class="p-given-name given-name" itemprop="givenName">' . $firstname .  $space . '</span>' : print '';
 
                     if($secondname) :
                         if($secondnameinitialbtn == 1) :
-                            print '<span class="p-additional-name additional-name" itemprop="additionalName" title="' . $secondname . '">' . $secondnameinitial . $ws . '</span>';
+                            print '<span class="p-additional-name additional-name" itemprop="additionalName" title="' . $secondname . '">' . $secondnameinitial . $space . '</span>';
                         else:
-                            print '<span class="p-additional-name additional-name" itemprop="additionalName">' . $secondname .  $ws . '</span>';
+                            print '<span class="p-additional-name additional-name" itemprop="additionalName">' . $secondname .  $space . '</span>';
                         endif;
                     endif;
 
@@ -177,9 +177,9 @@ endif;
                         ?>
                         <span class="p-post-office" itemprop="PostOffice">
                             <?php
-                            $postoffice ? print '<span>' . $postoffice . $ws . '</span>' : print '';
+                            $postoffice ? print '<span>' . $postoffice . $space . '</span>' : print '';
                             ?>
-                            <span class="p-post-office-box" itemprop="postOfficeBox"><?php print $postofficeboxaddress . $ws; ?></span>
+                            <span class="p-post-office-box" itemprop="postOfficeBox"><?php print $postofficeboxaddress . $space; ?></span>
                             <span class="p-post-office-box-number" itemprop="postOfficeBoxNumber"><?php print $postofficeboxnumber; ?></span>
                         </span>
                         <?php
@@ -193,7 +193,7 @@ endif;
                         ?>
                         <span class="city">
                             <?php
-                            $postalcode ? print '<span class="p-postal-code postal-code" itemprop="postalCode">' . $postalcode . $ws . '</span>' : print '';
+                            $postalcode ? print '<span class="p-postal-code postal-code" itemprop="postalCode">' . $postalcode . $space . '</span>' : print '';
                             $city ? print '<span class="p-locality locality" itemprop="addressLocality">' . $city . '</span>' : print '';
                             ?>
                         </span>
@@ -227,7 +227,7 @@ endif;
             if($geolatitude && $geolongitude) :
                 ?>
                 <span class="h-geo" itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates"<?php ($geohidden == 1) ? print ' ' . $hidden : print ''; ?>>
-                    <span class="type work">GEO:<?php print $ws; ?></span>
+                    <span class="type work">GEO:<?php print $space; ?></span>
                     <?php // backward compatibility ?>
                     <span class="p-latitude" itemprop="latitude"><?php print $geolatitude; ?></span>
                     <span class="p-longitude" itemprop="longitude"><?php print ';' . $geolongitude; ?></span>
@@ -251,7 +251,7 @@ endif;
             if($telephone) :
                 ?>
                 <span class="p-tel cell" itemprop="telephone">
-                    <span class="type work VOICE">Tel:<?php print $ws; ?></span>
+                    <span class="type work VOICE">Tel:<?php print $space; ?></span>
                     <span class="value" property="telephone"><?php print $telephone; ?></span>
                     <?php
                     ($telephonecall == 1) ? print '<a class="u-url" href="tel:' . $telephone . '" title="Anruf t&auml;tigen"><span></span>Anruf</a>' : '';
@@ -266,7 +266,7 @@ endif;
             if($telefax) :
                 ?>
                 <span class="p-fax fax" itemprop="faxNumber">
-                    <span class="type fax work">Fax:<?php print $ws; ?></span>
+                    <span class="type fax work">Fax:<?php print $space; ?></span>
                     <span class="value"><?php print $telefax; ?></span>
                 </span>
                 <?php
@@ -280,7 +280,7 @@ endif;
             if($mobilephone) :
                 ?>
                 <span class="p-tel mobil" itemprop="telephone">
-                    <span class="type work VOICE mobil msg">Mobil:<?php print $ws; ?></span>
+                    <span class="type work VOICE mobil msg">Mobil:<?php print $space; ?></span>
                     <span class="value" property="telephone"><?php print $mobilephone; ?></span>
                     <?php
                     ($mobilephonecall == 1) ? print '<a class="u-url" href="tel:' . $mobilephone . '" title="Anruf t&auml;tigen"><span></span>Anruf</a>' : '';
@@ -299,7 +299,7 @@ endif;
         if($email):
             ?>
             <span class="u-email org pref">
-                <span class="type" title="pref">E-Mail:<?php print $ws; ?></span>
+                <span class="type" title="pref">E-Mail:<?php print $space; ?></span>
                 <span class="value"><a class="email" itemprop="email" href="mailto:<?php print convert_email($email); ?>" title=""><?php print convert_email($email); ?></a></span>
             </span>
             <?php
@@ -312,7 +312,7 @@ endif;
         if($url):
             ?>
             <span class="domain">
-                <span title="online">//www:<?php print $ws; ?></span>
+                <span title="online">//www:<?php print $space; ?></span>
                 <span><a class="p-name u-url org url" itemprop="url" href="<?php print $url; ?>" title=""><?php print $url; ?></a></span>
             </span>
             <?php

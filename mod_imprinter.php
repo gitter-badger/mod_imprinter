@@ -53,7 +53,7 @@ $jobtitle = htmlspecialchars($params->get('jobtitle'));
 
 // Imprint Tab
 $organizationname = htmlspecialchars($params->get('organizationname'));
-$organizationdescription = htmlspecialchars($params->get('organizationdescription'));
+$organizationdesc = htmlspecialchars($params->get('organizationdesc'));
 
 $startbusiness = htmlspecialchars($params->get('startbusiness'));
 $vatid = htmlspecialchars($params->get('vatid'));
@@ -108,8 +108,8 @@ endif;
 
 /* ========================================================================= */
 
-$ws = '&nbsp;';
-//$ws = '&#160;';
+$space = '&nbsp;';
+//$space = '&#160;';
 
 $hidden = 'hidden';
 

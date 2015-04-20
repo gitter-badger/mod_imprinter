@@ -25,6 +25,9 @@ defined('_JEXEC') or die;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 ?>
+Version 0.1.9 20.04.2015
+! Codingchanges and Optimization
+
 Version 0.1.84 19.04.2015
 ! 4. UpdateTest imprinter_update.xml
 
