@@ -18,6 +18,13 @@ defined('_JEXEC') or die;
 
 class modImprinterHelper {
 
+    private $params;
+    private $database;
+    private $string;
+    private $value;
+    private $query;
+    private $result;
+
     public static function getImprinter($params) {
         // https://docs.joomla.org/Securing_Joomla_extensions
 
