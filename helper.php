@@ -24,7 +24,7 @@ class modImprinterHelper {
         $database = JFactory::getDbo();
         $string = $database->escape( $string );
 
-        $value = $_GET['value'];
+        $value = mysql_real_escape_string( $_GET['value'] );
         $value = intval($value);
 
         $query = $database->getQuery(true);
