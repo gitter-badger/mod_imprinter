@@ -24,8 +24,7 @@ class modImprinterHelper {
         $database = JFactory::getDbo();
         $string = $database->escape( $string );
 
-        $value = mysqli_real_escape_string( $_GET['value'] );
-        $value = intval($value);
+        $value = intval($_GET['value']);
 
         $query = $database->getQuery(true);
         $query = "SELECT * FROM #__modules mod_imprinter WHERE id = $value";
