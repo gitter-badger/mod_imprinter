@@ -17,7 +17,6 @@ defined('_JEXEC') or die;
 /*
  * <article <?php $moduleclass_sfx ? print 'class="' . $moduleclass_sfx . '"' : ''; ?>>
  */
-
 if($showtitle == 1) :
     ?>
     <header>

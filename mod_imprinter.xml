@@ -7,14 +7,14 @@
     <license>GNU General Public License version 2; see LICENSE.txt</license>
     <authorEmail>info@interim-webmanagement.net</authorEmail>
     <authorUrl>interim-webmanagement.net</authorUrl>
-    <version>0.1.96</version>
+    <version>0.1.97</version>
     <description><![CDATA[
         <style>
             .star{color: red;}
         </style>
         <div style="font-weight:400;">
             <h4>Imprint Module for legal information spiced with microdata and microformat 2 [h-card] (backwards compatible [hcard]).
-            <small style="float:right">ver. 0.1.96</small></h4>
+            <small style="float:right">ver. 0.1.97</small></h4>
             <p><strong>Imprinter</strong> module. Put Imprinter on any page.</p>
             </hr>
             <p>Need information? Please visit the <a target="_blank" href="//interim-webmanagement.net/projekte/jmodule-imprinter"><strong>Imprinter Info Page</strong></a>. You'll find there all the information you need.</p>
@@ -332,18 +332,18 @@
                     <option value="0" class="off">JNO</option>
                     <option value="1" class="on">JYES</option>
                 </field>
-                <field type="spacer" name="geoinfo" class="text"
+                <field name="imprintercsscode" type="spacer" class="text"
                        label="MOD_IMPRINTER_IMPRINTERCSSCODE_LABEL" description="MOD_IMPRINTER_IMPRINTERCSSCODE_DESC" />
 
                 <field type="spacer" hr="true" />
 
-                <field type="spacer" name="developersdtest" class="text"
+                <field name="developersdtest" type="spacer" class="text"
                        label="MOD_IMPRINTER_DEVELOPERSDTEST_LABEL" description="MOD_IMPRINTER_DEVELOPERSDTEST_DESC" />
 
-                <field type="spacer" name="hcardconformance" class="text"
+                <field name="hcardconformance" type="spacer" class="text"
                        label="MOD_IMPRINTER_HCARDCONFORMANCE_LABEL" description="MOD_IMPRINTER_HCARDCONFORMANCE_DESC" />
 
-                <field type="spacer" name="microformatparserpin13" class="text"
+                <field name="microformatparserpin13" type="spacer" class="text"
                        label="MOD_IMPRINTER_MICROFORMATPARSERPIN13_LABEL" description="MOD_IMPRINTER_MICROFORMATPARSERPIN13_DESC" />
 
                 <field name="spacer_name_7" type="spacer" label="MOD_IMPRINTER_SPACER_7" />

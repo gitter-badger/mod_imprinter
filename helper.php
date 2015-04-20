@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Helper class for mod_imprinter
  *
@@ -10,7 +11,6 @@
  * @license         GNU/GPL, see /assets/license.txt
  * @copyright       Copyright (C) 2015. Michael S. RitZenhoff by Interim Webmanagement. All rights reserved.
  */
-
 // no direct access
 defined('_JEXEC') or die;
 
@@ -29,7 +29,7 @@ class modImprinterHelper {
         // https://docs.joomla.org/Securing_Joomla_extensions
 
         $database = JFactory::getDbo();
-        $string = $database->escape( $string );
+        $string = $database->escape($string);
 
         $value = intval($_GET['value']);
 
@@ -45,7 +45,6 @@ class modImprinterHelper {
 
 }
 
-
 /* convert E-Mail to ASCII
  * ========================================================================= */
 
@@ -54,7 +53,7 @@ function convert_email($email) {
     $emailAddress = '';
 
     foreach ($pieces as $val) {
-        $emailAddress .= '&#'.ord($val).';';
+        $emailAddress .= '&#' . ord($val) . ';';
     }
 
     return $emailAddress;

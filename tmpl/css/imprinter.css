@@ -56,8 +56,12 @@
 [class='microformat2'] a{
     color: #679A06; color: rgb(103,154,6);
 }
+/*
 [class='microformat2'] a:after{
-    content: url('../modules/mod_imprinter/tmpl/img/mf-logo.svg');
-    display: block; width: 16px; height: 16px; margin: 0 0 0 6px;
+    content: '';
+    display: inline-block;
+    background: url('../modules/mod_imprinter/tmpl/img/mf-logo.svg') no-repeat top right;
+    width: 16px; height: 16px; margin: 0 0 0 6px;
 }
+*/
 /* vCard / h-card end */

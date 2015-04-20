@@ -15,7 +15,9 @@
 defined('_JEXEC') or die;
 
 $document = JFactory::getDocument();
-$modTemplate = JPATH_SITE . "/modules/{$module->module}/tmpl/";
+
+$base = JUri::base(true);
+$modTemplate = $base . "modules/{$module->module}/tmpl/";
 
 //include helpers of the component and module
 require_once dirname(__FILE__) . '/helper.php';
@@ -28,6 +30,19 @@ $imprinter = modImprinterHelper::getImprinter($params);
 
 $showtitle = htmlspecialchars($module->showtitle);
 $title = htmlspecialchars($module->title);
+
+
+/* EXTRA
+ * ========================================================================= */
+
+// Extras Tab
+$microformat2 = htmlspecialchars($params->get('microformat2'));
+
+// add CSS
+$imprintercss = htmlspecialchars($params->get('imprintercss'));
+if($imprintercss == 1) :
+    JFactory::getDocument()->addStyleSheet($modTemplate . 'css/imprinter.min.css');
+endif;
 
 
 /* set show/hide values
@@ -97,14 +112,6 @@ $openingHours = htmlspecialchars($params->get('openingHours'));
 // Additional Tab
 $accessory = $params->get('accessory');
 
-// Extras Tab
-$microformat2 = htmlspecialchars($params->get('microformat2'));
-
-$imprintercss = htmlspecialchars($params->get('imprintercss'));
-if($imprintercss == 1) :
-    //add css
-    $document->addStyleSheet($modTemplate . 'css/imprinter.min.css');
-endif;
 
 /* ========================================================================= */
 
