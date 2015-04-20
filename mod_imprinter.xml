@@ -7,14 +7,14 @@
     <license>GNU General Public License version 2; see LICENSE.txt</license>
     <authorEmail>info@interim-webmanagement.net</authorEmail>
     <authorUrl>interim-webmanagement.net</authorUrl>
-    <version>0.1.91</version>
+    <version>0.1.92</version>
     <description><![CDATA[
         <style>
             .star{color: red;}
         </style>
         <div style="font-weight:400;">
             <h4>Imprint Module for legal information spiced with microdata and microformat 2 [h-card] (backwards compatible [hcard]).
-            <small style="float:right">ver. 0.1.91</small></h4>
+            <small style="float:right">ver. 0.1.92</small></h4>
             <p><strong>Imprinter</strong> module. Put Imprinter on any page.</p>
             </hr>
             <p>Need information? Please visit the <a target="_blank" href="//interim-webmanagement.net/projekte/jmodule-imprinter"><strong>Imprinter Info Page</strong></a>. You'll find there all the information you need.</p>
@@ -173,7 +173,7 @@
                        label="MOD_IMPRINTER_FIELD_ORGANIZATIONNAME_LABEL" description="MOD_IMPRINTER_FIELD_ORGANIZATIONNAME_DESC"
                        filter="string" />
 
-                <field name="organizationdescription" type="text" default=""
+                <field name="organizationdesc" type="text" default=""
                        label="MOD_IMPRINTER_FIELD_ORGANIZATIONDESC_LABEL" description="MOD_IMPRINTER_FIELD_ORGANIZATIONDESC_DESC"
                        filter="string" />
 
