@@ -25,6 +25,9 @@ defined('_JEXEC') or die;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 ?>
+Version 0.1.94 20.04.2015
+^ mysql_real_escape_string to mysqli_real_escape_string
+
 Version 0.1.93 20.04.2015
 * $value = mysql_real_escape_string( $_GET['value'] );
 
