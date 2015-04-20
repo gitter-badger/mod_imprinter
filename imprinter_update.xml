@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <updates>
     <update>
-        <name>Imprinter</name>
+        <name>Imprinter Update</name>
+        <description>This is mod_imprinter 0.1.91</description>
+        <element>mod_imprinter</element>
+        <type>module</type>
+        <version>0.1.91</version>
+        <downloads>
+            <downloadurl type="full" format="zip">https://github.com/msritzenhoff/mod_imprinter/archive/master.zip</downloadurl>
+        </downloads>
+        <tags>
+            <tag>stable</tag>
+        </tags>
+        <maintainer>Michael S. Ritzenhoff</maintainer>
+        <maintainerurl>http://interim-webmanagement.net</maintainerurl>
+        <targetplatform name="joomla" version="3.4"/>
+        <client>site</client>
+    </update>
+
+    <update>
+        <name>Imprinter Update</name>
         <description>This is mod_imprinter 0.1.9</description>
         <element>mod_imprinter</element>
         <type>module</type>
@@ -9,6 +27,9 @@
         <downloads>
             <downloadurl type="full" format="zip">https://github.com/msritzenhoff/mod_imprinter/archive/master.zip</downloadurl>
         </downloads>
+        <tags>
+            <tag>stable</tag>
+        </tags>
         <maintainer>Michael S. Ritzenhoff</maintainer>
         <maintainerurl>http://interim-webmanagement.net</maintainerurl>
         <targetplatform name="joomla" version="3.4"/>
@@ -16,7 +37,7 @@
     </update>
 
     <update>
-        <name>Imprinter</name>
+        <name>Imprinter Update</name>
         <description>This is mod_imprinter 0.1.84</description>
         <element>mod_imprinter</element>
         <type>module</type>
@@ -24,6 +45,9 @@
         <downloads>
             <downloadurl type="full" format="zip">https://github.com/msritzenhoff/mod_imprinter/archive/master.zip</downloadurl>
         </downloads>
+        <tags>
+            <tag>beta</tag>
+        </tags>
         <maintainer>Michael S. Ritzenhoff</maintainer>
         <maintainerurl>http://interim-webmanagement.net</maintainerurl>
         <targetplatform name="joomla" version="3.4"/>
@@ -31,7 +55,7 @@
     </update>
 
     <update>
-        <name>Imprinter</name>
+        <name>Imprinter Update</name>
         <description>This is mod_imprinter 0.1.83</description>
         <element>mod_imprinter</element>
         <type>module</type>
@@ -39,6 +63,9 @@
         <downloads>
             <downloadurl type="full" format="zip">https://github.com/msritzenhoff/mod_imprinter/archive/master.zip</downloadurl>
         </downloads>
+        <tags>
+            <tag>beta</tag>
+        </tags>
         <maintainer>Michael S. Ritzenhoff</maintainer>
         <maintainerurl>http://interim-webmanagement.net</maintainerurl>
         <targetplatform name="joomla" version="3.4"/>
@@ -46,7 +73,7 @@
     </update>
 
     <update>
-        <name>Imprinter</name>
+        <name>Imprinter Update</name>
         <description>This is mod_imprinter 0.1.82</description>
         <element>mod_imprinter</element>
         <type>module</type>
@@ -54,6 +81,9 @@
         <downloads>
             <downloadurl type="full" format="zip">https://github.com/msritzenhoff/mod_imprinter/archive/master.zip</downloadurl>
         </downloads>
+        <tags>
+            <tag>beta</tag>
+        </tags>
         <maintainer>Michael S. Ritzenhoff</maintainer>
         <maintainerurl>http://interim-webmanagement.net</maintainerurl>
         <targetplatform name="joomla" version="3.4"/>
@@ -61,7 +91,7 @@
     </update>
 
     <update>
-        <name>Imprinter</name>
+        <name>Imprinter Update</name>
         <description>This is mod_imprinter 0.1.81</description>
         <element>mod_imprinter</element>
         <type>module</type>
@@ -69,6 +99,27 @@
         <downloads>
             <downloadurl type="full" format="zip">https://github.com/msritzenhoff/mod_imprinter/archive/master.zip</downloadurl>
         </downloads>
+        <tags>
+            <tag>beta</tag>
+        </tags>
+        <maintainer>Michael S. Ritzenhoff</maintainer>
+        <maintainerurl>http://interim-webmanagement.net</maintainerurl>
+        <targetplatform name="joomla" version="3.4"/>
+        <client>site</client>
+    </update>
+
+    <update>
+        <name>Imprinter Update</name>
+        <description>This is mod_imprinter 0.1.8</description>
+        <element>mod_imprinter</element>
+        <type>module</type>
+        <version>0.1.8</version>
+        <downloads>
+            <downloadurl type="full" format="zip">https://github.com/msritzenhoff/mod_imprinter/archive/master.zip</downloadurl>
+        </downloads>
+        <tags>
+            <tag>stable</tag>
+        </tags>
         <maintainer>Michael S. Ritzenhoff</maintainer>
         <maintainerurl>http://interim-webmanagement.net</maintainerurl>
         <targetplatform name="joomla" version="3.4"/>

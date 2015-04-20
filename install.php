@@ -12,6 +12,8 @@
  **/
 
 /*
+ * https://docs.joomla.org/Deploying_an_Update_Server
+ * https://docs.joomla.org/J3.x:Creating_a_simple_module/Using_the_Database
  * https://docs.joomla.org/J3.x:Creating_a_simple_module/Adding_an_install-uninstall-update_script_file
  */
 
