@@ -16,4 +16,8 @@ Put Imprinter on any page in position, article or sidebar.
 [Wiki: mod_imprinter](https://github.com/msritzenhoff/mod_imprinter/wiki/Update)
 
 -
+### Browser support
+[Wiki: mod_imprinter](https://github.com/msritzenhoff/mod_imprinter/wiki/Browser-support)
+
+-
 > Installed & Test with Joomla! 3.4.1
