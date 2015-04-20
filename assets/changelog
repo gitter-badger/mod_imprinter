@@ -25,6 +25,9 @@ defined('_JEXEC') or die;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 ?>
+Version 0.1.98 20.04.2015
+$ Update css-copy
+
 Version 0.1.97 20.04.2015
 ! Codingchanges and Optimization
 
