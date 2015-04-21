@@ -7,17 +7,17 @@
     <license>GNU General Public License version 2; see LICENSE.txt</license>
     <authorEmail>info@interim-webmanagement.net</authorEmail>
     <authorUrl>interim-webmanagement.net</authorUrl>
-    <version>0.1.98</version>
+    <version>0.2.0</version>
     <description><![CDATA[
         <style>
             .star{color: red;}
         </style>
         <div style="font-weight:400;">
-            <h4>Imprint Module for legal information spiced with microdata and microformat 2 [h-card] (backwards compatible [hcard]).
-            <small style="float:right">ver. 0.1.98</small></h4>
-            <p><strong>Imprinter</strong> module. Put Imprinter on any page.</p>
+            <h4>Imprint Module for Joomla! 3.x</h4>
+            <h5>Imprint for legal websiteinformation spiced with extensive substantial 'Structured data markup'.</h5>
+            <p>Load the <strong>Imprinter</strong> module on any page to a position, an article or in the sidebar.</p>
             </hr>
-            <p>Need information? Please visit the <a target="_blank" href="//interim-webmanagement.net/projekte/jmodule-imprinter"><strong>Imprinter Info Page</strong></a>. You'll find there all the information you need.</p>
+            <p>Need information? <a target="_blank" href="//interim-webmanagement.net/projekte/jmodule-imprinter"><strong>Please visit the JModule Imprinter (Info Page)</strong></a>.</p>
             </hr>
             <!--
             <p>Like the Imprinter? Check out the <a target="_blank" href="//interim-webmanagement.net/projekte/clifflex"><strong>CLIFFlex Template</strong></a></p>
@@ -44,20 +44,23 @@
         <fields name="params">
             <!-- Module Tab -->
             <fieldset name="basic">
-                <field name="spacer_loadmodule" type="spacer"
-                       label="MOD_IMPRINTER_FIELD_BASICINFORMATION_LABEL" />
+                <field type="note" name="spacer_moduleinfo"
+                       label="MOD_IMPRINTER_FIELD_MODULEINFO_LABEL" />
+
+                <field type="spacer" name="spacer_modulehowto"
+                       label="MOD_IMPRINTER_FIELD_MODULEHOWTO_LABEL" />
 
                 <!--
                 <field type="spacer" hr="true" />
 
-                <field name="catid" type="category" extension="com_example" required="true" multiple="true" size="10" default="1"
+                <field type="category" name="catid" extension="com_example" required="true" multiple="true" size="10" default="1"
                        label="JGLOBAL_CHOOSE_CATEGORY_LABEL" description="JGLOBAL_CHOOSE_CATEGORY_DESC">
                     <option value="1">JALL</option>
                 </field>
 
                 <field type="spacer" hr="true" />
 
-                <field name="orderby" type="list" default="a.created"
+                <field type="list" name="orderby" default="a.created"
                        label="JGLOBAL_ARTICLE_ORDER_LABEL" description="JGLOBAL_ARTICLE_ORDER_DESC">
                     <option value="a.created">JGLOBAL_CREATED_DATE</option>
                     <option value="a.publish_up">MOD_IMPRINTER_PUBLISH_UP</option>
@@ -67,25 +70,25 @@
                     <option value="a.ordering">JGLOBAL_ORDERING</option>
                 </field>
 
-                <field name="order_dir" type="list" default="DESC"
+                <field type="list" name="order_dir" default="DESC"
                        label="JFIELD_ORDERING_LABEL" description="JFIELD_ORDERING_DESC">
                     <option value="ASC">MOD_IMPRINTER_ORDER_DIR_ASC</option>
                     <option value="DESC">MOD_IMPRINTER_ORDER_DIR_DESC</option>
                 </field>
                 -->
 
-                <field name="spacer_name_1" type="spacer" label="MOD_IMPRINTER_SPACER_1" />
+                <field type="spacer" name="spacer_name_1" label="MOD_IMPRINTER_SPACER_1" />
             </fieldset>
 
             <!-- Advanced Tab -->
             <fieldset name="advanced">
-                <field name="layout" type="modulelayout"
+                <field type="modulelayout" name="imprinterlayout"
                        label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
 
-                <field name="moduleclass_sfx" type="text" default=" imprinter"
+                <field type="text" name="moduleclass_sfx" default=" imprinter"
                        label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
 
-                <field name="cache" type="list" default="1"
+                <field type="list" name="cache" default="1"
                        label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
                     <option value="1">JGLOBAL_USE_GLOBAL</option>
                     <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
@@ -94,179 +97,239 @@
                 <field name="cache" type="hidden" value="0" />
                 -->
 
-                <field name="cache_time" type="text" default="900"
+                <field type="text" name="cache_time" default="900"
                        label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
 
                 <field name="cachemode" type="hidden" default="static">
                     <option value="static"></option>
                 </field>
 
-                <field name="spacer_name_1" type="spacer" label="MOD_IMPRINTER_SPACER_1" />
+                <field type="spacer" name="spacer_name_1" label="MOD_IMPRINTER_SPACER_1" />
             </fieldset>
 
             <!-- Owner Tab -->
             <fieldset name="owner">
 
-                <field name="gender" type="list" default="1"
+                <field type="list" name="gender" default=""
                        label="MOD_IMPRINTER_FIELD_GENDER_LABEL" description="MOD_IMPRINTER_FIELD_GENDER_DESC">
-                    <option value="MOD_IMPRINTER_FIELD_GENDERMALE_VALUE">MOD_IMPRINTER_FIELD_GENDERMALE</option>
-                    <option value="MOD_IMPRINTER_FIELD_GENDERFEMALE_VALUE">MOD_IMPRINTER_FIELD_GENDERFEMALE</option>
+                    <option value="1">MOD_IMPRINTER_FIELD_MALE</option>
+                    <option value="2">MOD_IMPRINTER_FIELD_FEMALE</option>
+                    <option value="3">MOD_IMPRINTER_FIELD_AGENDER</option>
+                    <option value="4">MOD_IMPRINTER_FIELD_ANDROGYNE</option>
+                    <option value="5">MOD_IMPRINTER_FIELD_ANDROGYNOUS</option>
+                    <option value="6">MOD_IMPRINTER_FIELD_BIGENDER</option>
+                    <option value="7">MOD_IMPRINTER_FIELD_CIS</option>
+                    <option value="8">MOD_IMPRINTER_FIELD_CISGENDER</option>
+                    <option value="9">MOD_IMPRINTER_FIELD_CISFEMALE</option>
+                    <option value="10">MOD_IMPRINTER_FIELD_CISMALE</option>
+                    <option value="11">MOD_IMPRINTER_FIELD_CISMAN</option>
+                    <option value="12">MOD_IMPRINTER_FIELD_CISWOMAN</option>
+                    <option value="13">MOD_IMPRINTER_FIELD_CISGENDERFEMALE</option>
+                    <option value="14">MOD_IMPRINTER_FIELD_CISGENDERMALE</option>
+                    <option value="15">MOD_IMPRINTER_FIELD_CISGENDERMAN</option>
+                    <option value="16">MOD_IMPRINTER_FIELD_CISGENDERWOMAN</option>
+                    <option value="17">MOD_IMPRINTER_FIELD_FEMALETOMALE</option>
+                    <option value="18">MOD_IMPRINTER_FIELD_FTM</option>
+                    <!--
+                    Gender Fluid
+                    Gender Nonconforming
+                    Gender Questioning
+                    Gender Variant
+                    Genderqueer
+                    Intersex
+                    Male to Female
+                    MTF
+                    Neither
+                    Neutrois
+                    Non-binary
+                    Other
+                    Pangender
+                    Trans
+                    Trans*
+                    Trans Female
+                    Trans* Female
+                    Trans Male
+                    Trans* Male
+                    Trans Man
+                    Trans* Man
+                    Trans Person
+                    Trans* Person
+                    Trans Woman
+                    Trans* Woman
+                    Transfeminine
+                    Transgender
+                    Transgender Female
+                    Transgender Male
+                    Transgender Man
+                    Transgender Person
+                    Transgender Woman
+                    Transmasculine
+                    Transsexual
+                    Transsexual Female
+                    Transsexual Male
+                    Transsexual Man
+                    Transsexual Person
+                    Transsexual Woman
+                    Two-Spirit
+                    -->
                 </field>
 
-                <field name="honorificprefix" type="list" default="1"
+                <field type="list" name="honorificprefix" default="1"
                        label="MOD_IMPRINTER_FIELD_HONORIFICPREFIX_LABEL" description="MOD_IMPRINTER_FIELD_HONORIFICPREFIX_DESC">
                     <option value="MOD_IMPRINTER_FIELD_HPREFIXMR_VALUE">MOD_IMPRINTER_FIELD_HPREFIXMR</option>
                     <option value="MOD_IMPRINTER_FIELD_HPREFIXMRS_VALUE">MOD_IMPRINTER_FIELD_HPREFIXMRS</option>
                 </field>
 
-                <field name="honorificsuffix" type="text" default=""
+                <field type="text" name="honorificsuffix" default=""
                        label="MOD_IMPRINTER_FIELD_HONORIFICSUFFIX_LABEL" description="MOD_IMPRINTER_FIELD_HONORIFICSUFFIX_DESC"
                        filter="string" />
 
                 <field type="spacer" hr="true" />
 
-                <field name="firstname" type="text" class="required" required="true" default=""
+                <field type="text" name="firstname" class="required" required="true" default=""
                        label="MOD_IMPRINTER_FIELD_FIRSTNAME_LABEL" description="MOD_IMPRINTER_FIELD_FIRSTNAME_DESC"
                        filter="string" />
 
-                <field name="secondname" type="text" default=""
+                <field type="text" name="secondname" default=""
                        label="MOD_IMPRINTER_FIELD_SECONDNAME_LABEL" description="MOD_IMPRINTER_FIELD_SECONDNAME_DESC"
                        filter="string" />
-                <field name="secondnameinitialbtn" type="radio" class="btn-group btn-group-yesno" default="0"
+                <field type="radio" name="secondnameinitialbtn" class="btn-group btn-group-yesno" default="0"
                        label="MOD_IMPRINTER_FIELD_SECONDNAMEINITIALBTN_LABEL" description="MOD_IMPRINTER_FIELD_SECONDNAMEINITIALBTN_DESC">
                     <option value="0" class="off">JNO</option>
                     <option value="1" class="on">JYES</option>
                 </field>
-                <field name="secondnameinitial" type="text" default=""
+                <field type="text" name="secondnameinitial" default=""
                        label="MOD_IMPRINTER_FIELD_SECONDNAMEINITIAL_LABEL" description="MOD_IMPRINTER_FIELD_SECONDNAMEINITIAL_DESC"
                        filter="string" />
 
-                <field name="lastname" type="text" class="required" required="true" default=""
+                <field type="text" name="lastname" class="required" required="true" default=""
                        label="MOD_IMPRINTER_FIELD_LASTNAME_LABEL" description="MOD_IMPRINTER_FIELD_LASTNAME_DESC"
                        filter="string" />
 
-                <field name="jobtitle" type="text" default=""
+                <field type="text" name="jobtitle" default=""
                        label="MOD_IMPRINTER_FIELD_JOBTITLE_LABEL" description="MOD_IMPRINTER_FIELD_JOBTITLE_DESC"
                        filter="string" />
 
                 <field type="spacer" hr="true" />
 
-                <field name="authorurl" type="text" default="https://plus.google.com/"
+                <field type="text" name="authorurl" default="https://plus.google.com/"
                        label="MOD_IMPRINTER_FIELD_AUTHORURL_LABEL" description="MOD_IMPRINTER_FIELD_AUTHORURL_DESC"
                        filter="string" />
 
                 <field type="spacer" hr="true" />
 
-                <field name="nameurl" type="text" default="http://"
+                <field type="text" name="nameurl" default="http://"
                        label="MOD_IMPRINTER_FIELD_NAMEURL_LABEL" description="MOD_IMPRINTER_FIELD_NAMEURL_DESC"
                        filter="string" />
-                <field name="nameurltitle" type="text" default=""
+                <field type="text" name="nameurltitle" default=""
                        label="MOD_IMPRINTER_FIELD_NAMEURLTITLE_LABEL" description="MOD_IMPRINTER_FIELD_NAMEURLTITLE_DESC"
                        filter="string" />
 
-                <field name="spacer_name_3" type="spacer" label="MOD_IMPRINTER_SPACER_3" />
+                <field type="spacer" name="spacer_name_2" label="MOD_IMPRINTER_SPACER_2" />
             </fieldset>
 
             <!-- Imprint Tab -->
             <fieldset name="organization">
-                <field name="organizationname" type="text" default=""
+                <field type="text" name="organizationname" default=""
                        label="MOD_IMPRINTER_FIELD_ORGANIZATIONNAME_LABEL" description="MOD_IMPRINTER_FIELD_ORGANIZATIONNAME_DESC"
                        filter="string" />
 
-                <field name="organizationdesc" type="text" default=""
+                <field type="text" name="organizationdesc" default=""
                        label="MOD_IMPRINTER_FIELD_ORGANIZATIONDESC_LABEL" description="MOD_IMPRINTER_FIELD_ORGANIZATIONDESC_DESC"
                        filter="string" />
 
                 <field type="spacer" hr="true" />
 
-                <field name="startbusiness" type="text" default=""
+                <field type="text" name="startbusiness" default=""
                        label="MOD_IMPRINTER_FIELD_BUSINESSSTART_LABEL" description="MOD_IMPRINTER_FIELD_BUSINESSSTART_DESC"
                        filter="string" />
 
-                <field name="vatid" type="text" default=""
+                <field type="calendar" name="start" default="2015" label="Select a year" description="" format="%Y" />
+
+                <field type="text" name="vatid" default=""
                        label="MOD_IMPRINTER_FIELD_VATID_LABEL" description="MOD_IMPRINTER_FIELD_VATID_DESC"
                        filter="string" />
 
-                <field name="spacer_name_2" type="spacer" label="MOD_IMPRINTER_SPACER_2" />
+                <field type="spacer" name="spacer_name_3" label="MOD_IMPRINTER_SPACER_3" />
             </fieldset>
 
             <!-- Location Tab -->
             <fieldset name="location">
 
-                <field name="street" type="text" class="required" required="true" default=""
+                <field type="text" name="street" class="required" required="true" default=""
                        label="MOD_IMPRINTER_FIELD_STREET_LABEL" description="MOD_IMPRINTER_FIELD_STREET_DESC"
                        filter="string" />
 
-                <field name="extendedaddress" type="text" default=""
+                <field type="text" name="extendedaddress" default=""
                        label="MOD_IMPRINTER_FIELD_EXTENDEDADDRESS_LABEL" description="MOD_IMPRINTER_FIELD_EXTENDEDADDRESS_DESC"
                        filter="string" />
 
-                <field name="postalcode" type="text" class="required" required="true" default=""
+                <field type="text" name="postalcode" class="required" required="true" default=""
                        label="MOD_IMPRINTER_FIELD_POSTALCODE_LABEL" description="MOD_IMPRINTER_FIELD_POSTALCODE_DESC"
                        filter="string" />
 
-                <field name="city" type="text" class="required" required="true" default=""
+                <field type="text" name="city" class="required" required="true" default=""
                        label="MOD_IMPRINTER_FIELD_CITY_LABEL" description="MOD_IMPRINTER_FIELD_CITY_DESC"
                        filter="string" />
 
-                <field name="region" type="text" default=""
+                <field type="text" name="region" default=""
                        label="MOD_IMPRINTER_FIELD_REGION_LABEL" description="MOD_IMPRINTER_FIELD_REGION_DESC"
                        filter="string" />
 
-                <field name="country" type="text" class="required" required="true" default=""
+                <field type="text" name="country" class="required" required="true" default=""
                        label="MOD_IMPRINTER_FIELD_COUNTRY_LABEL" description="MOD_IMPRINTER_FIELD_COUNTRY_DESC"
                        filter="string" />
 
                 <field type="spacer" hr="true" />
 
-                <field type="spacer" name="geoinfo" class="text"
+                <field type="note" name="geoinfo" class="text"
                        label="MOD_IMPRINTER_GEOINFO_LABEL" description="MOD_IMPRINTER_GEOINFO_DESC" />
 
-                <field name="georegion" type="text" default=""
+                <field type="text" name="georegion" default=""
                        label="MOD_IMPRINTER_FIELD_GEOREGION_LABEL" description="MOD_IMPRINTER_FIELD_GEOREGION_DESC"
                        filter="string" />
 
-                <field name="geoplacename" type="text" default=""
+                <field type="text" name="geoplacename" default=""
                        label="MOD_IMPRINTER_FIELD_GEOPLACENAME_LABEL" description="MOD_IMPRINTER_FIELD_GEOPLACENAME_DESC"
                        filter="string" />
 
-                <field name="geolatitude" type="text" default=""
+                <field type="text" name="geolatitude" default=""
                        label="MOD_IMPRINTER_FIELD_GEOLATITUDE_LABEL" description="MOD_IMPRINTER_FIELD_GEOLATITUDE_DESC"
                        filter="string" />
 
-                <field name="geolongitude" type="text" default=""
+                <field type="text" name="geolongitude" default=""
                        label="MOD_IMPRINTER_FIELD_GEOLONGITUDE_LABEL" description="MOD_IMPRINTER_FIELD_GEOLONGITUDE_DESC"
                        filter="string" />
 
-                <field name="geoaltitude" type="text" default=""
+                <field type="text" name="geoaltitude" default=""
                        label="MOD_IMPRINTER_FIELD_GEOALTITUDE_LABEL" description="MOD_IMPRINTER_FIELD_GEOALTITUDE_DESC"
                        filter="string" />
 
-                <field name="geohidden" type="radio" class="btn-group btn-group-yesno" default="1"
+                <field type="radio" name="geohidden" class="btn-group btn-group-yesno" default="1"
                        label="MOD_IMPRINTER_FIELD_GEOHIDDEN_LABEL" description="MOD_IMPRINTER_FIELD_GEOHIDDEN_DESC">
                     <option value="0" class="off">JNO</option>
                     <option value="1" class="on">JYES</option>
                 </field>
 
-                <field name="spacer_name_4" type="spacer" label="MOD_IMPRINTER_SPACER_4" />
+                <field type="spacer" name="spacer_name_4" label="MOD_IMPRINTER_SPACER_4" />
             </fieldset>
 
             <!-- Contact Tab -->
             <fieldset name="contact">
 
-                <field name="postofficeboxaddress" type="text" default=""
+                <field type="text" name="postofficeboxaddress" default=""
                        label="MOD_IMPRINTER_FIELD_POSTOFFICEBOXADDRESS_LABEL" description="MOD_IMPRINTER_FIELD_POSTOFFICEBOXADDRESS_DESC"
                        filter="string" />
-                <field name="postofficeboxnumber" type="text" default=""
+                <field type="text" name="postofficeboxnumber" default=""
                        label="MOD_IMPRINTER_FIELD_POSTOFFICEBOXNUMBER_LABEL" description="MOD_IMPRINTER_FIELD_POSTOFFICEBOXNUMBER_DESC"
                        filter="string" />
 
                 <field type="spacer" hr="true" />
 
-                <field name="telephone" type="text" validate="tel" default=""
+                <field type="text" name="telephone" validate="tel" default=""
                        label="MOD_IMPRINTER_FIELD_TELEPHONE_LABEL" description="MOD_IMPRINTER_FIELD_TELEPHONE_DESC"
                        filter="string" />
-                <field name="telephonecall" type="radio" class="btn-group btn-group-yesno" default="0"
+                <field type="radio" name="telephonecall" class="btn-group btn-group-yesno" default="0"
                        label="MOD_IMPRINTER_FIELD_TELEPHONECALL_LABEL" description="MOD_IMPRINTER_FIELD_TELEPHONECALL_DESC">
                     <option value="0" class="off">JNO</option>
                     <option value="1" class="on">JYES</option>
@@ -274,21 +337,21 @@
 
                 <field type="spacer" hr="true" />
 
-                <field name="telefax" type="text" validate="tel" default=""
+                <field type="text" name="telefax" validate="tel" default=""
                        label="MOD_IMPRINTER_FIELD_TELEFAX_LABEL" description="MOD_IMPRINTER_FIELD_TELEFAX_DESC"
                        filter="string" />
 
                 <field type="spacer" hr="true" />
 
-                <field name="mobilephone" type="text" validate="tel" default=""
+                <field type="text" name="mobilephone" validate="tel" default=""
                        label="MOD_IMPRINTER_FIELD_MOBILEPHONE_LABEL" description="MOD_IMPRINTER_FIELD_MOBILEPHONE_DESC"
                        filter="string" />
-                <field name="mobilephonecall" type="radio" class="btn-group btn-group-yesno" default="0"
+                <field type="radio" name="mobilephonecall" class="btn-group btn-group-yesno" default="0"
                        label="MOD_IMPRINTER_FIELD_MOBILEPHONECALL_LABEL" description="MOD_IMPRINTER_FIELD_MOBILEPHONECALL_DESC">
                     <option value="0" class="off">JNO</option>
                     <option value="1" class="on">JYES</option>
                 </field>
-                <field name="mobilephonesms" type="radio" class="btn-group btn-group-yesno" default="0"
+                <field type="radio" name="mobilephonesms" class="btn-group btn-group-yesno" default="0"
                        label="MOD_IMPRINTER_FIELD_MOBILEPHONESMS_LABEL" description="MOD_IMPRINTER_FIELD_MOBILEPHONESMS_DESC">
                     <option value="0" class="off">JNO</option>
                     <option value="1" class="on">JYES</option>
@@ -296,30 +359,30 @@
 
                 <field type="spacer" hr="true" />
 
-                <field name="email" type="text" class="required validate-email" required="true" validate="email" scheme="mailto" default=""
+                <field type="email" name="email" class="required validate-email" required="true" validate="email" scheme="mailto" default=""
                        label="MOD_IMPRINTER_FIELD_EMAIL_LABEL" description="MOD_IMPRINTER_FIELD_EMAIL_DESC"
                        filter="string" />
 
                 <field type="spacer" hr="true" />
 
-                <field name="url" type="text" class="validate-url" validate="url" scheme="http,https" default="http://"
+                <field type="text" name="url" class="validate-url" validate="url" scheme="http,https" default="http://"
                        label="MOD_IMPRINTER_FIELD_URL_LABEL" description="MOD_IMPRINTER_FIELD_URL_DESC"
                        filter="string" />
 
-                <field name="spacer_name_5" type="spacer" label="MOD_IMPRINTER_SPACER_5" />
+                <field type="spacer" name="spacer_name_5" label="MOD_IMPRINTER_SPACER_5" />
             </fieldset>
 
             <!-- Additional Tab -->
             <fieldset name="additional">
-                <field name="accessory" type="editor" buttons="true" width="409" filter="JComponentHelper::filterText"
+                <field type="editor" name="accessory" buttons="false" hide="readmore,pagebreak" width="409" filter="safehtml"
                        label="MOD_IMPRINTER_FIELD_EDITOR_LABEL" />
 
-                <field name="spacer_name_6" type="spacer" label="MOD_IMPRINTER_SPACER_6" />
+                <field type="spacer" name="spacer_name_6" label="MOD_IMPRINTER_SPACER_6" />
             </fieldset>
 
             <!-- Extra Tab -->
             <fieldset name="extra">
-                <field name="microformat2" type="radio" class="btn-group btn-group-yesno" default="0"
+                <field type="radio" name="microformat2" class="btn-group btn-group-yesno" default="0"
                        label="TPL_CLIFFLEX_FIELD_MICROFORMAT_LABEL" description="TPL_CLIFFLEX_FIELD_MICROFORMAT_DESC">
                     <option value="0" class="off">JNO</option>
                     <option value="1" class="on">JYES</option>
@@ -327,23 +390,23 @@
 
                 <field type="spacer" hr="true" />
 
-                <field name="imprintercss" type="radio" class="btn-group btn-group-yesno" default="0"
+                <field type="radio" name="imprintercss" class="btn-group btn-group-yesno" default="0"
                        label="TPL_CLIFFLEX_FIELD_IMPRINTERCSS_LABEL" description="TPL_CLIFFLEX_FIELD_IMPRINTERCSS_DESC">
                     <option value="0" class="off">JNO</option>
                     <option value="1" class="on">JYES</option>
                 </field>
-                <field name="imprintercsscode" type="spacer" class="text"
+                <field type="note" name="imprintercsscode" class="text"
                        label="MOD_IMPRINTER_IMPRINTERCSSCODE_LABEL" description="MOD_IMPRINTER_IMPRINTERCSSCODE_DESC" />
 
                 <field type="spacer" hr="true" />
 
-                <field name="developersdtest" type="spacer" class="text"
+                <field type="note" name="developersdtest" class="text"
                        label="MOD_IMPRINTER_DEVELOPERSDTEST_LABEL" description="MOD_IMPRINTER_DEVELOPERSDTEST_DESC" />
 
-                <field name="hcardconformance" type="spacer" class="text"
+                <field type="note" name="hcardconformance" class="text"
                        label="MOD_IMPRINTER_HCARDCONFORMANCE_LABEL" description="MOD_IMPRINTER_HCARDCONFORMANCE_DESC" />
 
-                <field name="microformatparserpin13" type="spacer" class="text"
+                <field type="note" name="microformatparserpin13" class="text"
                        label="MOD_IMPRINTER_MICROFORMATPARSERPIN13_LABEL" description="MOD_IMPRINTER_MICROFORMATPARSERPIN13_DESC" />
 
                 <field name="spacer_name_7" type="spacer" label="MOD_IMPRINTER_SPACER_7" />

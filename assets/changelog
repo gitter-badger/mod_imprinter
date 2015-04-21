@@ -25,11 +25,17 @@ defined('_JEXEC') or die;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 ?>
+Version 0.2.0 20.04.2015
+! Other codechanges and Optimization
++ editor: hide="readmore,pagebreak" 
+^ editor: buttons="false"
+^ editor: changed filter from "JComponentHelper::filterText" to "safehtml"
+
 Version 0.1.98 20.04.2015
 $ Update css-copy
 
 Version 0.1.97 20.04.2015
-! Codingchanges and Optimization
+! Codechanges and Optimization
 
 Version 0.1.96 20.04.2015
 $ private $vars;
@@ -47,11 +53,11 @@ Version 0.1.92 20.04.2015
 # Bug Fix (field name=organizationdesc)
 
 Version 0.1.91 20.04.2015
-! Codingchanges and Optimization
+! Codechanges and Optimization
 
 Version 0.1.9 20.04.2015
 # Bug Fix
-! Codingchanges and Optimization
+! Codechanges and Optimization
 
 Version 0.1.84 19.04.2015
 ! 4. UpdateTest imprinter_update.xml
@@ -73,7 +79,7 @@ Version 0.1.7 19.04.2015
 - removed htmlspecialchars from Accessory
 
 Version 0.1.6 19.04.2015
-^ Codingchanges, Bugfixes and Optimization
+^ Codechanges, Bugfixes and Optimization
 
 Version 0.1.5 18.04.2015
 * Fixes
