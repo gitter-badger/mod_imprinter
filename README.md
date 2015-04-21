@@ -17,6 +17,10 @@ Load the Imprinter module on any page to a position, an article or in the sideba
 [Wiki: mod_imprinter](https://github.com/msritzenhoff/mod_imprinter/wiki/Update)
 
 -
+### CascagingStyleSheet:
+[Wiki: mod_imprinter](https://github.com/msritzenhoff/mod_imprinter/wiki/CSS)
+
+-
 ### Browser support
 [Wiki: mod_imprinter](https://github.com/msritzenhoff/mod_imprinter/wiki/Browser-support)
 
