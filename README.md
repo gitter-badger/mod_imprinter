@@ -6,7 +6,7 @@
 -
 **Imprint for legal websiteinformation spiced with extensive substantial 'Structured data markup'**
 
-Load the Imprinter modules on any page to a position, an article or in the sidebar.
+Load the Imprinter module on any page to a position, an article or in the sidebar.
 
 -
 ### Installation:
