@@ -9,11 +9,11 @@
 Load the Imprinter module on any page to a position, an article or in the sidebar.
 
 -
-### Installation:
+### Joomla! 3.x - Extension Installation:
 [Wiki: mod_imprinter](https://github.com/msritzenhoff/mod_imprinter/wiki/Installation)
 
 -
-### Update:
+### Joomla! 3.x - Extension Update:
 [Wiki: mod_imprinter](https://github.com/msritzenhoff/mod_imprinter/wiki/Update)
 
 -
