@@ -4,9 +4,9 @@
 [![Code Climate](https://codeclimate.com/github/msritzenhoff/mod_imprinter/badges/gpa.svg)](https://codeclimate.com/github/msritzenhoff/mod_imprinter) [![Test Coverage](https://codeclimate.com/github/msritzenhoff/mod_imprinter/badges/coverage.svg)](https://codeclimate.com/github/msritzenhoff/mod_imprinter)
 
 -
-**Imprint for legal websiteinformation spiced with microdata and microformat 2.**
+**Imprint for legal websiteinformation spiced with extensive substantial 'Structured data markup'**
 
-Put Imprinter on any page in position, article or sidebar.
+Load the Imprinter modules on any page to a position, an article or in the sidebar.
 
 -
 ### Installation:
