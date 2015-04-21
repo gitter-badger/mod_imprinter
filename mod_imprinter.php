@@ -31,7 +31,6 @@ $imprinter = modImprinterHelper::getImprinter($params);
 $showtitle = htmlspecialchars($module->showtitle);
 $title = htmlspecialchars($module->title);
 
-
 /* EXTRA
  * ========================================================================= */
 
@@ -110,6 +109,8 @@ $url = htmlspecialchars($params->get('url'));
 $openingHours = htmlspecialchars($params->get('openingHours'));
 
 // Additional Tab
+$headlinede = htmlspecialchars($params->get('headlinede'));
+$headlinededesc = htmlspecialchars($params->get('headlinededesc'));
 $accessory = $params->get('accessory');
 
 

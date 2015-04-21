@@ -7,7 +7,7 @@
     <license>GNU General Public License version 2; see LICENSE.txt</license>
     <authorEmail>info@interim-webmanagement.net</authorEmail>
     <authorUrl>interim-webmanagement.net</authorUrl>
-    <version>0.2.0</version>
+    <version>0.2.1</version>
     <description><![CDATA[
         <style>
             .star{color: red;}
@@ -15,10 +15,12 @@
         <div style="font-weight:400;">
             <h4>Imprint Module for Joomla! 3.x</h4>
             <h5>Imprint for legal websiteinformation spiced with extensive substantial 'Structured data markup'.</h5>
+            <p>Imprinter is finetuned with Googles Rich Snippets (<a href="https://schema.org/">Schema.org</a>) and with microformat 2 [h-card] incl. backwards compatible [hcard].</p>
             <p>Load the <strong>Imprinter</strong> module on any page to a position, an article or in the sidebar.</p>
             </hr>
             <p>Need information? <a target="_blank" href="//interim-webmanagement.net/projekte/jmodule-imprinter"><strong>Please visit the JModule Imprinter (Info Page)</strong></a>.</p>
             </hr>
+            <blockquote style="color: darkred;">The data you are publishing can contribute Data-Mining by machines. So be careful!</blockquote>
             <!--
             <p>Like the Imprinter? Check out the <a target="_blank" href="//interim-webmanagement.net/projekte/clifflex"><strong>CLIFFlex Template</strong></a></p>
             -->
@@ -176,8 +178,8 @@
 
                 <field type="list" name="honorificprefix" default="1"
                        label="MOD_IMPRINTER_FIELD_HONORIFICPREFIX_LABEL" description="MOD_IMPRINTER_FIELD_HONORIFICPREFIX_DESC">
-                    <option value="MOD_IMPRINTER_FIELD_HPREFIXMR_VALUE">MOD_IMPRINTER_FIELD_HPREFIXMR</option>
-                    <option value="MOD_IMPRINTER_FIELD_HPREFIXMRS_VALUE">MOD_IMPRINTER_FIELD_HPREFIXMRS</option>
+                    <option value="1">MOD_IMPRINTER_FIELD_HPREFIXMR</option>
+                    <option value="2">MOD_IMPRINTER_FIELD_HPREFIXMRS</option>
                 </field>
 
                 <field type="text" name="honorificsuffix" default=""
@@ -244,7 +246,9 @@
                        label="MOD_IMPRINTER_FIELD_BUSINESSSTART_LABEL" description="MOD_IMPRINTER_FIELD_BUSINESSSTART_DESC"
                        filter="string" />
 
+                <!--
                 <field type="calendar" name="start" default="2015" label="Select a year" description="" format="%Y" />
+                -->
 
                 <field type="text" name="vatid" default=""
                        label="MOD_IMPRINTER_FIELD_VATID_LABEL" description="MOD_IMPRINTER_FIELD_VATID_DESC"
@@ -374,6 +378,16 @@
 
             <!-- Additional Tab -->
             <fieldset name="additional">
+                <field type="note" name="headlinededesc" class="text"
+                       label="MOD_IMPRINTER_FIELD_HEADLINEDEDESC_LABEL" description="MOD_IMPRINTER_FIELD_HEADLINEDEDESC_DESC" />
+                <field type="radio" name="headlinede" class="btn-group btn-group-yesno" default="0"
+                       label="MOD_IMPRINTER_FIELD_HEADLINEDE_LABEL" description="MOD_IMPRINTER_FIELD_HEADLINEDE_DESC">
+                    <option value="0" class="off">JNO</option>
+                    <option value="1" class="on">JYES</option>
+                </field>
+
+                <field type="spacer" hr="true" />
+
                 <field type="editor" name="accessory" buttons="false" hide="readmore,pagebreak" width="409" filter="safehtml"
                        label="MOD_IMPRINTER_FIELD_EDITOR_LABEL" />
 
@@ -383,7 +397,7 @@
             <!-- Extra Tab -->
             <fieldset name="extra">
                 <field type="radio" name="microformat2" class="btn-group btn-group-yesno" default="0"
-                       label="TPL_CLIFFLEX_FIELD_MICROFORMAT_LABEL" description="TPL_CLIFFLEX_FIELD_MICROFORMAT_DESC">
+                       label="MOD_IMPRINTER_FIELD_MICROFORMAT_LABEL" description="MOD_IMPRINTER_FIELD_MICROFORMAT_DESC">
                     <option value="0" class="off">JNO</option>
                     <option value="1" class="on">JYES</option>
                 </field>
@@ -391,7 +405,7 @@
                 <field type="spacer" hr="true" />
 
                 <field type="radio" name="imprintercss" class="btn-group btn-group-yesno" default="0"
-                       label="TPL_CLIFFLEX_FIELD_IMPRINTERCSS_LABEL" description="TPL_CLIFFLEX_FIELD_IMPRINTERCSS_DESC">
+                       label="MOD_IMPRINTER_FIELD_IMPRINTERCSS_LABEL" description="MOD_IMPRINTER_FIELD_IMPRINTERCSS_DESC">
                     <option value="0" class="off">JNO</option>
                     <option value="1" class="on">JYES</option>
                 </field>

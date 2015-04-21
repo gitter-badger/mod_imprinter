@@ -37,7 +37,9 @@ endif;
     <section data-role="imprint-vcard">
         <h3 hidden><?php print 'h-card for ' . $organizationname; ?></h3>
 
-        <h3 class="p-note">Inhaltliche Verantwortlichkeit gem&auml;&szlig; <small><a title="Informationspflichten und Informationsrechte" href="http://www.juris.de/jportal/portal/page/bshaprod.psml?doc.id=jlr-RdFunkStVtrHAV3P55&amp;st=lr&amp;showdoccase=1&amp;paramfromHL=true#focuspoint" rel="external">&sect; 55 Abs. 2 RStV</a></small> sowie <small><a title="Allgemeine Informationspflichten" href="http://www.gesetze-im-internet.de/tmg/__5.html" rel="external">&sect; 5 TMG</a></small></h3>
+        <?php
+        print ($headlinede == 1) ? '<h3 class=\"p-note\">Inhaltliche Verantwortlichkeit gem&auml;&szlig; <a title=\"Informationspflichten und Informationsrechte\" href=\"//www.juris.de/jportal/portal/page/bshaprod.psml?doc.id=jlr-RdFunkStVtrHAV3P55&amp;st=lr&amp;showdoccase=1&amp;paramfromHL=true#focuspoint\">&sect; 55 Abs. 2 RStV</a> sowie <a title=\"Allgemeine Informationspflichten\" href=\"//www.gesetze-im-internet.de/tmg/__5.html\">&sect; 5 TMG</a></h3>' : '';
+        ?>
 
     <?php
     /*
@@ -63,8 +65,8 @@ endif;
             ?>
             <span class="p-org org">
                 <?php
-                $organizationname ? print '<span class="p-organization-name organization-name" itemprop="legalName">' . $organizationname . '</span>' : print '';
-                $organizationdesc ? print '<span class="p-category category" itemprop="description">' . $organizationdesc . '</span>' : print '';
+                print $organizationname ? '<span class="p-organization-name organization-name" itemprop="legalName">' . $organizationname . '</span>' : '';
+                print $organizationdesc ? '<span class="p-category category" itemprop="description">' . $organizationdesc . '</span>' : '';
                 ?>
             </span>
             <?php
@@ -97,8 +99,8 @@ endif;
                     endif;
                     // start link: p-name u-url
 
-                    $firstname ? print '<span class="p-given-name given-name" itemprop="givenName">' . $firstname .  $space . '</span>' : print '';
-                    $lastname ? print '<span class="p-family-name family-name" itemprop="familyName">' . $lastname . '</span>' : print '';
+                    print $firstname ? '<span class="p-given-name given-name" itemprop="givenName">' . $firstname .  $space . '</span>' : '';
+                    print $lastname ? '<span class="p-family-name family-name" itemprop="familyName">' . $lastname . '</span>' : '';
 
                     // end link: p-name u-url
                     if($authorurl):
@@ -113,16 +115,20 @@ endif;
                     <?php
                     if($nameurl) :
                         ?>
-                        <a class="p-fn u-url fn url" href="<?php print $nameurl; ?>"<?php $nameurltitle ? print ' title="' . $nameurltitle . '"' : print ''; ?>>
+                        <a class="p-fn u-url fn url" href="<?php print $nameurl; ?>"<?php print $nameurltitle ? ' title="' . $nameurltitle . '"' : ''; ?>>
                         <?php
                     endif;
                     // start link: p-name u-url
 
-                    //$honorificprefix ? print '<span class="p-honorific-prefix honorific-prefix" itemprop="honorificPrefix">' . $honorificprefix .  $space . '</span>' : print '';
+                    if ($honorificprefix == 1) :
+                        print 'Herr' .  $space;
+                    elseif ($honorificprefix == 2) :
+                        print 'Frau' .  $space;
+                    endif;
 
-                    $honorificsuffix ? print '<span class="p-honorific-suffix honorific-suffix" itemprop="honorificSuffix">' . $honorificsuffix . $space . '</span>' : print '';
+                    print $honorificsuffix ? '<span class="p-honorific-suffix honorific-suffix" itemprop="honorificSuffix">' . $honorificsuffix . $space . '</span>' : '';
 
-                    $firstname ? print '<span class="p-given-name given-name" itemprop="givenName">' . $firstname .  $space . '</span>' : print '';
+                    print $firstname ? '<span class="p-given-name given-name" itemprop="givenName">' . $firstname .  $space . '</span>' : '';
 
                     if($secondname) :
                         if($secondnameinitialbtn == 1) :
@@ -132,9 +138,29 @@ endif;
                         endif;
                     endif;
 
-                    $lastname ? print '<span class="p-family-name family-name" itemprop="familyName">' . $lastname . '</span>' : print '';
+                    print $lastname ? '<span class="p-family-name family-name" itemprop="familyName">' . $lastname . '</span>' : '';
 
-                    $gender ? print '<meta itemprop="gender" content="' . $gender . '" />' : print '';
+                    print $gender ? '<meta itemprop="gender" content="' . $gender . '" />' : '';
+                    /*
+                    ($honorificprefix == 1) ? 'Männlich' .  $space
+                    ($honorificprefix == 1) ? 'Weiblich' .  $space
+                    ($honorificprefix == 1) ? 'Agender' .  $space
+                    ($honorificprefix == 1) ? 'Androgyne' .  $space
+                    ($honorificprefix == 1) ? 'Androgynous' .  $space
+                    ($honorificprefix == 1) ? 'Bigender' .  $space
+                    ($honorificprefix == 1) ? 'Cis' .  $space
+                    ($honorificprefix == 1) ? 'Cisgender' .  $space
+                    ($honorificprefix == 1) ? 'Cis Female' .  $space
+                    ($honorificprefix == 1) ? 'Cis Male' .  $space
+                    ($honorificprefix == 1) ? 'Cis Man' .  $space
+                    ($honorificprefix == 1) ? 'Cis Woman' .  $space
+                    ($honorificprefix == 1) ? 'Cisgender Female' .  $space
+                    ($honorificprefix == 1) ? 'Cisgender Male' .  $space
+                    ($honorificprefix == 1) ? 'Cisgender Man' .  $space
+                    ($honorificprefix == 1) ? 'Cisgender Woman' .  $space
+                    ($honorificprefix == 1) ? 'Female to Male' .  $space
+                    ($honorificprefix == 1) ? 'FTM' .  $space
+                    */
 
                     // end link: p-name u-url
                     if($nameurl) :
@@ -145,7 +171,7 @@ endif;
                     ?>
                 </span>
                 <?php
-                $jobtitle ? print '<span class="p-job-title title" itemprop="jobTitle">' . $jobtitle . '</span>' : print '';
+                print $jobtitle ? '<span class="p-job-title title" itemprop="jobTitle">' . $jobtitle . '</span>' : '';
                 ?>
             </span>
             <?php
@@ -176,7 +202,7 @@ endif;
                         ?>
                         <span class="p-post-office" itemprop="PostOffice">
                             <?php
-                            $postoffice ? print '<span>' . $postoffice . $space . '</span>' : print '';
+                            print $postoffice ? '<span>' . $postoffice . $space . '</span>' : '';
                             ?>
                             <span class="p-post-office-box" itemprop="postOfficeBox"><?php print $postofficeboxaddress . $space; ?></span>
                             <span class="p-post-office-box-number" itemprop="postOfficeBoxNumber"><?php print $postofficeboxnumber; ?></span>
@@ -184,16 +210,16 @@ endif;
                         <?php
                     endif;
 
-                    $street ? print '<span class="p-street-address street-address" itemprop="streetAddress">' . $street . '</span>' : print '';
+                    print $street ? '<span class="p-street-address street-address" itemprop="streetAddress">' . $street . '</span>' : '';
 
-                    $extendedaddress ? print '<span class="p-extended-address extended-address">' . $extendedaddress . '</span>' : print '';
+                    print $extendedaddress ? '<span class="p-extended-address extended-address">' . $extendedaddress . '</span>' : '';
 
                     if($postalcode || $city) :
                         ?>
                         <span class="city">
                             <?php
-                            $postalcode ? print '<span class="p-postal-code postal-code" itemprop="postalCode">' . $postalcode . $space . '</span>' : print '';
-                            $city ? print '<span class="p-locality locality" itemprop="addressLocality">' . $city . '</span>' : print '';
+                            print $postalcode ? '<span class="p-postal-code postal-code" itemprop="postalCode">' . $postalcode . $space . '</span>' : '';
+                            print $city ? '<span class="p-locality locality" itemprop="addressLocality">' . $city . '</span>' : '';
                             ?>
                         </span>
                         <?php
@@ -203,8 +229,8 @@ endif;
                         ?>
                         <span>
                             <?php
-                            $region ? print '<span class="p-region region" itemprop="addressRegion">' . $region . '</span><span>/</span>' : print '';
-                            $country ? print '<span class="p-country-name country-name" itemprop="addressCountry">' . $country . '</span>' : print '';
+                            print $region ? '<span class="p-region region" itemprop="addressRegion">' . $region . '</span><span>/</span>' : '';
+                            print $country ? '<span class="p-country-name country-name" itemprop="addressCountry">' . $country . '</span>' : '';
                             ?>
                         </span>
                         <?php
@@ -225,7 +251,7 @@ endif;
              */
             if($geolatitude && $geolongitude) :
                 ?>
-                <span class="h-geo" itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates"<?php ($geohidden == 1) ? print ' ' . $hidden : print ''; ?>>
+                <span class="h-geo" itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates"<?php print ($geohidden == 1) ? ' ' . $hidden : ''; ?>>
                     <span class="type work">GEO:<?php print $space; ?></span>
                     <?php // backward compatibility ?>
                     <span class="p-latitude" itemprop="latitude"><?php print $geolatitude; ?></span>
@@ -253,7 +279,7 @@ endif;
                     <span class="type work VOICE">Tel:<?php print $space; ?></span>
                     <span class="value" property="telephone"><?php print $telephone; ?></span>
                     <?php
-                    ($telephonecall == 1) ? print '<a class="u-url" href="tel:' . $telephone . '" title="Anruf t&auml;tigen"><span></span>Anruf</a>' : '';
+                    print ($telephonecall == 1) ? '<a class="u-url" href="tel:' . $telephone . '" title="Anruf t&auml;tigen"><span></span>Anruf</a>' : '';
                     ?>
                 </span>
                 <?php
@@ -282,8 +308,8 @@ endif;
                     <span class="type work VOICE mobil msg">Mobil:<?php print $space; ?></span>
                     <span class="value" property="telephone"><?php print $mobilephone; ?></span>
                     <?php
-                    ($mobilephonecall == 1) ? print '<a class="u-url" href="tel:' . $mobilephone . '" title="Anruf t&auml;tigen"><span></span>Anruf</a>' : '';
-                    ($mobilephonesms == 1) ? print '<a class="u-url" href="sms:' . $mobilephone . '" title="SMS schicken"><span></span>SMS</a>' : '';
+                    print ($mobilephonecall == 1) ? '<a class="u-url" href="tel:' . $mobilephone . '" title="Anruf t&auml;tigen"><span></span>Anruf</a>' : '';
+                    print ($mobilephonesms == 1) ? '<a class="u-url" href="sms:' . $mobilephone . '" title="SMS schicken"><span></span>SMS</a>' : '';
                     ?>
                 </span>
                 <?php
@@ -359,12 +385,12 @@ endif;
         /*
          * $startbusiness
          */
-        //$startbusiness ? print '<span itemprop="startDate">' . $startbusiness . '</span>' : print '';
+        //print $startbusiness ? '<span itemprop="startDate">' . $startbusiness . '</span>' : '';
 
         /*
          * $vatid
          */
-        $vatid ? print '<p data-vatid="de">USt-IdNr. gem&auml;&szlig; 19 UStG: ' . $vatid . '</p>' : '';
+        print $vatid ? '<p data-vatid="de">USt-IdNr. gem&auml;&szlig; 19 UStG: ' . $vatid . '</p>' : '';
         /*
          * <p data-vatid="de">USt-IdNr. gem&auml&szlig; Â§ 19 UStG / Â§ 27 UStG: <?php print $vatid; ?></p>
          */
@@ -372,7 +398,7 @@ endif;
         /*
          * $microformat2
          */
-        ($microformat2 == 1) ? print '<small class="microformat2">This content uses <a target="_blank" href="http://microformats.org/wiki/microformats2">microformats 2</a></small>' : '';
+        print ($microformat2 == 1) ? '<small class="microformat2">This content uses <a target="_blank" href="http://microformats.org/wiki/microformats2">microformats 2</a></small>' : '';
         ?>
     </section>
 
