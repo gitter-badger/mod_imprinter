@@ -23,7 +23,9 @@
 .h-card .h-adr >*,
 .h-card .h-geo,
 .h-card .p-tel,
-.h-card .p-fax{
+.h-card .p-fax,
+.vatid,
+.imprintfooter {
     float: left; width: 100%;
 }
 
@@ -45,15 +47,18 @@
     float: left; width: auto;
 }
 
-[data-vatid=de]{
+.vatid{
     padding: 0 0 1vh;
 }
-[class='microformat2']{
-    float: left; width: 100%; padding: 3px 0;
+.imprintfooter{
+    padding: 3px 0;
     border-top: 1px solid #a6b6dd;
-    text-align: right;
+    font-size: 12px; font-size: 0.75rem;
 }
-[class='microformat2'] a{
+.imprintfooter .microformat2{
+    float: right;
+}
+.imprintfooter .microformat2 a{
     color: #679A06; color: rgb(103,154,6);
 }
 /*

@@ -7,7 +7,7 @@
     <license>GNU General Public License version 2; see LICENSE.txt</license>
     <authorEmail>info@interim-webmanagement.net</authorEmail>
     <authorUrl>interim-webmanagement.net</authorUrl>
-    <version>0.2.1</version>
+    <version>0.2.2</version>
     <description><![CDATA[
         <style>
             .star{color: red;}
@@ -53,6 +53,11 @@
                        label="MOD_IMPRINTER_FIELD_MODULEHOWTO_LABEL" />
 
                 <!--
+                <field type="spacer" hr="true" />
+
+                <field type="user" name="modified_user_id" class="readonly" readonly="false" filter="set"
+                       label="JGLOBAL_FIELD_MODIFIED_BY_LABEL"/>
+
                 <field type="spacer" hr="true" />
 
                 <field type="category" name="catid" extension="com_example" required="true" multiple="true" size="10" default="1"
@@ -111,7 +116,6 @@
 
             <!-- Owner Tab -->
             <fieldset name="owner">
-
                 <field type="list" name="gender" default=""
                        label="MOD_IMPRINTER_FIELD_GENDER_LABEL" description="MOD_IMPRINTER_FIELD_GENDER_DESC">
                     <option value="1">MOD_IMPRINTER_FIELD_MALE</option>
@@ -230,8 +234,31 @@
                 <field type="spacer" name="spacer_name_2" label="MOD_IMPRINTER_SPACER_2" />
             </fieldset>
 
-            <!-- Imprint Tab -->
+            <!-- Organization Tab -->
             <fieldset name="organization">
+                <!--
+                # https://docs.joomla.org/Standard_form_field_types/Single-page_reference
+                <field type="Repeatable" name="list_templates" icon="list"
+                       default="{
+                            'template':['Layout','Simple snippet'],
+                            'location':['layout1.html','snippet1.html'],
+                            'description':['HTMLLayout','Simple HTML snippet']
+                        }"
+                       label="PLG_TINY_FIELD_TEMPLATE_FIELD_ELEMENTS_LABEL" description="PLG_TINY_FIELD_TEMPLATE_FIELD_ELEMENTS_DESC">
+                    <fields name="params">
+                        <fieldset hidden="true" name="list_templates_modal" repeat="true">
+                            <field type="text" name="template" size="30"
+                                   label="PLG_TINY_FIELD_TEMPLATE_FIELD_NAME_LABEL" />
+                            <field type="filelist" name="location" size="30"
+                                   directory="media/editors/tinymce/templates" exclude="index.html" hide_default="true" hide_none="true"
+                                   label="PLG_TINY_FIELD_TEMPLATE_FIELD_LOCATION_LABEL" description="PLG_TINY_FIELD_TEMPLATE_LOCATION_DESC" />
+                            <field type="textarea" name="description" size="30"
+                                   label="PLG_TINY_FIELD_TEMPLATE_FIELD_DESCRIPTION_LABEL" />
+                        </fieldset>
+                    </fields>
+                </field>
+                -->
+
                 <field type="text" name="organizationname" default=""
                        label="MOD_IMPRINTER_FIELD_ORGANIZATIONNAME_LABEL" description="MOD_IMPRINTER_FIELD_ORGANIZATIONNAME_DESC"
                        filter="string" />
@@ -375,6 +402,13 @@
 
                 <field type="spacer" name="spacer_name_5" label="MOD_IMPRINTER_SPACER_5" />
             </fieldset>
+
+            <!-- Openclose Tab - - >
+            <fieldset name="openclose" label="Open/Close">
+                <field type="timezone" name="imprintertime" default="-10"
+                       label="Select a timezone" description="" />
+            </fieldset>
+            -->
 
             <!-- Additional Tab -->
             <fieldset name="additional">

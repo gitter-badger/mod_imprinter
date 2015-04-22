@@ -25,6 +25,9 @@ defined('_JEXEC') or die;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 ?>
+Version 0.2.2 21.04.2015
+! Other codechanges and Optimization
+
 Version 0.2.1 20.04.2015
 ! Other codechanges and Optimization
 + Starting Gender-List

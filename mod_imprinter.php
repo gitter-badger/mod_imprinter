@@ -31,11 +31,7 @@ $imprinter = modImprinterHelper::getImprinter($params);
 $showtitle = htmlspecialchars($module->showtitle);
 $title = htmlspecialchars($module->title);
 
-/* EXTRA
- * ========================================================================= */
-
-// Extras Tab
-$microformat2 = htmlspecialchars($params->get('microformat2'));
+/* ========================================================================= */
 
 // add CSS
 $imprintercss = htmlspecialchars($params->get('imprintercss'));
@@ -113,6 +109,11 @@ $headlinede = htmlspecialchars($params->get('headlinede'));
 $headlinededesc = htmlspecialchars($params->get('headlinededesc'));
 $accessory = $params->get('accessory');
 
+// Extras Tab
+$imprintfooter = htmlspecialchars($params->get('imprintfooter'));
+$imprintcopy = htmlspecialchars($params->get('imprintcopy'));
+$microformat2 = htmlspecialchars($params->get('microformat2'));
+
 
 /* ========================================================================= */
 
@@ -120,6 +121,12 @@ $space = '&nbsp;';
 //$space = '&#160;';
 
 $hidden = 'hidden';
+
+$imprintkey = '';
+
+// LINKS
+$imprinthome = '<a href="//interim-webmanagement.net/projekte/jmodule-imprinter" title="Imprinter &ndash; Module for Joomla! 3.x">Imprinter</a>';
+$microformathome = 'This content uses <a target="_blank" href="//microformats.org/wiki/microformats2">microformats 2</a>';
 
 
 /* #

@@ -38,7 +38,7 @@ endif;
         <h3 hidden><?php print 'h-card for ' . $organizationname; ?></h3>
 
         <?php
-        print ($headlinede == 1) ? '<h3 class=\"p-note\">Inhaltliche Verantwortlichkeit gem&auml;&szlig; <a title=\"Informationspflichten und Informationsrechte\" href=\"//www.juris.de/jportal/portal/page/bshaprod.psml?doc.id=jlr-RdFunkStVtrHAV3P55&amp;st=lr&amp;showdoccase=1&amp;paramfromHL=true#focuspoint\">&sect; 55 Abs. 2 RStV</a> sowie <a title=\"Allgemeine Informationspflichten\" href=\"//www.gesetze-im-internet.de/tmg/__5.html\">&sect; 5 TMG</a></h3>' : '';
+        print ($headlinede == 1) ? '<h3 class="p-note">Inhaltliche Verantwortlichkeit gem&auml;&szlig; <a title="Informationspflichten und Informationsrechte" href="//www.juris.de/jportal/portal/page/bshaprod.psml?doc.id=jlr-RdFunkStVtrHAV3P55&amp;st=lr&amp;showdoccase=1&amp;paramfromHL=true#focuspoint">&sect; 55 Abs. 2 RStV</a> sowie <a title="Allgemeine Informationspflichten" href="//www.gesetze-im-internet.de/tmg/__5.html">&sect; 5 TMG</a></h3>' : '';
         ?>
 
     <?php
@@ -76,10 +76,10 @@ endif;
          * $authorurl
          * $nameurl
          * $nameurltitle
-         * 
+         *
          * $honorificprefix
          * $honorificsuffix
-         * 
+         *
          * $firstname
          * $secondname
          * $lastname
@@ -183,7 +183,7 @@ endif;
          * $postoffice
          * $postofficeboxaddress
          * $postofficeboxnumber
-         * 
+         *
          * $street
          * $extendedaddress
          * $postalcode
@@ -244,7 +244,7 @@ endif;
             <?php
             /*
              * $geohidden
-             * 
+             *
              * $geolatitude
              * $geolongitude
              * $geoaltitude
@@ -366,7 +366,7 @@ endif;
         /*
          * <time itemprop="openingHours" datetime="Tu,Th 16:00-20:00">Tuesdays and Thursdays 4-8pm</time>
          * <time itemprop="openingHours" datetime="Mo-Su">Monday through Sunday, all day</time>
-         * 
+         *
          * Montag 10:00-18:00
          * Dienstag 10:00-18:00
          * Mittwoch 10:00-18:00
@@ -390,15 +390,22 @@ endif;
         /*
          * $vatid
          */
-        print $vatid ? '<p data-vatid="de">USt-IdNr. gem&auml;&szlig; 19 UStG: ' . $vatid . '</p>' : '';
+        print $vatid ? '<p class="vatid">USt-IdNr. gem&auml;&szlig; 19 UStG: ' . $vatid . '</p>' : '';
         /*
          * <p data-vatid="de">USt-IdNr. gem&auml&szlig; Â§ 19 UStG / Â§ 27 UStG: <?php print $vatid; ?></p>
          */
 
         /*
+         * $imprintfooter
+         * $imprintcopy
          * $microformat2
          */
-        print ($microformat2 == 1) ? '<small class="microformat2">This content uses <a target="_blank" href="http://microformats.org/wiki/microformats2">microformats 2</a></small>' : '';
+        if( (empty($imprintkey) == ($imprintkey == 0)) && $microformat2 == 0 || (empty($imprintkey) == ($imprintkey == 0)) && $microformat2 == 1 ):
+            print '<div class="imprintfooter">';
+                print ($imprintkey == 0) ? '<span class="imprintcopy">' . (date('Y') == '2015') ? '&#169; ' . htmlspecialchars(date('Y')) . $space . $imprinthome : '&#169; 2014&ndash;' . htmlspecialchars(date('Y')) . $imprinthome . '</span>' : '';
+                print ($microformat2 == 1) ? '<span class="microformat2">' . $microformathome . '</span>' : '';
+            print '</div>';
+        endif;
         ?>
     </section>
 
