@@ -1,4 +1,5 @@
-# Imprinter v0.2.3
+# Imprinter
+Version 0.2.3
 ### Imprint Module for Joomla! 3.x
 
 [![Code Climate](https://codeclimate.com/github/msritzenhoff/mod_imprinter/badges/gpa.svg)](https://codeclimate.com/github/msritzenhoff/mod_imprinter) [![Test Coverage](https://codeclimate.com/github/msritzenhoff/mod_imprinter/badges/coverage.svg)](https://codeclimate.com/github/msritzenhoff/mod_imprinter)
