@@ -2,6 +2,24 @@
 <updates>
     <update>
         <name>Imprinter Update</name>
+        <description>This is mod_imprinter 0.2.3</description>
+        <element>mod_imprinter</element>
+        <type>module</type>
+        <version>0.2.3</version>
+        <downloads>
+            <downloadurl type="full" format="zip">https://github.com/msritzenhoff/mod_imprinter/archive/master.zip</downloadurl>
+        </downloads>
+        <tags>
+            <tag>stable</tag>
+        </tags>
+        <maintainer>Michael S. Ritzenhoff</maintainer>
+        <maintainerurl>http://interim-webmanagement.net</maintainerurl>
+        <targetplatform name="joomla" version="3.4"/>
+        <client>site</client>
+    </update>
+
+    <update>
+        <name>Imprinter Update</name>
         <description>This is mod_imprinter 0.2.2</description>
         <element>mod_imprinter</element>
         <type>module</type>

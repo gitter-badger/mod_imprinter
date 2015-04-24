@@ -7,7 +7,7 @@
     <license>GNU General Public License version 2; see LICENSE.txt</license>
     <authorEmail>info@interim-webmanagement.net</authorEmail>
     <authorUrl>interim-webmanagement.net</authorUrl>
-    <version>0.2.2</version>
+    <version>0.2.3</version>
     <description><![CDATA[
         <style>
             .star{color: red;}
@@ -52,38 +52,6 @@
                 <field type="spacer" name="spacer_modulehowto"
                        label="MOD_IMPRINTER_FIELD_MODULEHOWTO_LABEL" />
 
-                <!--
-                <field type="spacer" hr="true" />
-
-                <field type="user" name="modified_user_id" class="readonly" readonly="false" filter="set"
-                       label="JGLOBAL_FIELD_MODIFIED_BY_LABEL"/>
-
-                <field type="spacer" hr="true" />
-
-                <field type="category" name="catid" extension="com_example" required="true" multiple="true" size="10" default="1"
-                       label="JGLOBAL_CHOOSE_CATEGORY_LABEL" description="JGLOBAL_CHOOSE_CATEGORY_DESC">
-                    <option value="1">JALL</option>
-                </field>
-
-                <field type="spacer" hr="true" />
-
-                <field type="list" name="orderby" default="a.created"
-                       label="JGLOBAL_ARTICLE_ORDER_LABEL" description="JGLOBAL_ARTICLE_ORDER_DESC">
-                    <option value="a.created">JGLOBAL_CREATED_DATE</option>
-                    <option value="a.publish_up">MOD_IMPRINTER_PUBLISH_UP</option>
-                    <option value="a.publish_down">MOD_IMPRINTER_PUBLISH_DOWN</option>
-                    <option value="a.modified">JGLOBAL_FIELD_MODIFIED_LABEL</option>
-                    <option value="a.title">JGLOBAL_TITLE</option>
-                    <option value="a.ordering">JGLOBAL_ORDERING</option>
-                </field>
-
-                <field type="list" name="order_dir" default="DESC"
-                       label="JFIELD_ORDERING_LABEL" description="JFIELD_ORDERING_DESC">
-                    <option value="ASC">MOD_IMPRINTER_ORDER_DIR_ASC</option>
-                    <option value="DESC">MOD_IMPRINTER_ORDER_DIR_DESC</option>
-                </field>
-                -->
-
                 <field type="spacer" name="spacer_name_1" label="MOD_IMPRINTER_SPACER_1" />
             </fieldset>
 
@@ -100,9 +68,6 @@
                     <option value="1">JGLOBAL_USE_GLOBAL</option>
                     <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
                 </field>
-                <!--
-                <field name="cache" type="hidden" value="0" />
-                -->
 
                 <field type="text" name="cache_time" default="900"
                        label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
@@ -236,29 +201,6 @@
 
             <!-- Organization Tab -->
             <fieldset name="organization">
-                <!--
-                # https://docs.joomla.org/Standard_form_field_types/Single-page_reference
-                <field type="Repeatable" name="list_templates" icon="list"
-                       default="{
-                            'template':['Layout','Simple snippet'],
-                            'location':['layout1.html','snippet1.html'],
-                            'description':['HTMLLayout','Simple HTML snippet']
-                        }"
-                       label="PLG_TINY_FIELD_TEMPLATE_FIELD_ELEMENTS_LABEL" description="PLG_TINY_FIELD_TEMPLATE_FIELD_ELEMENTS_DESC">
-                    <fields name="params">
-                        <fieldset hidden="true" name="list_templates_modal" repeat="true">
-                            <field type="text" name="template" size="30"
-                                   label="PLG_TINY_FIELD_TEMPLATE_FIELD_NAME_LABEL" />
-                            <field type="filelist" name="location" size="30"
-                                   directory="media/editors/tinymce/templates" exclude="index.html" hide_default="true" hide_none="true"
-                                   label="PLG_TINY_FIELD_TEMPLATE_FIELD_LOCATION_LABEL" description="PLG_TINY_FIELD_TEMPLATE_LOCATION_DESC" />
-                            <field type="textarea" name="description" size="30"
-                                   label="PLG_TINY_FIELD_TEMPLATE_FIELD_DESCRIPTION_LABEL" />
-                        </fieldset>
-                    </fields>
-                </field>
-                -->
-
                 <field type="text" name="organizationname" default=""
                        label="MOD_IMPRINTER_FIELD_ORGANIZATIONNAME_LABEL" description="MOD_IMPRINTER_FIELD_ORGANIZATIONNAME_DESC"
                        filter="string" />
@@ -272,10 +214,6 @@
                 <field type="text" name="startbusiness" default=""
                        label="MOD_IMPRINTER_FIELD_BUSINESSSTART_LABEL" description="MOD_IMPRINTER_FIELD_BUSINESSSTART_DESC"
                        filter="string" />
-
-                <!--
-                <field type="calendar" name="start" default="2015" label="Select a year" description="" format="%Y" />
-                -->
 
                 <field type="text" name="vatid" default=""
                        label="MOD_IMPRINTER_FIELD_VATID_LABEL" description="MOD_IMPRINTER_FIELD_VATID_DESC"
@@ -403,13 +341,6 @@
                 <field type="spacer" name="spacer_name_5" label="MOD_IMPRINTER_SPACER_5" />
             </fieldset>
 
-            <!-- Openclose Tab - - >
-            <fieldset name="openclose" label="Open/Close">
-                <field type="timezone" name="imprintertime" default="-10"
-                       label="Select a timezone" description="" />
-            </fieldset>
-            -->
-
             <!-- Additional Tab -->
             <fieldset name="additional">
                 <field type="note" name="headlinededesc" class="text"
@@ -463,9 +394,6 @@
     </config>
 
     <updateservers>
-        <!--
-        <server type="collection">http://example.com/list.xml</server>
-        -->
         <server type="extension" name="Imprinter" priority="1">https://raw.githubusercontent.com/msritzenhoff/mod_imprinter/master/imprinter_update.xml</server>
     </updateservers>
 

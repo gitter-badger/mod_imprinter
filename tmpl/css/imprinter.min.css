@@ -11,5 +11,12 @@
 */
 
 /* vCard / h-card start */
-.h-card,.h-card .h-adr,.h-card .h-adr>*,.h-card .h-geo,.h-card .p-fax,.h-card .p-fn,.h-card .p-job-title,.h-card .p-n,.h-card .p-name,.h-card .p-org,.h-card .p-org>*,.h-card .p-tel,.h-card>*{float:left;width:100%}.h-card .h-adr,.h-card .h-geo,.h-card .p-adr,.h-card .p-post-office,.h-card>*{padding-bottom:7px}.h-card .p-tel>.u-url{margin-left:10px}.h-card .domain>span,.h-card .p-name>a,.h-card .u-email>span{float:left;width:auto}[data-vatid=de]{padding:0 0 1vh}[class=microformat2]{float:left;width:100%;padding:3px 0;border-top:1px solid #a6b6dd;text-align:right}[class=microformat2] a{color:#679a06}
+.h-card,.h-card .h-adr,.h-card .h-adr>*,.h-card .h-geo,.h-card .p-fax,.h-card .p-fn,.h-card .p-job-title,.h-card .p-n,.h-card .p-name,.h-card .p-org,.h-card .p-org>*,.h-card .p-tel,.h-card>*,.imprintfooter,.vatid{float:left;width:100%}
+.h-card .h-adr,.h-card .h-geo,.h-card .p-adr,.h-card .p-post-office,.h-card>*{padding-bottom:7px}
+.h-card .p-tel>.u-url{margin-left:10px}
+.h-card .domain>span,.h-card .p-name>a,.h-card .u-email>span{float:left;width:auto}
+.vatid{padding:0 0 1vh}
+.imprintfooter{padding:3px 0;color:#666;border-top:1px solid #a6b6dd;font-size:12px;font-size:.75rem}
+.imprintfooter .microformat2{float:right}
+.imprintfooter .microformat2 a{color:#679a06}
 /* vCard / h-card end */

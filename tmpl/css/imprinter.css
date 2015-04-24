@@ -25,7 +25,7 @@
 .h-card .p-tel,
 .h-card .p-fax,
 .vatid,
-.imprintfooter {
+.imprintfooter{
     float: left; width: 100%;
 }
 
@@ -52,6 +52,7 @@
 }
 .imprintfooter{
     padding: 3px 0;
+    color: #666;
     border-top: 1px solid #a6b6dd;
     font-size: 12px; font-size: 0.75rem;
 }
@@ -61,12 +62,4 @@
 .imprintfooter .microformat2 a{
     color: #679A06; color: rgb(103,154,6);
 }
-/*
-[class='microformat2'] a:after{
-    content: '';
-    display: inline-block;
-    background: url('../modules/mod_imprinter/tmpl/img/mf-logo.svg') no-repeat top right;
-    width: 16px; height: 16px; margin: 0 0 0 6px;
-}
-*/
 /* vCard / h-card end */

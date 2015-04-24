@@ -24,15 +24,6 @@ if($showtitle == 1) :
     </header>
     <?php
 endif;
-/*
-if($module->showtitle) :
-    ?>
-    <header>
-        <h2><?php print $module->title; ?></h2>
-    </header>
-    <?php
-endif;
-*/
 ?>
     <section data-role="imprint-vcard">
         <h3 hidden><?php print 'h-card for ' . $organizationname; ?></h3>
