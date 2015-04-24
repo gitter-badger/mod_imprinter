@@ -1,8 +1,9 @@
 # Imprinter
 Version 0.2.3
-### Imprint Module for Joomla! 3.x
 
 [![Code Climate](https://codeclimate.com/github/msritzenhoff/mod_imprinter/badges/gpa.svg)](https://codeclimate.com/github/msritzenhoff/mod_imprinter)
+
+### Imprint Module for Joomla! 3.x
 
 -
 **Imprint for legal websiteinformation spiced with extensive substantial 'Structured data markup'**
