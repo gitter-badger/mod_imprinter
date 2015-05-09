@@ -10,8 +10,8 @@ Version 0.2.3
 
 Load the Imprinter module on any page to a position, an article or in the sidebar.
 
-* [Imprinter Demonstration](http://interim-webmanagement.net/projekte/jmodule-imprinter)
-* [Imprinter Screenshots](http://interim-webmanagement.net/projekte/jmodule-imprinter)
+* [Imprinter Demonstration](http://iwm.agency/projekte/jmodule-imprinter)
+* [Imprinter Screenshots](http://iwm.agency/projekte/jmodule-imprinter)
 
 -
 ### Joomla! 3.x - Extension Installation:
