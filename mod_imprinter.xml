@@ -4,10 +4,10 @@
     <author>Michael S. RitZenhoff</author>
     <creationDate>13.04.2015</creationDate>
     <copyright>Copyright (C) 2015. Michael S. RitZenhoff. All rights reserved.</copyright>
-    <license>GNU General Public License version 2; see LICENSE.txt</license>
+    <license>GNU/GPLv3, http://www.gnu.org/licenses/gpl-3.0.html, see /assets/en-GB.license.txt</license>
     <authorEmail>info@iwm.agency</authorEmail>
     <authorUrl>iwm.agency</authorUrl>
-    <version>0.2.3</version>
+    <version>0.2.32</version>
     <description><![CDATA[
         <style>
             .star{color: red;}
@@ -21,9 +21,6 @@
             <p>Need information? <a target="_blank" href="//iwm.agency/projekte/jmodule-imprinter"><strong>Please visit the JModule Imprinter (Info Page)</strong></a>.</p>
             </hr>
             <blockquote style="color: darkred;">The data you are publishing can contribute Data-Mining by machines. So be careful!</blockquote>
-            <!--
-            <p>Like the Imprinter? Check out the <a target="_blank" href="//iwm.agency/projekte/clifflex"><strong>CLIFFlex Template</strong></a></p>
-            -->
         </div>
     ]]></description>
 

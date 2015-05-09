@@ -3,28 +3,20 @@
 defined('_JEXEC') or die;
 
 /**
- * @package         Joomla
- * @subpackage      Imprinter Module
- * @author          Michael S. RitZenhoff by Interim Webmanagement
+ * @package         Module Imprinter for Joomla! 3.x
+ * @author          Michael S. RitZenhoff
  * @author url      http://iwm.agency
  * @author email    info@iwm.agency
- * @license         GNU/GPL, see /assets/license.txt
- * @copyright       Copyright (C) 2015. Michael S. RitZenhoff by Interim Webmanagement. All rights reserved.
- *
- * Imprinter is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
-
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
-
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+ * @copyright       Copyright (C) 2015. Michael S. RitZenhoff. All rights reserved.
+ * @license         GNU/GPLv3, http://www.gnu.org/licenses/gpl-3.0.html, see /assets/en-GB.license.txt
+ **/
 ?>
+Version 0.2.32 09.05.2015
+^ changed License to GNU/GPLv3
+^ changed global docblocks
+^ changed filename changelog to en-GB.changelog
+^ changed filename license.txt to en-GB.license.txt
+
 Version 0.2.31 09.05.2015
 ^ changed MaintainerURL
 

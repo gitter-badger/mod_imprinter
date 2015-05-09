@@ -1,14 +1,13 @@
 /*
  * StyleSheet for mod_imprinter
  *
- * @package         Joomla
- * @subpackage      Imprinter Module
- * @author          Michael S. RitZenhoff by Interim Webmanagement
+ * @package         Module Imprinter for Joomla! 3.x
+ * @author          Michael S. RitZenhoff
  * @author url      http://iwm.agency
  * @author email    info@iwm.agency
- * @license         GNU/GPL, see /assets/license.txt
- * @copyright       Copyright (C) 2015. Michael S. RitZenhoff by Interim Webmanagement. All rights reserved.
-*/
+ * @copyright       Copyright (C) 2015. Michael S. RitZenhoff. All rights reserved.
+ * @license         GNU/GPLv3, http://www.gnu.org/licenses/gpl-3.0.html, see /assets/en-GB.license.txt
+ **/
 
 /* vCard / h-card start */
 .h-card,.h-card .h-adr,.h-card .h-adr>*,.h-card .h-geo,.h-card .p-fax,.h-card .p-fn,.h-card .p-job-title,.h-card .p-n,.h-card .p-name,.h-card .p-org,.h-card .p-org>*,.h-card .p-tel,.h-card>*,.imprintfooter,.vatid{float:left;width:100%}
