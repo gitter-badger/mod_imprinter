@@ -1,12 +1,12 @@
 <?php
 /**
  * mod_imprinter Module Entry Point
- * 
+ *
  * @package         Joomla
  * @subpackage      Imprinter Module
  * @author          Michael S. RitZenhoff by Interim Webmanagement
- * @author url      http://interim-webmanagement.net
- * @author email    info@interim-webmanagement.net
+ * @author url      http://iwm.agency
+ * @author email    info@iwm.agency
  * @license         GNU/GPL, see /assets/license.txt
  * @copyright       Copyright (C) 2015. Michael S. RitZenhoff by Interim Webmanagement. All rights reserved.
  **/
@@ -125,7 +125,7 @@ $hidden = 'hidden';
 $imprintkey = '';
 
 // LINKS
-$imprinthome = '<a href="//interim-webmanagement.net/projekte/jmodule-imprinter" title="Imprinter &ndash; Module for Joomla! 3.x">Imprinter</a>';
+$imprinthome = '<a href="//iwm.agency/projekte/jmodule-imprinter" title="Imprinter &ndash; Module for Joomla! 3.x">Imprinter</a>';
 $microformathome = 'This content uses <a target="_blank" href="//microformats.org/wiki/microformats2">microformats 2</a>';
 
 

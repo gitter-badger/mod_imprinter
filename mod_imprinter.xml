@@ -5,8 +5,8 @@
     <creationDate>13.04.2015</creationDate>
     <copyright>Copyright (C) 2015. Michael S. RitZenhoff. All rights reserved.</copyright>
     <license>GNU General Public License version 2; see LICENSE.txt</license>
-    <authorEmail>info@interim-webmanagement.net</authorEmail>
-    <authorUrl>interim-webmanagement.net</authorUrl>
+    <authorEmail>info@iwm.agency</authorEmail>
+    <authorUrl>iwm.agency</authorUrl>
     <version>0.2.3</version>
     <description><![CDATA[
         <style>
@@ -18,11 +18,11 @@
             <p>Imprinter is finetuned with Googles Rich Snippets (<a href="https://schema.org/">Schema.org</a>) and with microformat 2 [h-card] incl. backwards compatible [hcard].</p>
             <p>Load the <strong>Imprinter</strong> module on any page to a position, an article or in the sidebar.</p>
             </hr>
-            <p>Need information? <a target="_blank" href="//interim-webmanagement.net/projekte/jmodule-imprinter"><strong>Please visit the JModule Imprinter (Info Page)</strong></a>.</p>
+            <p>Need information? <a target="_blank" href="//iwm.agency/projekte/jmodule-imprinter"><strong>Please visit the JModule Imprinter (Info Page)</strong></a>.</p>
             </hr>
             <blockquote style="color: darkred;">The data you are publishing can contribute Data-Mining by machines. So be careful!</blockquote>
             <!--
-            <p>Like the Imprinter? Check out the <a target="_blank" href="//interim-webmanagement.net/projekte/clifflex"><strong>CLIFFlex Template</strong></a></p>
+            <p>Like the Imprinter? Check out the <a target="_blank" href="//iwm.agency/projekte/clifflex"><strong>CLIFFlex Template</strong></a></p>
             -->
         </div>
     ]]></description>

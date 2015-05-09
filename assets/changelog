@@ -6,8 +6,8 @@ defined('_JEXEC') or die;
  * @package         Joomla
  * @subpackage      Imprinter Module
  * @author          Michael S. RitZenhoff by Interim Webmanagement
- * @author url      http://interim-webmanagement.net
- * @author email    info@interim-webmanagement.net
+ * @author url      http://iwm.agency
+ * @author email    info@iwm.agency
  * @license         GNU/GPL, see /assets/license.txt
  * @copyright       Copyright (C) 2015. Michael S. RitZenhoff by Interim Webmanagement. All rights reserved.
  *
@@ -25,6 +25,9 @@ defined('_JEXEC') or die;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 ?>
+Version 0.2.31 09.05.2015
+^ changed MaintainerURL
+
 Version 0.2.3 24.04.2015
 ! CleanUp
 
@@ -37,7 +40,7 @@ Version 0.2.1 20.04.2015
 
 Version 0.2.0 20.04.2015
 ! Other codechanges and Optimization
-+ editor: hide="readmore,pagebreak" 
++ editor: hide="readmore,pagebreak"
 ^ editor: buttons="false"
 ^ editor: changed filter from "JComponentHelper::filterText" to "safehtml"
 
@@ -131,7 +134,7 @@ $ Changes in language
 Version 0.0.5 15.04.2015
 ^ Changes in mod_imprinter.xml: scriptfile, updateservers
 + install.php
-- script.php 
+- script.php
 
 Version 0.0.4 15.04.2015
 ! Published on GitHub
