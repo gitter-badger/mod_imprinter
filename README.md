@@ -1,4 +1,6 @@
 # Imprinter
+
+[![Join the chat at https://gitter.im/msritzenhoff/mod_imprinter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/msritzenhoff/mod_imprinter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Version 0.2.3
 
 [![Code Climate](https://codeclimate.com/github/msritzenhoff/mod_imprinter/badges/gpa.svg)](https://codeclimate.com/github/msritzenhoff/mod_imprinter)
